@@ -1,0 +1,648 @@
+/* Solutions/product page hero */
+.solutions-hero,
+.product-hero {
+  min-height: 740px;
+  padding: 7vw 5vw;
+  display: grid;
+  grid-template-columns: 0.92fr 1.08fr;
+  gap: 7vw;
+  align-items: center;
+  background: var(--cream);
+  overflow: hidden;
+}
+.solutions-hero h1,
+.product-hero h1 {
+  font-size: clamp(52px, 6vw, 94px);
+  line-height: 0.94;
+  letter-spacing: -0.072em;
+  font-weight: 520;
+  margin: 0;
+}
+.solutions-hero > div > p:not(.kicker),
+.product-hero > div > p:not(.kicker) {
+  max-width: 650px;
+  color: var(--muted);
+  font-size: 18px;
+  line-height: 1.65;
+  margin: 25px 0 30px;
+}
+.product-hero > div > div {
+  display: flex;
+  gap: 12px;
+}
+.store-badges {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+.store-badge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--ink);
+  color: white;
+  border-radius: 10px;
+  padding: 9px 16px;
+  transition: transform 0.25s, background 0.25s;
+}
+.store-badge:hover {
+  background: var(--green);
+  transform: translateY(-2px);
+}
+.store-badge span {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+.store-badge small {
+  font-size: 9px;
+  color: #ffffffb0;
+}
+.store-badge b {
+  font-size: 15px;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+}
+/* Product mock-UI visual (ProductVisual component) */
+.solution-ui {
+  position: relative;
+  aspect-ratio: 1.5;
+  border: 5px solid var(--ink);
+  border-radius: 15px;
+  background: #f8f5ed;
+  overflow: hidden;
+  box-shadow: 0 28px 55px #07150d2e;
+}
+.solution-ui.phone {
+  aspect-ratio: 0.52;
+  border-radius: 28px;
+  border-width: 7px;
+  width: 260px;
+  max-width: 100%;
+  justify-self: center;
+  margin: 0 auto;
+}
+.solution-ui.phone > div {
+  height: 22px;
+}
+.solution-ui.phone > div b {
+  font-size: 5px;
+}
+.solution-ui.phone aside {
+  display: none;
+}
+.solution-ui.phone main {
+  padding: 10%;
+}
+.solution-ui.has-image {
+  padding: 0;
+}
+.phone-shot {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.solution-ui > div {
+  height: 28px;
+  background: var(--ink);
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 0 9px;
+}
+.solution-ui > div i {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--green);
+}
+.solution-ui > div b {
+  margin-left: auto;
+  font-size: 6px;
+  letter-spacing: 0.12em;
+}
+.solution-ui > section {
+  height: calc(100% - 28px);
+  display: flex;
+}
+.solution-ui aside {
+  width: 15%;
+  padding: 11px 5px;
+  background: #dcd8ce;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 11px;
+}
+.solution-ui aside img {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+}
+.solution-ui aside i {
+  width: 45%;
+  height: 4px;
+  background: #7e8881;
+}
+.solution-ui main {
+  position: relative;
+  flex: 1;
+  padding: 8%;
+  background: linear-gradient(135deg, #faf8f1, #d3e5d8);
+}
+.solution-ui main > span {
+  display: inline-block;
+  width: 29%;
+  height: 20px;
+  background: white;
+  margin-right: 3%;
+}
+.solution-ui main > div {
+  height: 58%;
+  margin-top: 12px;
+  background: repeating-linear-gradient(
+    35deg,
+    #bfd2c3,
+    #bfd2c3 1px,
+    transparent 1px,
+    transparent 13px
+  );
+}
+.solution-ui main small {
+  position: absolute;
+  right: 7px;
+  bottom: 7px;
+  background: var(--green);
+  color: white;
+  padding: 4px 6px;
+  font-size: 6px;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+}
+/* Solutions overview ecosystem art */
+.ecosystem-art {
+  position: relative;
+  height: 520px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ecosystem-diagram {
+  position: relative;
+  width: 100%;
+  max-width: 460px;
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+}
+.eco-lines {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+.eco-line {
+  stroke: var(--green);
+  stroke-width: 2;
+  stroke-dasharray: 6 8;
+  opacity: 0.55;
+  animation: eco-flow 2.4s linear infinite;
+}
+.eco-line.l1 {
+  animation-delay: -0.6s;
+}
+.eco-line.l2 {
+  animation-delay: -1.2s;
+}
+.eco-line.l3 {
+  animation-delay: -1.8s;
+}
+@keyframes eco-flow {
+  to {
+    stroke-dashoffset: -28;
+  }
+}
+.eco-hub {
+  position: relative;
+  z-index: 2;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: var(--ink);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  box-shadow: 0 28px 55px #07150d2e, 0 0 0 10px #1174470f;
+  text-align: center;
+  animation: eco-pulse 3.2s ease-in-out infinite;
+}
+.eco-hub b {
+  font-size: 17px;
+  font-weight: 700;
+}
+.eco-hub span {
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #9fd6b6;
+}
+@keyframes eco-pulse {
+  0%, 100% {
+    box-shadow: 0 28px 55px #07150d2e, 0 0 0 10px #11744714;
+  }
+  50% {
+    box-shadow: 0 28px 55px #07150d2e, 0 0 0 18px #11744705;
+  }
+}
+.eco-nodes {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+.eco-node {
+  position: absolute;
+  width: 42%;
+  background: #f8f5ed;
+  border: 1.5px solid var(--line);
+  border-radius: 14px;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  box-shadow: 0 14px 30px #07150d14;
+  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+  animation: eco-float 4.5s ease-in-out infinite;
+}
+.eco-node:hover {
+  transform: translateY(-4px) scale(1.03);
+  border-color: var(--green);
+  box-shadow: 0 20px 40px #07150d22;
+}
+.eco-node span {
+  font-size: 10px;
+  font-weight: 800;
+  color: var(--green);
+  letter-spacing: 0.08em;
+}
+.eco-node b {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink);
+}
+.eco-node.tl {
+  top: 0;
+  left: 0;
+  animation-delay: 0s;
+}
+.eco-node.tr {
+  top: 0;
+  right: 0;
+  animation-delay: -1.1s;
+}
+.eco-node.bl {
+  bottom: 0;
+  left: 0;
+  animation-delay: -2.2s;
+}
+.eco-node.br {
+  bottom: 0;
+  right: 0;
+  animation-delay: -3.3s;
+}
+@keyframes eco-float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .eco-line,
+  .eco-hub,
+  .eco-node {
+    animation: none;
+  }
+}
+.mini-ui {
+  position: absolute;
+  width: 25%;
+  z-index: 3;
+}
+.mini-ui .solution-ui {
+  aspect-ratio: 0.54;
+  border-radius: 25px;
+}
+.mini-ui.one {
+  left: 3%;
+  bottom: 0;
+  transform: rotate(-5deg);
+}
+.mini-ui.two {
+  right: 1%;
+  bottom: 0;
+  transform: rotate(5deg);
+}
+/* Solutions overview journey band */
+.journey-band {
+  padding: 7vw 5vw;
+  background: var(--ink);
+  color: white;
+}
+.journey-band > div {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  border-top: 1px solid #ffffff3b;
+}
+.journey-band article {
+  position: relative;
+  padding: 25px 18px;
+  border-right: 1px solid #ffffff3b;
+  display: flex;
+  flex-direction: column;
+  gap: 55px;
+}
+.journey-band article span {
+  color: #68bd90;
+  font-size: 9px;
+}
+.journey-band article i {
+  position: absolute;
+  right: 15px;
+  bottom: 22px;
+  color: #68bd90;
+}
+/* Solutions overview product list */
+.solution-list {
+  padding: 9vw 5vw;
+}
+.solution-list-head h2,
+.workflow-intro h2,
+.benefit-band h2,
+.connected-products h2,
+.goal-grid h2 {
+  font-size: clamp(48px, 5.5vw, 84px);
+  line-height: 0.94;
+  letter-spacing: -0.07em;
+  font-weight: 520;
+  margin: 0;
+}
+.solution-list > article {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 8vw;
+  align-items: center;
+  padding: 7vw 0;
+  border-top: 1px solid var(--line);
+}
+.solution-list > article:nth-child(odd) > .solution-ui {
+  order: -1;
+}
+.solution-list > article > div > span,
+.workflow-list article > div > span {
+  font-size: 10px;
+  color: var(--green);
+}
+.solution-list > article h2,
+.workflow-list h2 {
+  font-size: clamp(38px, 4vw, 64px);
+  line-height: 1;
+  letter-spacing: -0.06em;
+}
+.solution-list > article p,
+.workflow-list p {
+  color: var(--muted);
+  line-height: 1.7;
+}
+.solution-list > article a {
+  display: inline-block;
+  margin-top: 22px;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+/* Solutions overview goal grid */
+.goal-grid {
+  padding: 9vw 5vw;
+  background: var(--ink);
+  color: white;
+}
+.goal-grid > div {
+  margin-top: 5vw;
+  border-top: 1px solid #ffffff3d;
+}
+.goal-grid article {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 22px 3px;
+  border-bottom: 1px solid #ffffff3d;
+}
+.goal-grid article span {
+  color: #aeb9b3;
+}
+/* Product detail page: problem/promise band */
+.product-problem {
+  padding: 9vw 5vw;
+  display: grid;
+  grid-template-columns: 1.4fr 0.6fr;
+  gap: 9vw;
+  background: var(--ink);
+  color: white;
+  align-items: end;
+}
+.product-problem h2 {
+  font-size: clamp(45px, 5vw, 78px);
+  line-height: 0.98;
+  letter-spacing: -0.066em;
+  font-weight: 520;
+  margin: 0;
+}
+.product-problem > div:last-child {
+  border-top: 1px solid #ffffff45;
+  padding-top: 25px;
+}
+.product-problem > div:last-child span {
+  font-size: 9px;
+  color: #69bd91;
+  letter-spacing: 0.15em;
+}
+.product-problem > div:last-child p {
+  color: #adb8b2;
+  line-height: 1.7;
+}
+/* Product detail page: video film section */
+.product-film.refined {
+  padding: 8vw 12vw;
+}
+/* Product detail page: workflow list */
+.workflow-intro {
+  padding: 9vw 5vw 5vw;
+}
+.workflow-list {
+  padding: 0 5vw 9vw;
+}
+.workflow-list article {
+  display: grid;
+  grid-template-columns: 0.78fr 1.22fr;
+  gap: 8vw;
+  align-items: center;
+  padding: 7vw 0;
+  border-top: 1px solid var(--line);
+}
+.workflow-list article:nth-child(even) > .solution-ui {
+  order: -1;
+}
+/* Product detail page: benefits band */
+.benefit-band {
+  padding: 9vw 5vw;
+  background: var(--green);
+  color: white;
+}
+.benefit-band > div {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 5vw;
+  border-top: 1px solid #ffffff55;
+}
+.benefit-band article {
+  padding: 27px;
+  border-right: 1px solid #ffffff55;
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+}
+.benefit-band article span {
+  font-size: 9px;
+}
+.benefit-band article b {
+  font-size: 21px;
+}
+/* Product detail page: connected products */
+.connected-products {
+  padding: 9vw 5vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 9vw;
+  background: var(--cream);
+}
+.connected-products > div:last-child {
+  border-top: 1px solid var(--ink);
+}
+.connected-products a {
+  display: grid;
+  grid-template-columns: 45px 1fr auto;
+  padding: 22px 4px;
+  border-bottom: 1px solid var(--line);
+}
+.connected-products a span {
+  font-size: 9px;
+  color: var(--green);
+}
+.connected-products a i {
+  font-style: normal;
+}
+/* Product detail page: FAQ */
+.product-faq {
+  padding: 8vw 12vw;
+}
+.product-faq details {
+  border-top: 1px solid var(--line);
+  padding: 23px 0;
+}
+.product-faq summary {
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+  font-weight: 800;
+  cursor: pointer;
+}
+.product-faq details p {
+  max-width: 760px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+@media (max-width: 1000px) {
+  .solutions-hero,
+  .product-hero,
+  .product-problem,
+  .connected-products {
+    grid-template-columns: 1fr;
+  }
+  .ecosystem-art {
+    height: 470px;
+  }
+  .solution-list > article,
+  .workflow-list article {
+    grid-template-columns: 1fr;
+  }
+  .solution-list > article:nth-child(odd) > .solution-ui,
+  .workflow-list article:nth-child(even) > .solution-ui {
+    order: 0;
+  }
+  .journey-band > div {
+    grid-template-columns: 1fr 1fr;
+  }
+  .benefit-band > div {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 650px) {
+  .solutions-hero,
+  .product-hero {
+    padding: 70px 22px;
+  }
+  .solutions-hero h1,
+  .product-hero h1 {
+    font-size: 50px;
+  }
+  .product-hero > div > div {
+    flex-direction: column;
+  }
+  .ecosystem-art {
+    height: 350px;
+  }
+  .journey-band,
+  .solution-list,
+  .goal-grid,
+  .product-problem,
+  .workflow-intro,
+  .workflow-list,
+  .benefit-band,
+  .connected-products,
+  .product-faq {
+    padding-left: 22px;
+    padding-right: 22px;
+  }
+  .journey-band > div,
+  .benefit-band > div {
+    grid-template-columns: 1fr;
+  }
+  .journey-band article {
+    gap: 25px;
+  }
+  .solution-list > article,
+  .workflow-list article {
+    padding: 70px 0;
+  }
+  .solution-list-head h2,
+  .workflow-intro h2,
+  .benefit-band h2,
+  .connected-products h2,
+  .goal-grid h2 {
+    font-size: 46px;
+  }
+  .goal-grid article {
+    grid-template-columns: 1fr;
+    gap: 7px;
+  }
+  .product-film.refined {
+    padding: 75px 22px;
+  }
+}
