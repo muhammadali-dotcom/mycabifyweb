@@ -11,18 +11,8 @@ export function OurStory() {
       <p className="kicker">OUR STORY / WHY MYCABIFY</p>
       <h2>A simpler approach to complete taxi management.</h2>
       <p>
-        MyCabify was created with a clear purpose: to give taxi companies a modern
-        and complete way to manage their operation without the unnecessary
-        complexity often associated with larger dispatch systems.
-      </p>
-      <p>
-        The platform brings booking, dispatch, drivers, passengers and operational
-        management together, helping companies work through one connected
-        ecosystem.
-      </p>
-      <p>
-        As taxi businesses evolve, MyCabify continues to focus on practical
-        technology, flexible configuration and dependable customer support.
+        MyCabify brings booking, dispatch, drivers and passengers together in
+        one connected platform, built to stay practical as your fleet grows.
       </p>
       <div className="story-direction">
         <p className="kicker">OUR CONTINUING DIRECTION</p>

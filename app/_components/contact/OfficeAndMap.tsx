@@ -1,12 +1,48 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useRef } from "react";
+import "leaflet/dist/leaflet.css";
 
 const address = "MyCabify, 66 Kingsley Road, Hounslow, Middlesex, TW3 1QA";
 const mapsHref = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(address);
-const embedSrc = "https://www.google.com/maps?q=" + encodeURIComponent(address) + "&output=embed";
+const officePosition: [number, number] = [51.4685, -0.3639];
 
 export function OfficeAndMap() {
-  const [mapLoaded, setMapLoaded] = useState(false);
+  const mapContainer = useRef<HTMLDivElement>(null);
+  const mapInstance = useRef<import("leaflet").Map | null>(null);
+
+  useEffect(() => {
+    if (!mapContainer.current || mapInstance.current) return;
+
+    let cancelled = false;
+
+    import("leaflet").then((L) => {
+      if (cancelled || !mapContainer.current || mapInstance.current) return;
+
+      const icon = L.icon({
+        iconUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png",
+        iconRetinaUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png",
+        shadowUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
+        iconSize: [25, 41],
+        iconAnchor: [12, 41],
+      });
+
+      const map = L.map(mapContainer.current, { attributionControl: false }).setView(officePosition, 15);
+      L.control.attribution({ prefix: false }).addTo(map);
+      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+        maxZoom: 19,
+      }).addTo(map);
+      L.marker(officePosition, { icon }).addTo(map).bindPopup("MyCabify, Hounslow office");
+
+      mapInstance.current = map;
+    });
+
+    return () => {
+      cancelled = true;
+      mapInstance.current?.remove();
+      mapInstance.current = null;
+    };
+  }, []);
 
   return (
     <section className="office-map">
@@ -32,28 +68,7 @@ export function OfficeAndMap() {
       </div>
       <div>
         <div className="map-placeholder">
-          {mapLoaded ? (
-            <iframe
-              title="MyCabify office location"
-              src={embedSrc}
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            />
-          ) : (
-            <>
-              <div className="map-pin">
-                <span />
-              </div>
-              <b>66 Kingsley Road, Hounslow</b>
-              <small>
-                Loading the map requests content from Google Maps. Click to
-                load it.
-              </small>
-              <button className="line" type="button" onClick={() => setMapLoaded(true)}>
-                Load map
-              </button>
-            </>
-          )}
+          <div ref={mapContainer} className="leaflet-mount" />
         </div>
       </div>
     </section>

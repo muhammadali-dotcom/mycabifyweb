@@ -2,30 +2,35 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
+import { solutionIcons } from "./_data/solutionIcons";
 const solutions = [
   {
     no: "01",
     name: "Dispatch System",
     href: "/dispatch-system",
     copy: "Bookings, allocation and live operational control.",
+    icon: solutionIcons["dispatch-system"],
   },
   {
     no: "02",
     name: "Driver App",
     href: "/driver-app",
     copy: "Keep drivers connected through every journey.",
+    icon: solutionIcons["driver-app"],
   },
   {
     no: "03",
     name: "Passenger App",
     href: "/passenger-app",
     copy: "A simple branded passenger booking experience.",
+    icon: solutionIcons["passenger-app"],
   },
   {
     no: "04",
     name: "Web Booker",
     href: "/web-booker",
     copy: "Turn website visitors into direct bookings.",
+    icon: solutionIcons["web-booker"],
   },
 ];
 export default function SiteHeader({ onDemo }: { onDemo?: () => void }) {
@@ -74,7 +79,7 @@ export default function SiteHeader({ onDemo }: { onDemo?: () => void }) {
           <div className="mega">
             {solutions.map((s) => (
               <Link key={s.name} href={s.href} onClick={close}>
-                <span>{s.no}</span>
+                <span className="mega-icon">{s.icon}</span>
                 <div>
                   <b>{s.name}</b>
                   <small>{s.copy}</small>

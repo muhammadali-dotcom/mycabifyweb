@@ -13,7 +13,6 @@ import { ImplementationSection } from "./_components/home/ImplementationSection"
 import { SupportSection } from "./_components/home/SupportSection";
 import { FaqSection } from "./_components/home/FaqSection";
 import { ClosingSection } from "./_components/home/ClosingSection";
-import { WhatsAppButton } from "./_components/home/WhatsAppButton";
 import { DemoModal } from "./_components/home/DemoModal";
 import { VideoModal } from "./_components/home/VideoModal";
 
@@ -36,7 +35,6 @@ export default function Home() {
       <FaqSection />
       <ClosingSection onDemo={() => setDemo(true)} />
       <SiteFooter />
-      <WhatsAppButton />
       {demo && <DemoModal close={() => setDemo(false)} />}
       {video && <VideoModal video={video} close={() => setVideo("")} />}
     </main>

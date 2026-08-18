@@ -7,12 +7,12 @@ const pillars = [
   {
     label: "Optimise",
     line: "Feel in control.",
-    copy: "Shape MyCabify around how your business really works — not the other way round — until it feels like it was built just for you.",
+    copy: "Shape MyCabify around how your business really works, not the other way round, until it feels like it was built just for you.",
   },
   {
     label: "Grow",
     line: "Move forward with confidence.",
-    copy: "Take on more drivers, more bookings, more ambition — knowing your operation can carry the weight.",
+    copy: "Take on more drivers, more bookings, more ambition, knowing your operation can carry the weight.",
   },
 ];
 

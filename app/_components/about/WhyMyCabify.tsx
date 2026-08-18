@@ -1,7 +1,7 @@
 const benefits = [
   {
     title: "Always there when you need us",
-    copy: "Round-the-clock support whenever your operation needs a hand — day, night, and everything in between.",
+    copy: "Round-the-clock support whenever your operation needs a hand, day, night, and everything in between.",
     icon: (
       <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="white" strokeWidth="1.6">
         <circle cx="12" cy="12" r="8.5" />
@@ -23,7 +23,7 @@ const benefits = [
   },
   {
     title: "Built around your fleet",
-    copy: "MyCabify adapts to your fleet size, workflows and the way your business already runs — not the other way round.",
+    copy: "MyCabify adapts to your fleet size, workflows and the way your business already runs, not the other way round.",
     icon: (
       <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="white" strokeWidth="1.6" strokeLinecap="round">
         <path d="M4 8h16M4 16h16" />
@@ -44,7 +44,7 @@ const benefits = [
   },
   {
     title: "Complete capability, sensible cost",
-    copy: "Everything a modern taxi operation needs, without paying for enterprise complexity you'll never use.",
+    copy: "Everything a taxi operation needs, without paying for enterprise complexity you'll never use.",
     icon: (
       <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="white" strokeWidth="1.6" strokeLinejoin="round">
         <path d="M12 3.5l7 7-8.5 8.5-7-7z" strokeLinecap="round" />
@@ -54,7 +54,7 @@ const benefits = [
   },
   {
     title: "Technology your whole team will use",
-    copy: "A modern, intuitive experience so controllers, drivers and passengers feel confident from day one.",
+    copy: "A clear, intuitive experience so controllers, drivers and passengers feel confident from day one.",
     icon: (
       <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="white" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
         <path d="M4 6.5h16v9H9l-3 3v-3H4z" />

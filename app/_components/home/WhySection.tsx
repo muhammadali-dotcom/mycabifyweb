@@ -7,7 +7,7 @@ const reasons = [
   ],
   [
     "Easy to understand",
-    "A modern interface designed around practical daily work.",
+    "A clear interface designed around practical daily work.",
   ],
   [
     "Flexible by design",

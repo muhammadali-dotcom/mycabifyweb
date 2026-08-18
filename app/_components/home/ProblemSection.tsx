@@ -17,7 +17,7 @@ const problems = [
   [
     "04",
     "Growth feels heavier",
-    "More bookings should grow the business—not multiply stress for controllers, drivers and owners.",
+    "More bookings should grow the business, not multiply stress for controllers, drivers and owners.",
   ],
 ];
 

@@ -14,7 +14,7 @@ export function MissionVision() {
         <p className="kicker">02 / OUR VISION</p>
         <h2>A better-connected future for local taxi companies.</h2>
         <p>
-          Our vision is to help taxi and private-hire companies deliver modern
+          Our vision is to help taxi and private-hire companies deliver smoother
           booking and journey experiences while keeping ownership of their
           customer relationships and operations.
         </p>

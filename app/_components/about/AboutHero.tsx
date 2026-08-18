@@ -6,7 +6,7 @@ export function AboutHero() {
     <section className="about-hero">
       <div>
         <p className="kicker">ABOUT MYCABIFY / COMPLETE TAXI TECHNOLOGY</p>
-        <h1>Modern taxi management technology, built around real business needs.</h1>
+        <h1>Complete taxi management technology, built around real business needs.</h1>
         <p>
           MyCabify provides a complete, connected platform that helps UK taxi and
           private-hire companies manage bookings, dispatch, drivers, passengers and

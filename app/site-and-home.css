@@ -110,6 +110,16 @@ header nav {
   color: var(--green);
   font-size: 10px;
 }
+.mega-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.mega-icon svg {
+  width: 20px;
+  height: 20px;
+}
 .mega a div {
   display: flex;
   flex-direction: column;
@@ -179,6 +189,46 @@ header nav {
   letter-spacing: -0.072em;
   font-weight: 520;
   margin: 0;
+}
+.hero-rotator {
+  display: flex;
+  align-items: center;
+  min-height: calc(clamp(50px, 6.2vw, 96px) * 0.94 * 2);
+}
+.hero-rotator span {
+  display: block;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .hero-rotator span {
+    animation: hero-headline-in 0.9s ease;
+  }
+}
+@keyframes hero-headline-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.hero-rotator-dots {
+  display: flex;
+  gap: 8px;
+  margin-top: 18px;
+}
+.hero-rotator-dots button {
+  width: 7px;
+  height: 7px;
+  padding: 0;
+  border: 0;
+  border-radius: 99px;
+  background: var(--line);
+  cursor: pointer;
+  transition: background 0.25s, width 0.25s;
+}
+.hero-rotator-dots button.active {
+  width: 20px;
+  background: var(--green);
 }
 .lead {
   max-width: 600px;
@@ -859,6 +909,112 @@ footer > div > p {
   font-weight: 800;
   box-shadow: 0 10px 30px #0003;
 }
+/* Rotating message bubble next to the WhatsApp button */
+.whatsapp-bubble {
+  position: fixed;
+  right: 22px;
+  bottom: 90px;
+  z-index: 51;
+  max-width: 230px;
+  background: var(--paper);
+  color: var(--ink);
+  border-radius: 14px;
+  padding: 12px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.35;
+  box-shadow: 0 10px 30px #0003;
+  text-decoration: none;
+}
+.whatsapp-bubble::after {
+  content: "";
+  position: absolute;
+  right: 22px;
+  bottom: -7px;
+  width: 14px;
+  height: 14px;
+  background: var(--paper);
+  transform: rotate(45deg);
+  border-radius: 2px;
+}
+.whatsapp-bubble span {
+  display: block;
+  animation: bubble-fade 0.4s ease;
+}
+@keyframes bubble-fade {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (max-width: 640px) {
+  .whatsapp-bubble {
+    right: 16px;
+    max-width: 190px;
+  }
+}
+/* Top announcement banner */
+.announcement-banner {
+  position: relative;
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  padding: 12px 48px;
+  background: var(--green);
+  color: white;
+  text-align: center;
+}
+.announcement-banner p {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+}
+.announcement-banner p span {
+  opacity: 0.85;
+}
+.announcement-banner-cta {
+  flex-shrink: 0;
+  background: white;
+  color: var(--green);
+  border-radius: 999px;
+  padding: 7px 18px;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.announcement-banner-cta:hover {
+  background: var(--ink);
+  color: white;
+}
+.announcement-banner-close {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: white;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 4px 8px;
+}
+@media (max-width: 640px) {
+  .announcement-banner {
+    padding: 10px 40px;
+  }
+  .announcement-banner p {
+    font-size: 12px;
+  }
+}
 /* Demo / video modals */
 .overlay {
   position: fixed;
@@ -915,6 +1071,9 @@ footer > div > p {
 }
 .video-modal {
   background: var(--ink);
+}
+.video-modal .close {
+  color: var(--cream);
 }
 .video-modal > div {
   aspect-ratio: 16/9;
@@ -985,6 +1144,9 @@ footer > div > p {
   }
   .hero h1 {
     font-size: 52px;
+  }
+  .hero-rotator {
+    min-height: calc(52px * 0.94 * 3);
   }
   .actions {
     flex-direction: column;

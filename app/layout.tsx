@@ -4,6 +4,9 @@ import "./site-and-home.css";
 import "./header-and-testimonials.css";
 import "./product-pages.css";
 import "./about-contact.css";
+import { WhatsAppButton } from "./_components/home/WhatsAppButton";
+import { WhatsAppBubble } from "./_components/home/WhatsAppBubble";
+import { AnnouncementBanner } from "./_components/AnnouncementBanner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -37,7 +40,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <AnnouncementBanner />
         {children}
+        <WhatsAppButton />
+        <WhatsAppBubble />
       </body>
     </html>
   );

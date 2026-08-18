@@ -418,10 +418,7 @@
 }
 .phone-link {
   color: var(--green);
-  text-decoration: underline;
-  text-decoration-color: var(--green);
-  text-decoration-thickness: 2px;
-  text-underline-offset: 4px;
+  text-decoration: none;
 }
 @keyframes pill-float {
   0%,

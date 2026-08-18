@@ -39,15 +39,17 @@ export function BasicPage({ data, slug }: { data: Basic; slug?: string }) {
           ))}
         </section>
       )}
-      <section className="connected">
-        <p className="kicker pale">READY WHEN YOU ARE</p>
-        <h2>See MyCabify around your operation.</h2>
-        <div>
-          <Link className="cream-btn" href="/contact">
-            Book a Demo ↗
-          </Link>
-        </div>
-      </section>
+      {slug !== "why-mycabify" && (
+        <section className="connected">
+          <p className="kicker pale">READY WHEN YOU ARE</p>
+          <h2>See MyCabify around your operation.</h2>
+          <div>
+            <Link className="cream-btn" href="/contact">
+              Book a Demo ↗
+            </Link>
+          </div>
+        </section>
+      )}
       <SiteFooter />
     </>
   );

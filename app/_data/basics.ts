@@ -6,7 +6,7 @@ export const basics: Record<string, Basic> = {
   "why-mycabify": {
     label: "WHY MYCABIFY",
     title: "Complete when you need it. Simple where it matters.",
-    intro: "Modern, flexible taxi management technology with hands-on support.",
+    intro: "Complete, flexible taxi management technology with hands-on support.",
     items: [
       {
         title: "Finally, a calm operation",
@@ -18,7 +18,7 @@ export const basics: Record<string, Basic> = {
       },
       {
         title: "Made for how you actually work",
-        copy: "Not a rigid system you have to bend around — MyCabify adapts to the way your operation already runs.",
+        copy: "Not a rigid system you have to bend around. MyCabify adapts to the way your operation already runs.",
       },
       {
         title: "Room to grow, without the fear",
@@ -26,7 +26,7 @@ export const basics: Record<string, Basic> = {
       },
       {
         title: "Every part of your day, connected",
-        copy: "Dispatch, drivers and passengers moving as one — so nothing slips through the cracks.",
+        copy: "Dispatch, drivers and passengers moving as one, so nothing slips through the cracks.",
       },
       {
         title: "Peace of mind, shift after shift",
@@ -36,7 +36,7 @@ export const basics: Record<string, Basic> = {
   },
   about: {
     label: "ABOUT MYCABIFY",
-    title: "Practical technology for modern UK taxi companies.",
+    title: "Practical technology for UK taxi companies.",
     intro: "We make complete taxi management easier and more accessible.",
     items: [],
   },
