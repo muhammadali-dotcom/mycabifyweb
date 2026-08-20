@@ -17,13 +17,33 @@ export function DemoModal({ close }: { close: () => void }) {
             close();
           }}
         >
-          <input required placeholder="Full name" />
-          <input required placeholder="Company name" />
+          <label className="sr-only" htmlFor="demo-name">
+            Full name
+          </label>
+          <input id="demo-name" required placeholder="Full name" />
+          <label className="sr-only" htmlFor="demo-company">
+            Company name
+          </label>
+          <input id="demo-company" required placeholder="Company name" />
           <div>
-            <input required type="email" placeholder="Work email" />
-            <input required placeholder="Phone number" />
+            <label className="sr-only" htmlFor="demo-email">
+              Work email
+            </label>
+            <input
+              id="demo-email"
+              required
+              type="email"
+              placeholder="Work email"
+            />
+            <label className="sr-only" htmlFor="demo-phone">
+              Phone number
+            </label>
+            <input id="demo-phone" required placeholder="Phone number" />
           </div>
-          <select defaultValue="">
+          <label className="sr-only" htmlFor="demo-fleet-size">
+            Fleet size
+          </label>
+          <select id="demo-fleet-size" defaultValue="">
             <option value="" disabled>
               Fleet size
             </option>
@@ -31,7 +51,13 @@ export function DemoModal({ close }: { close: () => void }) {
             <option>21–100 vehicles</option>
             <option>100+ vehicles</option>
           </select>
-          <textarea placeholder="What would you like to improve?" />
+          <label className="sr-only" htmlFor="demo-message">
+            What would you like to improve?
+          </label>
+          <textarea
+            id="demo-message"
+            placeholder="What would you like to improve?"
+          />
           <button className="solid">Send enquiry ↗</button>
         </form>
       </div>

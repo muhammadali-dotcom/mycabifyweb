@@ -71,10 +71,20 @@ export default function SiteHeader({ onDemo }: { onDemo?: () => void }) {
         <Link href="/" onClick={close} className={isActive("/") ? "active" : ""}>
           Home
         </Link>
-        <div className={`solution-nav ${solutionsOpen ? "expanded" : ""}`}>
+        <div
+          className={`solution-nav ${solutionsOpen ? "expanded" : ""}`}
+          onMouseEnter={() => setSolutionsOpen(true)}
+          onMouseLeave={() => setSolutionsOpen(false)}
+        >
           <div className="solutions-trigger">
             <span className={isSolutionsActive ? "active" : ""}>Solutions</span>
-            <button onClick={() => setSolutionsOpen(!solutionsOpen)} aria-expanded={solutionsOpen} aria-label="Toggle solutions menu"><i>⌄</i></button>
+            <button onClick={() => setSolutionsOpen(!solutionsOpen)} aria-expanded={solutionsOpen} aria-label="Toggle solutions menu">
+              <i>
+                <svg viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <path d="m3 5.5 5 5 5-5" />
+                </svg>
+              </i>
+            </button>
           </div>
           <div className="mega">
             {solutions.map((s) => (
@@ -99,7 +109,7 @@ export default function SiteHeader({ onDemo }: { onDemo?: () => void }) {
           Contact
         </Link>
         <div className="mobile-actions">
-          <a className="phone-link" href="tel:02084558888">Call Now: 020 8455 8888</a>
+          <a className="phone-link" href="tel:02084558888">🇬🇧 020 8455 8888</a>
           {onDemo ? (
             <button
               className="pill"
@@ -118,7 +128,7 @@ export default function SiteHeader({ onDemo }: { onDemo?: () => void }) {
         </div>
       </nav>
       <div className="header-cta">
-        <a className="phone-link" href="tel:02084558888">Call Now: 020 8455 8888</a>
+        <a className="phone-link" href="tel:02084558888">🇬🇧 020 8455 8888</a>
         {onDemo ? (
           <button className="pill" onClick={onDemo}>
             Book a Demo <i>↗</i>

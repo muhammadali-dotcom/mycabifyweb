@@ -1,8 +1,10 @@
+import { featureIcons } from "../../_data/featureIcons";
+
 const direction = [
-  { title: "Understand taxi operations", copy: "Learn from the everyday reality of controllers, drivers and passengers." },
-  { title: "Build a connected platform", copy: "Bring booking, dispatch, drivers and passengers into one ecosystem." },
-  { title: "Improve everyday usability", copy: "Keep the experience clear enough for teams to use with confidence." },
-  { title: "Support customers through growth", copy: "Stay involved as fleets and requirements continue to change." },
+  { title: "Understand taxi operations", copy: "Learn from the everyday reality of controllers, drivers and passengers.", icon: "clarity" },
+  { title: "Build a connected platform", copy: "Bring booking, dispatch, drivers and passengers into one ecosystem.", icon: "connected" },
+  { title: "Improve everyday usability", copy: "Keep the experience clear enough for teams to use with confidence.", icon: "gear" },
+  { title: "Support customers through growth", copy: "Stay involved as fleets and requirements continue to change.", icon: "support" },
 ];
 
 export function OurStory() {
@@ -17,9 +19,9 @@ export function OurStory() {
       <div className="story-direction">
         <p className="kicker">OUR CONTINUING DIRECTION</p>
         <div className="direction-list">
-          {direction.map((d, i) => (
+          {direction.map((d) => (
             <article key={d.title}>
-              <span>0{i + 1}</span>
+              <span>{featureIcons[d.icon]}</span>
               <b>{d.title}</b>
             </article>
           ))}

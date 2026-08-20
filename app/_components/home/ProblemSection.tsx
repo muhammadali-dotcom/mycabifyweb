@@ -1,23 +1,29 @@
+import { featureIcons } from "../../_data/featureIcons";
+
 const problems = [
   [
     "01",
     "Too many places to look",
     "Calls, spreadsheets and separate tools leave the team asking where the right information is.",
+    "scattered",
   ],
   [
     "02",
     "The same work, repeated",
     "Re-entering details and chasing updates steals time when the phones are already busy.",
+    "duplicate",
   ],
   [
     "03",
     "Always reacting",
     "Without a clear live view, small issues become urgent problems before anyone sees them coming.",
+    "alert",
   ],
   [
     "04",
     "Growth feels heavier",
     "More bookings should grow the business, not multiply stress for controllers, drivers and owners.",
+    "heavy",
   ],
 ];
 
@@ -34,7 +40,9 @@ export function ProblemSection() {
       <div className="problem-list">
         {problems.map((x) => (
           <article key={x[0]}>
-            <span>{x[0]}</span>
+            <div className="problem-icon">
+              {featureIcons[x[3]]}
+            </div>
             <h3>{x[1]}</h3>
             <p>{x[2]}</p>
           </article>

@@ -82,11 +82,7 @@ export function HeroSection({ onDemo }: { onDemo: () => void }) {
             />
           ))}
         </div>
-        <p className="lead">
-          When phones are ringing, drivers are waiting and bookings keep
-          arriving, MyCabify keeps every part of your operation connected and
-          clear.
-        </p>
+
         <div className="actions">
           <a className="solid" href="#platform">
             See MyCabify in Action ↗
@@ -102,13 +98,13 @@ export function HeroSection({ onDemo }: { onDemo: () => void }) {
       </div>
       <div className="hero-art">
         <div className="device main-device">
-          <Screen />
+          <Screen image="/dispatch-system/dispatch-light.png" />
         </div>
         <div className="device driver">
-          <Screen type="phone" />
+          <Screen type="phone" image="/driver-app/dashboard-light.png" />
         </div>
         <div className="device passenger-device">
-          <Screen type="passenger" />
+          <Screen type="passenger" image="/passenger-app/dashboard-light.png" />
         </div>
         <span className="tag t1">DISPATCH</span>
         <span className="tag t2">DRIVER</span>

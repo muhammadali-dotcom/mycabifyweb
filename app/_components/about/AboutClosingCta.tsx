@@ -13,9 +13,6 @@ export function AboutClosingCta() {
         <Link className="cream-btn" href="/contact#enquiry">
           Book a Demo ↗
         </Link>
-        <Link className="outline" href="/contact">
-          Contact Our Team
-        </Link>
       </div>
     </section>
   );

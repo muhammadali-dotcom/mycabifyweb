@@ -1,4 +1,11 @@
-export function Screen({ type = "desktop" }: { type?: string }) {
+export function Screen({ type = "desktop", image }: { type?: string; image?: string }) {
+  if (image) {
+    return (
+      <div className={`screen ${type} has-image`}>
+        <img src={image} alt="" className="screen-shot" draggable={false} />
+      </div>
+    );
+  }
   return (
     <div className={`screen ${type}`}>
       <div className="screen-top">

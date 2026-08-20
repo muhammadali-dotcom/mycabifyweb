@@ -47,7 +47,7 @@ export function OfficeAndMap() {
   return (
     <section className="office-map">
       <div>
-        <p className="kicker">OUR OFFICE / HOUNSLOW</p>
+        <p className="kicker">OUR OFFICE</p>
         <h2>Visit or contact our Hounslow office.</h2>
         <p className="address-block">
           MyCabify

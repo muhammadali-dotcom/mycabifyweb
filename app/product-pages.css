@@ -4,8 +4,8 @@
   min-height: 740px;
   padding: 7vw 5vw;
   display: grid;
-  grid-template-columns: 0.92fr 1.08fr;
-  gap: 7vw;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 4vw;
   align-items: center;
   background: var(--cream);
   overflow: hidden;
@@ -97,11 +97,131 @@
 .solution-ui.has-image {
   padding: 0;
 }
+/* Hero: 7-phone arc (driver-app / passenger-app) */
+.phone-fan {
+  position: relative;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.phone-fan-item {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transition: transform 0.35s ease;
+}
+.phone-fan-item .solution-ui.phone {
+  width: 188px;
+}
+.phone-fan-item.center {
+  z-index: 4;
+  transform: translate(-50%, -50%);
+}
+.phone-fan-item.back-left {
+  z-index: 3;
+  transform: translate(-50%, -50%) translate(-115px, 6px) rotate(-5deg) scale(0.95);
+}
+.phone-fan-item.back-right {
+  z-index: 3;
+  transform: translate(-50%, -50%) translate(115px, 6px) rotate(5deg) scale(0.95);
+}
+.phone-fan-item.back-left-2 {
+  z-index: 2;
+  transform: translate(-50%, -50%) translate(-200px, 14px) rotate(-9deg) scale(0.88);
+}
+.phone-fan-item.back-right-2 {
+  z-index: 2;
+  transform: translate(-50%, -50%) translate(200px, 14px) rotate(9deg) scale(0.88);
+}
+.phone-fan-item.back-left-3 {
+  z-index: 1;
+  transform: translate(-50%, -50%) translate(-270px, 22px) rotate(-13deg) scale(0.8);
+}
+.phone-fan-item.back-right-3 {
+  z-index: 1;
+  transform: translate(-50%, -50%) translate(270px, 22px) rotate(13deg) scale(0.8);
+}
+.phone-fan:hover .back-left {
+  transform: translate(-50%, -50%) translate(-124px, 2px) rotate(-5deg) scale(0.97);
+}
+.phone-fan:hover .back-right {
+  transform: translate(-50%, -50%) translate(124px, 2px) rotate(5deg) scale(0.97);
+}
+.phone-fan:hover .back-left-2 {
+  transform: translate(-50%, -50%) translate(-214px, 10px) rotate(-9deg) scale(0.9);
+}
+.phone-fan:hover .back-right-2 {
+  transform: translate(-50%, -50%) translate(214px, 10px) rotate(9deg) scale(0.9);
+}
+.phone-fan:hover .back-left-3 {
+  transform: translate(-50%, -50%) translate(-288px, 18px) rotate(-13deg) scale(0.82);
+}
+.phone-fan:hover .back-right-3 {
+  transform: translate(-50%, -50%) translate(288px, 18px) rotate(13deg) scale(0.82);
+}
 .phone-shot {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
+}
+/* Hero: web-booker composite mockup image */
+.wb-hero-img {
+  display: block;
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+  justify-self: end;
+}
+/* Hero: dispatch-system photo showcase — realistic 2 monitor + 2 laptop stage */
+.mc-device-showcase {
+  position: relative;
+  width: min(100%, 820px);
+  aspect-ratio: 1672 / 941;
+  isolation: isolate;
+  transform: translateZ(0);
+  margin: 0 auto;
+  filter: drop-shadow(0 34px 30px rgba(20, 39, 31, 0.2));
+  animation: mc-enter 0.8s cubic-bezier(0.2, 0.75, 0.25, 1) both;
+  transition: transform 0.35s ease;
+}
+.mc-device-showcase:hover {
+  transform: translateY(-4px);
+}
+.mc-device-showcase::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 8%;
+  right: 8%;
+  bottom: 3%;
+  height: 9%;
+  border-radius: 50%;
+  background: rgba(20, 48, 38, 0.13);
+  filter: blur(26px);
+}
+.mc-hardware-photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  user-select: none;
+}
+@keyframes mc-enter {
+  from {
+    opacity: 0;
+    translate: 0 22px;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mc-device-showcase {
+    animation: none;
+  }
 }
 .solution-ui > div {
   height: 28px;
@@ -380,10 +500,11 @@
 }
 /* Solutions overview product list */
 .solution-list {
-  padding: 9vw 5vw;
+  padding: 9vw var(--side-padding);
+  padding-left: var(--content-pad-x);
+  padding-right: var(--content-pad-x);
 }
 .solution-list-head h2,
-.workflow-intro h2,
 .benefit-band h2,
 .connected-products h2,
 .goal-grid h2 {
@@ -404,19 +525,16 @@
 .solution-list > article:nth-child(odd) > .solution-ui {
   order: -1;
 }
-.solution-list > article > div > span,
-.workflow-list article > div > span {
+.solution-list > article > div > span {
   font-size: 10px;
   color: var(--green);
 }
-.solution-list > article h2,
-.workflow-list h2 {
+.solution-list > article h2 {
   font-size: clamp(38px, 4vw, 64px);
   line-height: 1;
   letter-spacing: -0.06em;
 }
-.solution-list > article p,
-.workflow-list p {
+.solution-list > article p {
   color: var(--muted);
   line-height: 1.7;
 }
@@ -430,7 +548,9 @@
 }
 /* Solutions overview goal grid */
 .goal-grid {
-  padding: 9vw 5vw;
+  padding: 9vw var(--side-padding);
+  padding-left: var(--content-pad-x);
+  padding-right: var(--content-pad-x);
   background: var(--ink);
   color: white;
 }
@@ -447,87 +567,78 @@
 .goal-grid article span {
   color: #aeb9b3;
 }
-/* Product detail page: problem/promise band */
-.product-problem {
-  padding: 9vw 5vw;
-  display: grid;
-  grid-template-columns: 1.4fr 0.6fr;
-  gap: 9vw;
-  background: var(--ink);
-  color: white;
-  align-items: end;
-}
-.product-problem h2 {
-  font-size: clamp(45px, 5vw, 78px);
-  line-height: 0.98;
-  letter-spacing: -0.066em;
-  font-weight: 520;
-  margin: 0;
-}
-.product-problem > div:last-child {
-  border-top: 1px solid #ffffff45;
-  padding-top: 25px;
-}
-.product-problem > div:last-child span {
-  font-size: 9px;
-  color: #69bd91;
-  letter-spacing: 0.15em;
-}
-.product-problem > div:last-child p {
-  color: #adb8b2;
-  line-height: 1.7;
-}
 /* Product detail page: video film section */
 .product-film.refined {
   padding: 8vw 12vw;
 }
-/* Product detail page: workflow list */
-.workflow-intro {
-  padding: 9vw 5vw 5vw;
-}
-.workflow-list {
-  padding: 0 5vw 9vw;
-}
-.workflow-list article {
+/* Product detail page: features grid */
+.features-grid {
+  padding: 9vw var(--side-padding);
+  padding-left: var(--content-pad-x);
+  padding-right: var(--content-pad-x);
   display: grid;
-  grid-template-columns: 0.78fr 1.22fr;
-  gap: 8vw;
-  align-items: center;
-  padding: 7vw 0;
-  border-top: 1px solid var(--line);
+  grid-template-columns: 0.7fr 1.3fr;
+  gap: 6vw;
+  align-items: start;
 }
-.workflow-list article:nth-child(even) > .solution-ui {
-  order: -1;
+.features-grid-head h2 {
+  font-size: clamp(34px, 3.4vw, 52px);
+  line-height: 1.02;
+  letter-spacing: -0.04em;
+  font-weight: 520;
+  margin: 14px 0 0;
 }
-.workflow-details {
+.features-cards {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 10px 18px;
-  margin-top: 26px;
-  padding: 22px 0 0;
-  border-top: 1px solid var(--line);
-  list-style: none;
+  gap: 20px;
 }
-.workflow-details li {
-  position: relative;
-  padding-left: 18px;
-  font-size: 13px;
+.features-grid article {
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--cream);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+}
+.features-grid article:hover {
+  transform: translateY(-4px);
+  border-color: var(--green);
+  box-shadow: 0 20px 40px #07150d14;
+}
+.features-grid article span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: var(--paper);
+  color: var(--green);
+}
+.features-grid article span svg {
+  width: 24px;
+  height: 24px;
+}
+.features-grid article h3 {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+.features-grid article p {
   color: var(--muted);
-  line-height: 1.5;
-}
-.workflow-details li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 7px;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--green);
+  line-height: 1.6;
+  font-size: 14px;
+  margin: 0;
 }
 /* Product detail page: benefits band */
 .benefit-band {
-  padding: 9vw 5vw;
+  padding: 9vw var(--side-padding);
+  padding-left: var(--content-pad-x);
+  padding-right: var(--content-pad-x);
   background: var(--green);
   color: white;
 }
@@ -545,14 +656,23 @@
   gap: 70px;
 }
 .benefit-band article span {
-  font-size: 9px;
+  display: block;
+  width: 32px;
+  height: 32px;
+  color: white;
+}
+.benefit-band article span svg {
+  width: 100%;
+  height: 100%;
 }
 .benefit-band article b {
   font-size: 21px;
 }
 /* Product detail page: connected products */
 .connected-products {
-  padding: 9vw 5vw;
+  padding: 9vw var(--side-padding);
+  padding-left: var(--content-pad-x);
+  padding-right: var(--content-pad-x);
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 9vw;
@@ -581,7 +701,9 @@
 }
 /* Product detail page: FAQ */
 .product-faq {
-  padding: 8vw 12vw;
+  padding: 8vw var(--side-padding);
+  padding-left: var(--content-pad-x);
+  padding-right: var(--content-pad-x);
 }
 .product-faq details {
   border-top: 1px solid var(--line);
@@ -602,19 +724,16 @@
 @media (max-width: 1000px) {
   .solutions-hero,
   .product-hero,
-  .product-problem,
   .connected-products {
     grid-template-columns: 1fr;
   }
   .ecosystem-art {
     height: 470px;
   }
-  .solution-list > article,
-  .workflow-list article {
+  .solution-list > article {
     grid-template-columns: 1fr;
   }
-  .solution-list > article:nth-child(odd) > .solution-ui,
-  .workflow-list article:nth-child(even) > .solution-ui {
+  .solution-list > article:nth-child(odd) > .solution-ui {
     order: 0;
   }
   .journey-band > div {
@@ -622,6 +741,41 @@
   }
   .benefit-band > div {
     grid-template-columns: 1fr 1fr;
+  }
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: 8vw;
+  }
+  .phone-fan {
+    height: 540px;
+  }
+  .phone-fan-item .solution-ui.phone {
+    width: 165px;
+  }
+  .phone-fan-item.back-left {
+    transform: translate(-50%, -50%) translate(-100px, 6px) rotate(-5deg) scale(0.95);
+  }
+  .phone-fan-item.back-right {
+    transform: translate(-50%, -50%) translate(100px, 6px) rotate(5deg) scale(0.95);
+  }
+  .phone-fan-item.back-left-2 {
+    transform: translate(-50%, -50%) translate(-174px, 14px) rotate(-9deg) scale(0.88);
+  }
+  .phone-fan-item.back-right-2 {
+    transform: translate(-50%, -50%) translate(174px, 14px) rotate(9deg) scale(0.88);
+  }
+  .phone-fan-item.back-left-3 {
+    transform: translate(-50%, -50%) translate(-236px, 22px) rotate(-13deg) scale(0.8);
+  }
+  .phone-fan-item.back-right-3 {
+    transform: translate(-50%, -50%) translate(236px, 22px) rotate(13deg) scale(0.8);
+  }
+  .wb-hero-img {
+    max-width: 560px;
+    justify-self: center;
+  }
+  .mc-device-showcase {
+    width: min(100%, 460px);
   }
 }
 @media (max-width: 650px) {
@@ -633,40 +787,54 @@
   .product-hero h1 {
     font-size: 50px;
   }
+  .phone-fan {
+    height: 380px;
+  }
+  .store-badges {
+    flex-wrap: wrap;
+  }
+  .phone-fan-item .solution-ui.phone {
+    width: 104px;
+  }
+  .phone-fan-item.back-left {
+    transform: translate(-50%, -50%) translate(-60px, 4px) rotate(-5deg) scale(0.95);
+  }
+  .phone-fan-item.back-right {
+    transform: translate(-50%, -50%) translate(60px, 4px) rotate(5deg) scale(0.95);
+  }
+  .phone-fan-item.back-left-2 {
+    transform: translate(-50%, -50%) translate(-102px, 10px) rotate(-9deg) scale(0.88);
+  }
+  .phone-fan-item.back-right-2 {
+    transform: translate(-50%, -50%) translate(102px, 10px) rotate(9deg) scale(0.88);
+  }
+  .phone-fan-item.back-left-3 {
+    transform: translate(-50%, -50%) translate(-100px, 16px) rotate(-13deg) scale(0.8);
+  }
+  .phone-fan-item.back-right-3 {
+    transform: translate(-50%, -50%) translate(100px, 16px) rotate(13deg) scale(0.8);
+  }
+  .wb-hero-img {
+    max-width: 320px;
+  }
   .product-hero > div > div {
     flex-direction: column;
   }
   .ecosystem-art {
     height: 350px;
   }
-  .journey-band,
-  .solution-list,
-  .goal-grid,
-  .product-problem,
-  .workflow-intro,
-  .workflow-list,
-  .benefit-band,
-  .connected-products,
-  .product-faq {
-    padding-left: 22px;
-    padding-right: 22px;
-  }
   .journey-band > div,
-  .benefit-band > div {
+  .benefit-band > div,
+  .features-cards {
     grid-template-columns: 1fr;
   }
   .journey-band article {
     gap: 25px;
   }
-  .solution-list > article,
-  .workflow-list article {
+  .solution-list > article {
     padding: 70px 0;
   }
-  .workflow-details {
-    grid-template-columns: 1fr;
-  }
   .solution-list-head h2,
-  .workflow-intro h2,
   .benefit-band h2,
   .connected-products h2,
   .goal-grid h2 {

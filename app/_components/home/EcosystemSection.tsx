@@ -15,8 +15,8 @@ export function EcosystemSection({ onPlayVideo }: { onPlayVideo: (name: string) 
           </h2>
         </div>
         <p>
-          Every booking channel, driver interaction and passenger update stays
-          connected to the same operational core.
+          Four products, one shared system — a booking made anywhere shows up
+          instantly for your team, your drivers and your passengers.
         </p>
       </div>
       <div className="solution-grid">
@@ -30,7 +30,7 @@ export function EcosystemSection({ onPlayVideo }: { onPlayVideo: (name: string) 
             </div>
             <button className="film" onClick={() => onPlayVideo(s.name)}>
               <div>
-                <Screen type={s.type} />
+                <Screen type={s.type} image={s.image} />
               </div>
               <i>▶</i>
               <strong>{s.role}</strong>

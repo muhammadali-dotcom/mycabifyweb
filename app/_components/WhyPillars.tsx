@@ -19,13 +19,19 @@ const pillars = [
 export function WhyPillars() {
   return (
     <section className="why-pillars">
-      {pillars.map((p) => (
-        <article key={p.label}>
-          <span>{p.label}</span>
-          <h2>{p.line}</h2>
-          <p>{p.copy}</p>
-        </article>
-      ))}
+      <div className="why-pillars-head">
+        <p className="kicker">HOW IT FEELS DAY TO DAY</p>
+        <h2>Three shifts you&rsquo;ll notice right away.</h2>
+      </div>
+      <div className="why-pillars-grid">
+        {pillars.map((p) => (
+          <article key={p.label}>
+            <span>{p.label}</span>
+            <h3>{p.line}</h3>
+            <p>{p.copy}</p>
+          </article>
+        ))}
+      </div>
     </section>
   );
 }

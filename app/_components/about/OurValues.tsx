@@ -1,9 +1,11 @@
+import { featureIcons } from "../../_data/featureIcons";
+
 const values = [
-  { title: "Simplicity", copy: "Make powerful technology easier to understand and use." },
-  { title: "Flexibility", copy: "Adapt the platform around different operational requirements." },
-  { title: "Reliability", copy: "Treat taxi operations as the business-critical services they are." },
-  { title: "Partnership", copy: "Work with customers during implementation and ongoing use." },
-  { title: "Continuous improvement", copy: "Keep developing the platform around changing business and customer needs." },
+  { title: "Simplicity", copy: "Make powerful technology easier to understand and use.", icon: "clarity" },
+  { title: "Flexibility", copy: "Adapt the platform around different operational requirements.", icon: "flexible" },
+  { title: "Reliability", copy: "Treat taxi operations as the business-critical services they are.", icon: "lock" },
+  { title: "Partnership", copy: "Work with customers during implementation and ongoing use.", icon: "connected" },
+  { title: "Continuous improvement", copy: "Keep developing the platform around changing business and customer needs.", icon: "sync" },
 ];
 
 export function OurValues() {
@@ -12,9 +14,9 @@ export function OurValues() {
       <p className="kicker">OUR VALUES / HOW WE WORK</p>
       <h2>The principles behind MyCabify.</h2>
       <div className="values-list">
-        {values.map((v, i) => (
+        {values.map((v) => (
           <div className="value-row" key={v.title}>
-            <span>0{i + 1}</span>
+            <span>{featureIcons[v.icon]}</span>
             <h3>{v.title}</h3>
             <p>{v.copy}</p>
           </div>

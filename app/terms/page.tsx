@@ -1,6 +1,6 @@
-import { BasicPage } from "../_components/BasicPage";
-import { basics } from "../_data/basics";
+import { LegalPage } from "../_components/LegalPage";
+import { legal } from "../_data/legal";
 
 export default function Page() {
-  return <BasicPage data={basics.terms} />;
+  return <LegalPage data={legal.terms} />;
 }

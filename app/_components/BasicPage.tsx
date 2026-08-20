@@ -30,13 +30,21 @@ export function BasicPage({ data, slug }: { data: Basic; slug?: string }) {
       {slug === "why-mycabify" && <WhyPillars />}
       {data.items.length > 0 && (
         <section className="feature-grid">
-          {data.items.map((x, i) => (
-            <article key={x.title}>
-              <span>0{i + 1}</span>
-              <h2>{x.title}</h2>
-              <p>{x.copy}</p>
-            </article>
-          ))}
+          {data.gridTitle && (
+            <div className="feature-grid-head">
+              {data.gridLabel && <p className="kicker">{data.gridLabel}</p>}
+              <h2>{data.gridTitle}</h2>
+            </div>
+          )}
+          <div className="feature-grid-cards">
+            {data.items.map((x, i) => (
+              <article key={x.title}>
+                <span>{String(i + 1).padStart(2, "0")}</span>
+                <h3>{x.title}</h3>
+                <p>{x.copy}</p>
+              </article>
+            ))}
+          </div>
         </section>
       )}
       {slug !== "why-mycabify" && (

@@ -1,7 +1,9 @@
+import { featureIcons } from "../../_data/featureIcons";
+
 const formula = [
-  ["01", "Simplify", "Bring the complete operation into one clear workspace."],
-  ["02", "Automate", "Reduce repetitive work and keep daily processes moving."],
-  ["03", "Grow", "Handle more activity without adding unnecessary complexity."],
+  { icon: "clarity", title: "Simplify", copy: "Bring the complete operation into one clear workspace." },
+  { icon: "sync", title: "Automate", copy: "Reduce repetitive work and keep daily processes moving." },
+  { icon: "rocket", title: "Grow", copy: "Handle more activity without adding unnecessary complexity." },
 ];
 
 export function FormulaSection() {
@@ -10,10 +12,10 @@ export function FormulaSection() {
       <p className="kicker pale">THE BUSINESS VALUE</p>
       <div>
         {formula.map((x) => (
-          <article key={x[0]}>
-            <span>{x[0]}</span>
-            <h2>{x[1]}</h2>
-            <p>{x[2]}</p>
+          <article key={x.title}>
+            <span>{featureIcons[x.icon]}</span>
+            <h2>{x.title}</h2>
+            <p>{x.copy}</p>
           </article>
         ))}
       </div>

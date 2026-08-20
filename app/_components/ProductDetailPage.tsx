@@ -3,16 +3,47 @@ import SiteHeader from "../SiteHeader";
 import SiteFooter from "../SiteFooter";
 import { cards, type Product } from "../_data/products";
 import { solutionIcons } from "../_data/solutionIcons";
+import { featureIcons } from "../_data/featureIcons";
 import { ProductVisual } from "./ProductVisual";
+import { PhoneFan } from "./PhoneFan";
+import { DispatchMockup } from "./DispatchMockup";
 import { StoreBadges } from "./StoreBadges";
 
-const driverAppScreens = [
-  "/driver-app/booking-request.jpg",
-  "/driver-app/navigation-1.jpg",
-  "/driver-app/navigation-2.jpg",
-  "/driver-app/fares.jpg",
-  "/driver-app/dashboard.jpg",
-];
+const driverAppScreens = {
+  front: "/driver-app/front.jpeg",
+  dashboardLight: "/driver-app/dashboard-light.png",
+  bookingLight: "/driver-app/booking-light.jpeg",
+  journeyLight: "/driver-app/journey-light.jpeg",
+  dashboardDark: "/driver-app/dashboard-dark.png",
+  bookingDark: "/driver-app/booking-dark.jpeg",
+  journeyDark: "/driver-app/journey-dark.jpeg",
+};
+
+const passengerAppScreens = {
+  front: "/passenger-app/front.png",
+  dashboardLight: "/passenger-app/dashboard-light.png",
+  vehicleLight: "/passenger-app/vehicle-light.png",
+  finalLight: "/passenger-app/final-light.png",
+  dashboardDark: "/passenger-app/dashboard-dark.png",
+  vehicleDark: "/passenger-app/vehicle-dark.png",
+  finalDark: "/passenger-app/final-dark.png",
+};
+
+type Shot = string | undefined;
+type FanImages = { front: Shot; left: [Shot, Shot, Shot]; right: [Shot, Shot, Shot] };
+
+const heroFanImages: Record<string, FanImages> = {
+  "driver-app": {
+    front: driverAppScreens.front,
+    left: [driverAppScreens.dashboardLight, driverAppScreens.bookingLight, driverAppScreens.journeyLight],
+    right: [driverAppScreens.dashboardDark, driverAppScreens.bookingDark, driverAppScreens.journeyDark],
+  },
+  "passenger-app": {
+    front: passengerAppScreens.front,
+    left: [passengerAppScreens.dashboardLight, passengerAppScreens.vehicleLight, passengerAppScreens.finalLight],
+    right: [passengerAppScreens.dashboardDark, passengerAppScreens.vehicleDark, passengerAppScreens.finalDark],
+  },
+};
 
 export function ProductDetailPage({ data, slug }: { data: Product; slug: string }) {
   return (
@@ -33,21 +64,15 @@ export function ProductDetailPage({ data, slug }: { data: Product; slug: string 
           </div>
           {(slug === "driver-app" || slug === "passenger-app") && <StoreBadges />}
         </div>
-        <ProductVisual
-          kind={slug}
-          phone={slug === "driver-app" || slug === "passenger-app"}
-          image={slug === "driver-app" ? driverAppScreens[0] : undefined}
-        />
-      </section>
-      <section className="product-problem">
-        <div>
-          <p className="kicker pale">THE PROBLEM</p>
-          <h2>{data.problem}</h2>
-        </div>
-        <div>
-          <span>THE SOLUTION</span>
-          <p>{data.promise}</p>
-        </div>
+        {slug === "driver-app" || slug === "passenger-app" ? (
+          <PhoneFan kind={slug} images={heroFanImages[slug]} />
+        ) : slug === "web-booker" ? (
+          <img className="wb-hero-img" src="/web-booker/hero.png" alt="Web Booker" draggable={false} />
+        ) : slug === "dispatch-system" ? (
+          <DispatchMockup />
+        ) : (
+          <ProductVisual kind={slug} />
+        )}
       </section>
       <section id="film" className="product-film refined">
         <div>
@@ -56,49 +81,33 @@ export function ProductDetailPage({ data, slug }: { data: Product; slug: string 
           <small>PUBLIC YOUTUBE PRODUCT WALKTHROUGH</small>
         </div>
       </section>
-      <section className="workflow-intro">
-        <p className="kicker">CORE WORKFLOWS / EXPLAINED CLEARLY</p>
-        <h2>
-          Everything your team needs.
-          <br />
-          <em>Nothing they don’t.</em>
-        </h2>
-      </section>
-      <section className="workflow-list">
-        {data.items.map((x, i) => (
-          <article key={x.title}>
-            <div>
-              <span>0{i + 1}</span>
-              <h2>{x.title}</h2>
+      <section className="features-grid">
+        <div className="features-grid-head">
+          <p className="kicker">KEY FEATURES</p>
+          <h2>
+            Built for the way
+            <br />
+            <em>your team works.</em>
+          </h2>
+        </div>
+        <div className="features-cards">
+          {data.features.map((x) => (
+            <article key={x.title}>
+              <span>{featureIcons[x.icon]}</span>
+              <h3>{x.title}</h3>
               <p>{x.copy}</p>
-              {x.details && x.details.length > 0 && (
-                <ul className="workflow-details">
-                  {x.details.map((d) => (
-                    <li key={d}>{d}</li>
-                  ))}
-                </ul>
-              )}
-            </div>
-            <ProductVisual
-              kind={`${slug}-${i + 1}`}
-              phone={slug === "driver-app" || slug === "passenger-app"}
-              image={
-                slug === "driver-app"
-                  ? driverAppScreens[(i + 1) % driverAppScreens.length]
-                  : undefined
-              }
-            />
-          </article>
-        ))}
+            </article>
+          ))}
+        </div>
       </section>
       <section className="benefit-band">
         <p className="kicker pale">WHAT CHANGES FOR THE BUSINESS</p>
         <h2>Less friction. More control.</h2>
         <div>
-          {data.benefits.map((x, i) => (
-            <article key={x}>
-              <span>0{i + 1}</span>
-              <b>{x}</b>
+          {data.benefits.map((x) => (
+            <article key={x.label}>
+              <span>{featureIcons[x.icon]}</span>
+              <b>{x.label}</b>
             </article>
           ))}
         </div>

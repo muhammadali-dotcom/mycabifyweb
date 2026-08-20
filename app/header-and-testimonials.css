@@ -207,14 +207,6 @@
   visibility: hidden;
   pointer-events: none;
 }
-@media (min-width: 1001px) {
-  .shared-header .solution-nav:hover .mega,
-  .shared-header .solution-nav:focus-within .mega {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
-  }
-}
 .shared-header .solution-nav.expanded .mega {
   opacity: 1;
   visibility: visible;
@@ -270,9 +262,12 @@
   }
   .shared-header nav.open {
     display: flex !important;
-    position: fixed;
-    inset: 80px 0 0;
-    z-index: 58;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    z-index: 200;
     margin: 0;
     padding: 26px 24px 40px;
     background: var(--cream);
@@ -353,9 +348,6 @@
     width: 38px;
     height: 38px;
   }
-  .shared-header nav.open {
-    top: 80px;
-  }
   .shared-header .mega a > div small {
     display: block;
   }
@@ -401,11 +393,6 @@
   padding: 4px;
   color: inherit;
   cursor: pointer;
-}
-@media (min-width: 1001px) {
-  .solutions-trigger button {
-    display: none;
-  }
 }
 .solutions-trigger button i {
   display: block;

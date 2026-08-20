@@ -6,11 +6,9 @@ import { HeroSection } from "./_components/home/HeroSection";
 import { ProblemSection } from "./_components/home/ProblemSection";
 import { EcosystemSection } from "./_components/home/EcosystemSection";
 import { FormulaSection } from "./_components/home/FormulaSection";
-import { RolesSection } from "./_components/home/RolesSection";
 import { WhySection } from "./_components/home/WhySection";
 import { TestimonialsSection } from "./_components/home/TestimonialsSection";
 import { ImplementationSection } from "./_components/home/ImplementationSection";
-import { SupportSection } from "./_components/home/SupportSection";
 import { FaqSection } from "./_components/home/FaqSection";
 import { ClosingSection } from "./_components/home/ClosingSection";
 import { DemoModal } from "./_components/home/DemoModal";
@@ -27,11 +25,9 @@ export default function Home() {
       <ProblemSection />
       <EcosystemSection onPlayVideo={setVideo} />
       <FormulaSection />
-      <RolesSection />
       <WhySection />
       <TestimonialsSection />
       <ImplementationSection onDemo={() => setDemo(true)} />
-      <SupportSection />
       <FaqSection />
       <ClosingSection onDemo={() => setDemo(true)} />
       <SiteFooter />
