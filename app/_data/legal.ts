@@ -147,7 +147,7 @@ export const legal: Record<"terms" | "privacy-policy", LegalDoc> = {
         ],
       },
       {
-        heading: "Collecting and Using Your Personal Data — Personal Data",
+        heading: "Personal Data",
         paragraphs: [
           "While using Our Service, We may ask You to provide Us with certain personally identifiable information that can be used to contact or identify You. Personally identifiable information may include, but is not limited to:",
         ],
@@ -205,7 +205,7 @@ export const legal: Record<"terms" | "privacy-policy", LegalDoc> = {
       {
         heading: "Transfer of Your Personal Data",
         paragraphs: [
-          "Your information, including Personal Data, is processed at the Company's operating offices and in any other places where the parties involved in the processing are located. It means that this information may be transferred to — and maintained on — computers located outside of Your state, province, country or other governmental jurisdiction where the data protection laws may differ than those from Your jurisdiction.",
+          "Your information, including Personal Data, is processed at the Company's operating offices and in any other places where the parties involved in the processing are located. It means that this information may be transferred to, and maintained on, computers located outside of Your state, province, country or other governmental jurisdiction where the data protection laws may differ than those from Your jurisdiction.",
         ],
       },
       {
@@ -217,7 +217,7 @@ export const legal: Record<"terms" | "privacy-policy", LegalDoc> = {
         ],
       },
       {
-        heading: "Disclosure of Your Personal Data — Business Transactions",
+        heading: "Business Transactions",
         paragraphs: [
           "If the Company is involved in a merger, acquisition or asset sale, Your Personal Data may be transferred. We will provide notice before Your Personal Data is transferred and becomes subject to a different Privacy Policy.",
         ],

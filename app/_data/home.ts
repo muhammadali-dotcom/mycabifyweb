@@ -69,7 +69,7 @@ export const customers: HomeCustomer[] = [
   {
     name: "Bittacy Cars",
     detail: "Taxi service in London, England",
-    logo: "https://mycabify.com/assets/images/testimonial/testmonial1.jpg",
+    logo: "/testimonials/bittacy-cars.jpg",
     quote:
       "MyCabify has made my daily booking and dispatch so much easier. Managing invoices and commissions is simple, and I can see everything going on at a glance.",
     theme: "clarity",
@@ -77,7 +77,7 @@ export const customers: HomeCustomer[] = [
   {
     name: "A2B Cars",
     detail: "Long Crendon Taxis",
-    logo: "https://mycabify.com/assets/images/testimonial/testmonial2.jpg",
+    logo: "/testimonials/a2b-cars.jpg",
     quote:
       "MyCabify is really easy to use, and the support team has been great. Booking and dispatch feel much simpler now.",
     theme: "simplicity",
@@ -85,7 +85,7 @@ export const customers: HomeCustomer[] = [
   {
     name: "London Cars",
     detail: "UK taxi operator",
-    logo: "https://mycabify.com/assets/images/testimonial/testmonial3.jpg",
+    logo: "/testimonials/london-cars.jpg",
     quote:
       "I've been using MyCabify for a couple of years now. It's fast, easy to use, and keeps accurate records of every driver and customer journey.",
     theme: "confidence",

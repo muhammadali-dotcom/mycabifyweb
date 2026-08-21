@@ -14,10 +14,7 @@ export function EcosystemSection({ onPlayVideo }: { onPlayVideo: (name: string) 
             <em>One complete operation.</em>
           </h2>
         </div>
-        <p>
-          Four products, one shared system — a booking made anywhere shows up
-          instantly for your team, your drivers and your passengers.
-        </p>
+
       </div>
       <div className="solution-grid">
         {solutions.map((s) => (

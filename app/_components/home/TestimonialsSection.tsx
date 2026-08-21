@@ -12,22 +12,17 @@ export function TestimonialsSection() {
             <em>More confidence every day.</em>
           </h2>
         </div>
-        <p>
-          Hear from taxi operators using MyCabify to make booking and dispatch
-          feel simpler.
-        </p>
       </div>
-      <div className="testimonial-grid">
-        {customers.map((story) => (
-          <article key={story.name}>
-            <img src={story.logo} alt={`${story.name} logo`} />
-            <blockquote>“{story.quote}”</blockquote>
-            <footer>
+      <div className="testimonial-marquee">
+        <div className="testimonial-track">
+          {[...customers, ...customers].map((story, i) => (
+            <div className="testimonial-line" key={`${story.name}-${i}`}>
+              <img src={story.logo} alt={`${story.name} logo`} />
               <b>{story.name}</b>
-              <span>{story.detail}</span>
-            </footer>
-          </article>
-        ))}
+              <blockquote>{story.quote}</blockquote>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

@@ -1,7 +1,18 @@
-# vinext-starter
+# MyCabify Marketing Site
 
-A clean frontend starter running on
-[vinext](https://github.com/cloudflare/vinext).
+The MyCabify marketing website (homepage, product pages, about/contact, legal
+pages) under `app/`.
+
+**Tech stack note:** this project depends on `next` (for its `Metadata` API,
+`next/font`, and TypeScript types) but does **not** build or run through
+Next.js's own CLI. The dev server, build, and production runtime are all
+Vite + [`vinext`](https://github.com/cloudflare/vinext) (a Next.js-API shim)
+deployed to Cloudflare Workers via `wrangler`. `next.config.ts` is a
+vestigial stub left over from the template and has no effect — configure
+Vite behavior in `vite.config.ts` instead.
+
+The rest of this document describes the underlying `vinext-starter` platform
+scaffolding this project was built on.
 
 ## Prerequisites
 

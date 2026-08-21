@@ -67,7 +67,7 @@ export function ProductDetailPage({ data, slug }: { data: Product; slug: string 
         {slug === "driver-app" || slug === "passenger-app" ? (
           <PhoneFan kind={slug} images={heroFanImages[slug]} />
         ) : slug === "web-booker" ? (
-          <img className="wb-hero-img" src="/web-booker/hero.png" alt="Web Booker" draggable={false} />
+          <img className="wb-hero-img" src="/web-booker/webbooker_hero_final.png" alt="Web Booker" draggable={false} />
         ) : slug === "dispatch-system" ? (
           <DispatchMockup />
         ) : (

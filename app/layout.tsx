@@ -18,15 +18,35 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const title = "MyCabify Content-Led Concept";
+const description =
+  "Complete taxi management, made simple for UK taxi operators.";
+
 export const metadata: Metadata = {
-  title: "MyCabify Content-Led Concept",
-  description: "Complete taxi management, made simple for UK taxi operators.",
+  metadataBase: new URL("https://mycabify.com"),
+  title,
+  description,
   other: {
     "codex-preview": "development",
   },
   icons: {
     icon: "/mycabify-logo.png",
     shortcut: "/mycabify-logo.png",
+  },
+  openGraph: {
+    title,
+    description,
+    url: "/",
+    siteName: "MyCabify",
+    images: [{ url: "/mycabify-logo.png", width: 1440, height: 1440 }],
+    locale: "en_GB",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+    images: ["/mycabify-logo.png"],
   },
 };
 

@@ -3,7 +3,6 @@ import { useState } from "react";
 import SiteHeader from "./SiteHeader";
 import SiteFooter from "./SiteFooter";
 import { HeroSection } from "./_components/home/HeroSection";
-import { ProblemSection } from "./_components/home/ProblemSection";
 import { EcosystemSection } from "./_components/home/EcosystemSection";
 import { FormulaSection } from "./_components/home/FormulaSection";
 import { WhySection } from "./_components/home/WhySection";
@@ -22,11 +21,10 @@ export default function Home() {
     <main>
       <SiteHeader onDemo={() => setDemo(true)} />
       <HeroSection onDemo={() => setDemo(true)} />
-      <ProblemSection />
+      <TestimonialsSection />
       <EcosystemSection onPlayVideo={setVideo} />
       <FormulaSection />
       <WhySection />
-      <TestimonialsSection />
       <ImplementationSection onDemo={() => setDemo(true)} />
       <FaqSection />
       <ClosingSection onDemo={() => setDemo(true)} />

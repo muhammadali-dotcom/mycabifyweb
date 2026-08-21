@@ -196,7 +196,7 @@ header nav {
 /* Hero */
 .hero {
   min-height: 760px;
-  padding: 7vw 5vw;
+  padding: 7vw 5vw 2vw;
   display: grid;
   grid-template-columns: 0.92fr 1.08fr;
   align-items: center;
@@ -1240,7 +1240,7 @@ footer > div > p {
     transform: translateY(0);
   }
 }
-@media (max-width: 640px) {
+@media (max-width: 650px) {
   .whatsapp-bubble {
     right: 16px;
     max-width: 190px;
@@ -1296,7 +1296,7 @@ footer > div > p {
   cursor: pointer;
   padding: 2px 6px;
 }
-@media (max-width: 640px) {
+@media (max-width: 650px) {
   .announcement-banner {
     padding: 3px 40px;
   }
@@ -1846,7 +1846,9 @@ footer > div > p {
 }
 /* Homepage testimonials carousel */
 .customer-proof {
-  background: var(--paper);
+  background: var(--cream);
+  overflow: hidden;
+  padding-top: 1.5vw;
 }
 .proof-heading {
   display: grid;
@@ -1866,63 +1868,137 @@ footer > div > p {
   font-size: 16px;
   line-height: 1.7;
 }
-.testimonial-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0;
-  margin-top: 5vw;
-  border-top: 1px solid var(--line);
+.testimonial-marquee {
+  overflow: hidden;
+  width: 100%;
+  margin-top: 1.5vw;
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 6%,
+    black 94%,
+    transparent
+  );
 }
-.testimonial-grid article {
-  padding: 34px 30px;
-  border-right: 1px solid var(--line);
+.testimonial-track {
   display: flex;
-  flex-direction: column;
-  min-height: 100%;
-  justify-content: space-between;
+  align-items: center;
+  width: max-content;
+  animation: testimonial-scroll 32s linear infinite;
 }
-.testimonial-grid article:last-child {
-  border-right: none;
+.testimonial-marquee:hover .testimonial-track {
+  animation-play-state: paused;
 }
-.testimonial-grid img {
-  width: 48px;
-  height: 48px;
+.testimonial-line {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex: 0 0 auto;
+  padding: 0 40px;
+  position: relative;
+}
+.testimonial-line::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 24px;
+  background: var(--line);
+}
+.testimonial-line img {
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
   object-fit: cover;
-  margin-bottom: 22px;
+  flex: 0 0 auto;
 }
-.testimonial-grid blockquote {
+.testimonial-line b {
+  white-space: nowrap;
+  font-weight: 600;
+  color: #fff;
+  background: var(--ink);
+  font-size: 13px;
+  padding: 4px 12px;
+  border-radius: 999px;
+}
+.testimonial-line blockquote {
+  position: relative;
   margin: 0;
+  padding-left: 22px;
   font-size: 18px;
   line-height: 1.55;
   letter-spacing: -0.01em;
   color: var(--ink);
-  flex-grow: 1;
+  white-space: nowrap;
 }
-.testimonial-grid footer {
-  margin-top: 24px;
-  padding-top: 20px;
-  border-top: 1px solid var(--line);
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
+.testimonial-line blockquote::before {
+  content: "“";
+  position: absolute;
+  left: 0;
+  top: -6px;
+  font-size: 32px;
+  line-height: 1;
+  font-weight: 700;
+  color: var(--green);
 }
-.testimonial-grid footer span {
-  color: var(--muted);
-  font-size: 13px;
+@keyframes testimonial-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 @media (max-width: 1000px) {
   .proof-heading {
     grid-template-columns: 1fr;
   }
-  .testimonial-grid {
+  .testimonial-line {
+    padding: 0 24px;
+  }
+  .testimonial-line blockquote {
+    font-size: 15px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .testimonial-track {
+    animation: none;
+  }
+}
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 40px;
+  }
+  .hero-rotator {
+    min-height: calc(40px * 0.94 * 3);
+  }
+  .hero-art {
+    height: 260px;
+  }
+  .driver,
+  .passenger {
+    width: 40%;
+  }
+  .logo-bar {
     grid-template-columns: 1fr;
+    gap: 14px;
   }
-  .testimonial-grid article {
-    border-right: none;
-    border-bottom: 1px solid var(--line);
+  .section-head h2 {
+    font-size: 36px;
   }
-  .testimonial-grid article:last-child {
-    border-bottom: none;
+  .answer-mark {
+    width: 52px;
+    height: 52px;
+  }
+  .proof-heading h2 {
+    font-size: 34px;
+  }
+  .testimonial-line {
+    padding: 0 16px;
+  }
+  .testimonial-line blockquote {
+    font-size: 14px;
   }
 }

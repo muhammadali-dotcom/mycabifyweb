@@ -848,3 +848,18 @@
     padding: 75px 22px;
   }
 }
+@media (max-width: 480px) {
+  .solutions-hero h1,
+  .product-hero h1 {
+    font-size: 38px;
+  }
+  .phone-fan {
+    height: 280px;
+  }
+  .solution-list-head h2,
+  .benefit-band h2,
+  .connected-products h2,
+  .goal-grid h2 {
+    font-size: 34px;
+  }
+}

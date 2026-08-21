@@ -232,8 +232,8 @@
   display: none;
 }
 .answer-mark {
-  background: transparent !important;
-  padding: 0 !important;
+  background: transparent;
+  padding: 0;
 }
 .answer-mark img {
   width: 90px;
@@ -241,8 +241,8 @@
   object-fit: contain;
 }
 .screen aside strong {
-  background: transparent !important;
-  padding: 0 !important;
+  background: transparent;
+  padding: 0;
 }
 .screen aside strong img {
   display: block;
@@ -258,10 +258,10 @@
     display: block;
   }
   .shared-header nav {
-    display: none !important;
+    display: none;
   }
   .shared-header nav.open {
-    display: flex !important;
+    display: flex;
     position: absolute;
     top: 100%;
     left: 0;
@@ -418,8 +418,8 @@
 }
 .pill {
   min-height: 38px;
-  padding: 5px 5px 5px 18px !important;
-  border-width: 1.5px !important;
+  padding: 5px 5px 5px 18px;
+  border-width: 1.5px;
   box-shadow: 0 7px 20px #11744712;
   white-space: nowrap;
   animation: pill-float 2.4s ease-in-out infinite;
@@ -438,8 +438,8 @@
   }
 }
 .pill i {
-  width: 28px !important;
-  height: 28px !important;
+  width: 28px;
+  height: 28px;
   transition: transform 0.25s, background 0.25s, color 0.25s;
 }
 .pill:hover {
@@ -482,5 +482,18 @@
   }
   .shared-header .solutions-trigger button i {
     font-size: 20px;
+  }
+}
+@media (max-width: 480px) {
+  .shared-header {
+    padding: 0 16px;
+  }
+  .shared-header .logo img {
+    width: 32px;
+    height: 32px;
+  }
+  .pill {
+    padding: 5px 5px 5px 14px;
+    font-size: 12px;
   }
 }
