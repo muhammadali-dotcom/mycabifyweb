@@ -710,40 +710,6 @@ header nav {
   letter-spacing: 0.1em;
   cursor: pointer;
 }
-/* Formula section */
-.formula {
-  padding: 8vw var(--side-padding);
-  padding-left: var(--content-pad-x);
-  padding-right: var(--content-pad-x);
-  background: var(--green);
-  color: white;
-}
-.formula > div {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  border-top: 1px solid #ffffff5c;
-}
-.formula article {
-  padding: 28px;
-  border-right: 1px solid #ffffff5c;
-}
-.formula article > span {
-  display: block;
-  width: 36px;
-  height: 36px;
-  margin-bottom: 20px;
-  color: white;
-}
-.formula article > span svg {
-  width: 100%;
-  height: 100%;
-}
-.formula article h2 {
-  font-size: clamp(52px, 5.5vw, 82px);
-  letter-spacing: -0.07em;
-  font-weight: 520;
-  margin: 75px 0 18px;
-}
 /* Roles section */
 .roles {
   background: var(--cream);
@@ -1414,9 +1380,6 @@ footer > div > p {
   .answer > p {
     grid-column: 2;
   }
-  .formula > div {
-    grid-template-columns: 1fr;
-  }
   .proof-layout {
     grid-template-columns: 1fr;
   }
@@ -1485,9 +1448,6 @@ footer > div > p {
   }
   .solution-copy {
     min-height: 220px;
-  }
-  .formula {
-    padding: 80px 22px;
   }
   .support > div,
   .support-cards {

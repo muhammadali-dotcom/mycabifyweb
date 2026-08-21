@@ -75,21 +75,7 @@ export function OfficeAndMap() {
             simply say hello.
           </h2>
         </div>
-        <div className="office-map-heading-right">
-          <p className="office-map-intro">
-            We&apos;re based in the heart of Hounslow and always happy to
-            welcome you.
-          </p>
-          <a className="office-directions-pill" href={mapsHref} target="_blank" rel="noopener noreferrer">
-            <span>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
-                <circle cx="12" cy="12" r="8.5" />
-                <circle cx="12" cy="12" r="2.4" fill="currentColor" stroke="none" />
-              </svg>
-            </span>
-            Get directions
-          </a>
-        </div>
+        
       </div>
 
       <div className="office-info-strip">

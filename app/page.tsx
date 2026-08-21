@@ -4,7 +4,6 @@ import SiteHeader from "./SiteHeader";
 import SiteFooter from "./SiteFooter";
 import { HeroSection } from "./_components/home/HeroSection";
 import { EcosystemSection } from "./_components/home/EcosystemSection";
-import { FormulaSection } from "./_components/home/FormulaSection";
 import { WhySection } from "./_components/home/WhySection";
 import { TestimonialsSection } from "./_components/home/TestimonialsSection";
 import { ImplementationSection } from "./_components/home/ImplementationSection";
@@ -23,7 +22,6 @@ export default function Home() {
       <HeroSection onDemo={() => setDemo(true)} />
       <TestimonialsSection />
       <EcosystemSection onPlayVideo={setVideo} />
-      <FormulaSection />
       <WhySection />
       <ImplementationSection onDemo={() => setDemo(true)} />
       <FaqSection />
