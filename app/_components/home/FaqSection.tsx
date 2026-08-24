@@ -48,7 +48,7 @@ const faqs = [
 export function FaqSection() {
   return (
     <section className="faq">
-      <p className="kicker">COMMON QUESTIONS / CLEAR ANSWERS</p>
+      <p className="kicker">FAQ</p>
       <h2>Everything you need to know.</h2>
       {faqs.map((x) => (
         <details key={x[0]}>

@@ -101,24 +101,27 @@ export function ProductDetailPage({ data, slug }: { data: Product; slug: string 
         </div>
       </section>
       <section className="benefit-band">
-        <p className="kicker pale">WHAT CHANGES FOR THE BUSINESS</p>
-        <h2>Less friction. More control.</h2>
+        <p className="kicker">WHAT MYCABIFY CHANGES</p>
+        <h2>Less daily stress. More control over your business.</h2>
         <div>
           {data.benefits.map((x) => (
             <article key={x.label}>
               <span>{featureIcons[x.icon]}</span>
-              <b>{x.label}</b>
+              <div>
+                <b>{x.label}</b>
+                <p>{x.copy}</p>
+              </div>
             </article>
           ))}
         </div>
       </section>
       <section className="connected-products">
         <div>
-          <p className="kicker">PART OF THE COMPLETE ECOSYSTEM</p>
+          <p className="kicker">ONE CONNECTED MYCABIFY SYSTEM</p>
           <h2>
-            Better on its own.
+            Powerful on its own.
             <br />
-            <em>Stronger when connected.</em>
+            <em>Even better together.</em>
           </h2>
         </div>
         <div>

@@ -2,10 +2,13 @@ import Link from "next/link";
 import SiteHeader from "../SiteHeader";
 import SiteFooter from "../SiteFooter";
 import type { Basic } from "../_data/basics";
+import { featureIcons } from "../_data/featureIcons";
 import { WhyBeforeAfter } from "./WhyBeforeAfter";
 import { WhyPillars } from "./WhyPillars";
 
 export function BasicPage({ data, slug }: { data: Basic; slug?: string }) {
+  const isWhyMyCabify = slug === "why-mycabify";
+
   return (
     <>
       <SiteHeader />
@@ -18,7 +21,7 @@ export function BasicPage({ data, slug }: { data: Basic; slug?: string }) {
             See MyCabify in Action ↗
           </Link>
         </div>
-        {slug === "why-mycabify" ? (
+        {isWhyMyCabify ? (
           <WhyBeforeAfter />
         ) : (
           <div className="detail-media">
@@ -27,19 +30,23 @@ export function BasicPage({ data, slug }: { data: Basic; slug?: string }) {
           </div>
         )}
       </section>
-      {slug === "why-mycabify" && <WhyPillars />}
+      {isWhyMyCabify && <WhyPillars />}
       {data.items.length > 0 && (
-        <section className="feature-grid">
+        <section className={`feature-grid${isWhyMyCabify ? " feature-grid-cream" : ""}`}>
           {data.gridTitle && (
             <div className="feature-grid-head">
               {data.gridLabel && <p className="kicker">{data.gridLabel}</p>}
               <h2>{data.gridTitle}</h2>
             </div>
           )}
-          <div className="feature-grid-cards">
+          <div className={`benefit-cards${isWhyMyCabify ? " benefit-cards-standardized" : ""}`}>
             {data.items.map((x, i) => (
-              <article key={x.title}>
-                <span>{String(i + 1).padStart(2, "0")}</span>
+              <article className="benefit-card" key={x.title}>
+                <div className="benefit-icon">
+                  {isWhyMyCabify && x.icon && featureIcons[x.icon]
+                    ? featureIcons[x.icon]
+                    : String(i + 1).padStart(2, "0")}
+                </div>
                 <h3>{x.title}</h3>
                 <p>{x.copy}</p>
               </article>
@@ -47,12 +54,12 @@ export function BasicPage({ data, slug }: { data: Basic; slug?: string }) {
           </div>
         </section>
       )}
-      {slug !== "why-mycabify" && (
-        <section className="connected">
-          <p className="kicker pale">READY WHEN YOU ARE</p>
+      {!isWhyMyCabify && (
+        <section className="connected connected-cream">
+          <p className="kicker">READY WHEN YOU ARE</p>
           <h2>See MyCabify around your operation.</h2>
           <div>
-            <Link className="cream-btn" href="/contact">
+            <Link className="solid" href="/contact">
               Book a Demo ↗
             </Link>
           </div>

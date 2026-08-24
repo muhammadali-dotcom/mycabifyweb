@@ -36,11 +36,11 @@ const reasons = [
 
 export function WhySection() {
   return (
-    <section className="why dark">
+    <section className="why">
       <div className="why-title">
-        <p className="kicker pale">WHY MYCABIFY</p>
-        <h2>Complete when you need it. Simple where it matters.</h2>
-        <Link href="/why-mycabify" className="cream-btn">
+        <p className="kicker">WHY OPERATORS CHOOSE MYCABIFY</p>
+        <h2>Everything you need. Made simple.</h2>
+        <Link href="/why-mycabify" className="solid">
           Explore Why MyCabify ↗
         </Link>
       </div>

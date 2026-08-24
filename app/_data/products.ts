@@ -1,5 +1,5 @@
 export type Feature = { title: string; copy: string; icon: string };
-export type Benefit = { label: string; icon: string };
+export type Benefit = { label: string; copy: string; icon: string };
 export type Product = {
   label: string;
   title: string;
@@ -19,30 +19,46 @@ export const products: Record<string, Product> = {
     features: [
       {
         icon: "calendar",
-        title: "Booking management",
-        copy: "Create immediate, scheduled and multi-stop bookings with the journey details your team needs.",
+        title: "Manage every booking",
+        copy: "Create instant, scheduled, return and multi-stop bookings with all journey details in one place.",
       },
       {
         icon: "dispatch",
-        title: "Dispatch and allocation",
-        copy: "Allocate drivers and follow every job from an unassigned queue to a live journey stage.",
+        title: "Dispatch with confidence",
+        copy: "Assign the right driver, track live journeys and manage unassigned bookings from one clear screen.",
       },
       {
         icon: "wallet",
-        title: "Pricing and payments",
-        copy: "Configure fare rules, fixed prices and driver commissions without leaving the workspace.",
+        title: "Control fares and payments",
+        copy: "Set fare rules, fixed prices, account pricing and driver commissions with ease.",
       },
       {
         icon: "chart",
-        title: "Reporting and oversight",
-        copy: "Review booking, driver and account activity in one connected view, not scattered exports.",
+        title: "Live Wallboard",
+        copy: "See bookings, driver activity and key performance insights in real time. Give your team a clear view of what is happening across the entire operation.",
       },
     ],
     benefits: [
-      { label: "Less repeated work", icon: "sync" },
-      { label: "Clearer live visibility", icon: "clarity" },
-      { label: "Faster controller decisions", icon: "chart" },
-      { label: "One connected operation", icon: "connected" },
+      {
+        label: "Less manual work",
+        copy: "Spend less time repeating everyday tasks.",
+        icon: "sync",
+      },
+      {
+        label: "See everything clearly",
+        copy: "Know what's happening across bookings, drivers and journeys.",
+        icon: "clarity",
+      },
+      {
+        label: "Make faster decisions",
+        copy: "Give controllers the information they need at the right time.",
+        icon: "chart",
+      },
+      {
+        label: "Keep everyone connected",
+        copy: "Bring your office team, drivers and customers together in one system.",
+        icon: "connected",
+      },
     ],
   },
   "driver-app": {
@@ -74,10 +90,26 @@ export const products: Record<string, Product> = {
       },
     ],
     benefits: [
-      { label: "Fewer status calls", icon: "bell" },
-      { label: "Clear job information", icon: "booking" },
-      { label: "Smoother driver workflow", icon: "route" },
-      { label: "Better coordination", icon: "connected" },
+      {
+        label: "Fewer status calls",
+        copy: "Drivers and control both see live job status without picking up the phone.",
+        icon: "bell",
+      },
+      {
+        label: "Clear job information",
+        copy: "Every pickup, drop-off and instruction arrives with the job, not after it.",
+        icon: "booking",
+      },
+      {
+        label: "Smoother driver workflow",
+        copy: "Drivers move from job to job with less friction and fewer manual steps.",
+        icon: "route",
+      },
+      {
+        label: "Better coordination",
+        copy: "Office and drivers stay aligned on where every journey stands.",
+        icon: "connected",
+      },
     ],
   },
   "passenger-app": {
@@ -109,10 +141,26 @@ export const products: Record<string, Product> = {
       },
     ],
     benefits: [
-      { label: "More direct bookings", icon: "booking" },
-      { label: "Fewer status calls", icon: "bell" },
-      { label: "Greater passenger confidence", icon: "valueIcon" },
-      { label: "A stronger local brand", icon: "brand" },
+      {
+        label: "More direct bookings",
+        copy: "Passengers book straight into your system instead of calling around.",
+        icon: "booking",
+      },
+      {
+        label: "Fewer status calls",
+        copy: "Live tracking and alerts answer the questions passengers used to call for.",
+        icon: "bell",
+      },
+      {
+        label: "Greater passenger confidence",
+        copy: "A clear, branded experience makes every journey feel dependable.",
+        icon: "valueIcon",
+      },
+      {
+        label: "A stronger local brand",
+        copy: "Your own app keeps passengers coming back to you, not a marketplace.",
+        icon: "brand",
+      },
     ],
   },
   "web-booker": {
@@ -144,10 +192,26 @@ export const products: Record<string, Product> = {
       },
     ],
     benefits: [
-      { label: "More booking opportunities", icon: "booking" },
-      { label: "Less manual entry", icon: "sync" },
-      { label: "Available around the clock", icon: "clock247" },
-      { label: "Connected directly to Dispatch", icon: "dispatch" },
+      {
+        label: "More booking opportunities",
+        copy: "Your website captures bookings your team would otherwise miss.",
+        icon: "booking",
+      },
+      {
+        label: "Less manual entry",
+        copy: "Online bookings arrive ready to dispatch, with nothing to retype.",
+        icon: "sync",
+      },
+      {
+        label: "Available around the clock",
+        copy: "Customers can book anytime, even when your phones are closed.",
+        icon: "clock247",
+      },
+      {
+        label: "Connected directly to Dispatch",
+        copy: "Every online booking lands straight in the same workspace as the rest of your operation.",
+        icon: "dispatch",
+      },
     ],
   },
 };

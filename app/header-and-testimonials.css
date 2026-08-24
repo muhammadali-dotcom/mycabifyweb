@@ -29,35 +29,53 @@
 .driver {
   z-index: 3;
 }
-/* Testimonials heading override */
+/* Testimonials heading override (font-size rule for .proof-heading.compact h2
+   lives in app/site-and-home.css alongside the base .proof-heading h2 rule) */
 .proof-heading.compact {
   max-width: 1180px;
   margin: 0 auto 45px;
 }
 .proof-heading.compact h2 {
-  font-size: clamp(44px, 5vw, 76px);
+  margin: 0 0 22px;
 }
 /* Testimonial swipe-story carousel */
 .swipe-story {
+  position: relative;
   max-width: 1180px;
-  min-height: 390px;
+  min-height: 220px;
   margin: auto;
   padding: 42px;
+  border-radius: 20px;
   display: grid;
-  grid-template-columns: 160px 1fr;
-  grid-template-rows: 1fr auto;
+  grid-template-columns: 160px 1fr auto;
+  align-items: center;
   gap: 20px 42px;
-  background: var(--ink);
-  color: white;
+  background: var(--cream);
+  color: var(--ink);
   touch-action: pan-y;
-  animation: storyIn 0.42s ease both;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .swipe-story {
+    animation: storyIn 0.5s ease both;
+  }
+}
+@keyframes storyIn {
+  from {
+    opacity: 0;
+    transform: translateX(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 .quote-logo {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-start;
-  border-right: 1px solid #ffffff36;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+  border-right: 1px solid var(--line);
   padding-right: 30px;
 }
 .quote-logo img {
@@ -67,63 +85,54 @@
   border-radius: 50%;
   background: white;
 }
-.quote-logo span {
-  font-size: 9px;
-  color: #7cc79f;
-  letter-spacing: 0.15em;
+.quote-logo b {
+  font-size: 15px;
+  font-weight: 700;
 }
 .swipe-story blockquote {
   margin: 0;
-  font-size: clamp(25px, 2.8vw, 43px);
-  line-height: 1.25;
-  letter-spacing: -0.045em;
+  font-size: clamp(19px, 2vw, 27px);
+  line-height: 1.35;
+  letter-spacing: -0.02em;
+  font-weight: 500;
 }
-.swipe-story blockquote footer {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  margin-top: 35px;
-  font-size: 13px;
-}
-.swipe-story blockquote footer span {
-  font-size: 11px;
-  color: #aab6af;
+.quote-mark {
+  display: block;
+  font-size: 34px;
+  line-height: 1;
+  font-weight: 700;
+  color: var(--green);
+  margin-bottom: 8px;
 }
 .swipe-controls {
-  grid-column: 2;
-  display: grid;
-  grid-template-columns: 44px 1fr 44px;
-  align-items: center;
-  gap: 18px;
-}
-.swipe-controls > button {
-  width: 44px;
-  height: 44px;
-  border: 1px solid #ffffff5c;
-  border-radius: 50%;
-  background: transparent;
-  color: white;
-  cursor: pointer;
-}
-.swipe-controls > button:hover {
-  background: var(--cream);
-  color: var(--ink);
-}
-.swipe-controls > div {
   display: flex;
-  justify-content: center;
-  gap: 8px;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
 }
-.swipe-controls > div button {
-  width: 25px;
-  height: 3px;
-  border: 0;
-  background: #ffffff45;
-  padding: 0;
+.swipe-arrows {
+  display: flex;
+  gap: 10px;
+}
+.swipe-arrows button {
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--ink);
   cursor: pointer;
+  font-size: 16px;
 }
-.swipe-controls > div button.active {
-  background: #55b884;
+.swipe-arrows button:hover {
+  background: var(--ink);
+  color: var(--cream);
+  border-color: var(--ink);
+}
+.swipe-counter {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--green);
 }
 .swipe-hint {
   text-align: center;
@@ -149,7 +158,7 @@
   }
   .quote-logo {
     border-right: 0;
-    border-bottom: 1px solid #ffffff36;
+    border-bottom: 1px solid var(--line);
     padding: 0 0 20px;
     flex-direction: row;
     align-items: center;
@@ -159,10 +168,10 @@
     height: 70px;
   }
   .swipe-story blockquote {
-    font-size: 25px;
+    font-size: 20px;
   }
   .swipe-controls {
-    grid-column: 1;
+    align-items: flex-start;
   }
   .proof-heading.compact {
     margin-bottom: 30px;

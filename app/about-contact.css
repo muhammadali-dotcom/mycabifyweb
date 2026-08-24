@@ -29,7 +29,7 @@
 .connected > p:not(.kicker) {
   max-width: 640px;
   margin: 20px auto 0;
-  color: rgba(255, 255, 255, 0.76);
+  color: var(--muted);
   line-height: 1.65;
 }
 
@@ -57,7 +57,9 @@
 /* ---------- About hero ---------- */
 .about-hero {
   min-height: 720px;
-  padding: 8vw 5vw;
+  padding: 8vw var(--side-padding);
+  padding-left: var(--content-pad-x);
+  padding-right: var(--content-pad-x);
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 6vw;
@@ -71,7 +73,7 @@
   font-weight: 520;
   margin: 0;
 }
-.about-hero > div:first-child > p {
+.about-hero > div:first-child > p:not(.kicker) {
   max-width: 600px;
   font-size: 18px;
   line-height: 1.65;
@@ -178,7 +180,7 @@
   margin: 0 0 30px;
   max-width: 900px;
 }
-.our-story p {
+.our-story p:not(.kicker) {
   max-width: 760px;
   color: var(--muted);
   line-height: 1.75;
@@ -219,8 +221,7 @@
 
 /* ---------- Who We Are ---------- */
 .who-we-are {
-  background: var(--ink);
-  color: white;
+  background: var(--cream);
 }
 .who-we-are h2 {
   font-size: clamp(2.75rem, 5vw, 5.25rem);
@@ -230,9 +231,9 @@
   max-width: 900px;
   margin: 0 0 22px;
 }
-.who-we-are > p {
+.who-we-are > p:not(.kicker) {
   max-width: 780px;
-  color: rgba(255, 255, 255, 0.66);
+  color: var(--muted);
   line-height: 1.7;
   font-size: 17px;
   margin: 0 0 5vw;
@@ -240,11 +241,11 @@
 .who-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  border-top: 1px solid rgba(255, 255, 255, 0.22);
+  border-top: 1px solid var(--line);
 }
 .who-grid article {
   padding: 40px 32px 0;
-  border-right: 1px solid rgba(255, 255, 255, 0.22);
+  border-right: 1px solid var(--line);
 }
 .who-grid article:last-child {
   border-right: 0;
@@ -255,13 +256,13 @@
   margin: 0 0 16px;
 }
 .who-grid p {
-  color: rgba(255, 255, 255, 0.66);
+  color: var(--muted);
   line-height: 1.7;
 }
 
 /* ---------- Why MyCabify: benefit-card grid ---------- */
 .why-mycabify {
-  background: var(--cream);
+  background: var(--paper);
 }
 .why-mycabify h2 {
   font-size: clamp(2.75rem, 5vw, 5.25rem);
@@ -303,16 +304,21 @@
 
 /* ---------- Mission & Vision ---------- */
 .mission-vision {
-  background: var(--green);
-  color: white;
+  background: var(--cream);
   display: grid;
   grid-template-columns: 1fr 1fr;
+  padding-left: var(--content-pad-x);
+  padding-right: var(--content-pad-x);
 }
 .mission-vision > div {
-  padding: clamp(5rem, 9vw, 9rem) 5vw;
+  padding: clamp(5rem, 9vw, 9rem) 0;
 }
 .mission-vision > div:first-child {
-  border-right: 1px solid rgba(255, 255, 255, 0.22);
+  padding-right: 5vw;
+  border-right: 1px solid var(--line);
+}
+.mission-vision > div:last-child {
+  padding-left: 5vw;
 }
 .mission-vision h2 {
   font-size: clamp(2.5rem, 4.4vw, 4rem);
@@ -321,14 +327,12 @@
   font-weight: 520;
   margin: 0 0 22px;
 }
-.mission-vision p {
-  color: rgba(255, 255, 255, 0.76);
+.mission-vision p:not(.kicker) {
+  color: var(--muted);
   line-height: 1.75;
   font-size: 17px;
   max-width: 480px;
-}
-.mission-vision .eyebrow {
-  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
 }
 
 /* ---------- Our Values ---------- */
@@ -608,7 +612,7 @@
   font-weight: 520;
   margin: 0;
 }
-.contact-hero > div:first-child > p {
+.contact-hero > div:first-child > p:not(.kicker) {
   max-width: 600px;
   font-size: 18px;
   line-height: 1.65;
@@ -681,7 +685,7 @@
 
 /* ---------- Enquiry form ---------- */
 .enquiry-form-section {
-  background: var(--paper);
+  background: var(--cream);
   padding-top: 3rem;
 }
 .enquiry-layout {
@@ -693,7 +697,7 @@
   gap: 48px;
 }
 .enquiry-panel {
-  background: var(--cream);
+  background: var(--paper);
   border: 1px solid var(--line);
   padding: clamp(2rem, 4vw, 3.5rem);
 }

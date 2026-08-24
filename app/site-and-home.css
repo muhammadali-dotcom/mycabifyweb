@@ -9,6 +9,9 @@
   --page-max-width: 1320px;
   --side-padding: 64px;
   --content-pad-x: max(var(--side-padding), calc((100% - var(--page-max-width)) / 2 + var(--side-padding)));
+  --h1-size: clamp(50px, 6.2vw, 96px);
+  --h2-size: clamp(38px, 4.5vw, 70px);
+  --h3-size: clamp(1.15rem, 1.6vw, 1.5rem);
 }
 @media (max-width: 1000px) {
   :root {
@@ -62,6 +65,29 @@ button {
 }
 em {
   font-style: normal;
+  color: var(--green);
+}
+/* Base heading scale (fallback for any h1/h2/h3 without a bespoke wrapper rule) */
+h1,
+h2,
+h3 {
+  margin: 0 0 0.5em;
+  line-height: 1.1;
+  font-weight: 520;
+  color: var(--ink);
+}
+h1 {
+  font-size: var(--h1-size);
+}
+h2 {
+  font-size: var(--h2-size);
+}
+h3 {
+  font-size: var(--h3-size);
+}
+/* em already gets the accent color from the global `em` rule above;
+   .heading-accent lets non-em markup opt into the same accent. */
+.heading-accent {
   color: var(--green);
 }
 /* Header / navigation */
@@ -196,13 +222,18 @@ header nav {
 /* Hero */
 .hero {
   min-height: 760px;
-  padding: 7vw 5vw 2vw;
+  padding: 7vw var(--side-padding) 2vw;
+  padding-left: var(--content-pad-x);
+  padding-right: var(--content-pad-x);
   display: grid;
   grid-template-columns: 0.92fr 1.08fr;
   align-items: center;
   overflow: hidden;
   background: var(--cream);
 }
+/* Shared display-heading treatment (weight/spacing/line-height) for the
+   homepage hero h1 and the section h2s below; per-section font-size
+   overrides live with each section and stay in the --h2-size scale. */
 .hero h1,
 .intro h2,
 .section-head h2,
@@ -211,7 +242,7 @@ header nav {
 .support h2,
 .faq h2,
 .closing h2 {
-  font-size: clamp(50px, 6.2vw, 96px);
+  font-size: var(--h1-size);
   line-height: 0.94;
   letter-spacing: -0.072em;
   font-weight: 520;
@@ -573,6 +604,9 @@ header nav {
   padding-left: var(--content-pad-x);
   padding-right: var(--content-pad-x);
 }
+.ecosystem {
+  background: var(--cream);
+}
 .section-head {
   display: grid;
   grid-template-columns: 1.4fr 0.6fr;
@@ -664,23 +698,23 @@ header nav {
   color: var(--ink);
 }
 .film:has(.has-image) {
-  background: var(--ink);
+  background: var(--paper);
 }
 .film:has(.has-image)::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(0deg, #07150dcc, #07150d00 45%);
+  background: linear-gradient(0deg, #fbfaf6e6, #fbfaf600 45%);
   pointer-events: none;
 }
 .film:has(.has-image) > strong {
-  color: white;
+  color: var(--ink);
   z-index: 1;
-  text-shadow: 0 2px 10px #07150d80;
 }
 .solution-copy {
   padding: 26px 18px 34px;
   min-height: 255px;
+  background: var(--paper);
 }
 .solution-copy h3 {
   font-size: 26px;
@@ -740,11 +774,15 @@ header nav {
   display: grid;
   grid-template-columns: 1fr 1.4fr;
   gap: 6vw;
+  background: var(--paper);
+}
+.why-title {
+  align-self: start;
 }
 .why-title h2 {
   font-size: clamp(50px, 5.5vw, 84px);
 }
-.why-title .cream-btn {
+.why-title .solid {
   margin-top: 35px;
 }
 .why-list {
@@ -756,13 +794,13 @@ header nav {
   display: flex;
   flex-direction: column;
   padding: 24px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(11, 23, 16, 0.03);
+  border: 1px solid var(--line);
   border-radius: 12px;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .why-list article:hover {
-  background: rgba(255, 255, 255, 0.06);
+  background: rgba(11, 23, 16, 0.06);
   border-color: rgba(17, 116, 71, 0.4);
   transform: translateY(-2px);
 }
@@ -770,10 +808,10 @@ header nav {
   font-size: 18px;
   font-weight: 700;
   margin: 0 0 6px;
-  color: white;
+  color: var(--ink);
 }
 .why-list p {
-  color: #aab6af;
+  color: var(--muted);
   font-size: 14px;
   line-height: 1.5;
   margin: 0;
@@ -822,6 +860,7 @@ header nav {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 9vw;
+  background: var(--cream);
 }
 .implementation h2 {
   font-size: clamp(46px, 5vw, 75px);
@@ -873,7 +912,7 @@ header nav {
 }
 /* FAQ section */
 .faq {
-  background: var(--cream);
+  background: var(--paper);
 }
 .faq h2 {
   font-size: clamp(48px, 5.5vw, 80px);
@@ -1033,14 +1072,13 @@ header nav {
   padding: 10vw var(--side-padding);
   padding-left: var(--content-pad-x);
   padding-right: var(--content-pad-x);
-  background: var(--green);
-  color: white;
+  background: var(--cream);
 }
 .closing h2 {
   max-width: 950px;
   margin: auto;
 }
-.closing .cream-btn {
+.closing .solid {
   margin-top: 35px;
 }
 /* Site footer */
@@ -1048,12 +1086,13 @@ footer {
   padding: 70px var(--side-padding) 28px;
   padding-left: var(--content-pad-x);
   padding-right: var(--content-pad-x);
-  background: var(--ink);
-  color: white;
+  background: #fbfaf6ed;
+  color: var(--ink);
   display: grid;
   grid-template-columns: 1.1fr repeat(4, 1fr);
   gap: 40px;
   font-size: 13px;
+  border-top: 1px solid var(--line);
 }
 footer > div {
   display: flex;
@@ -1065,7 +1104,7 @@ footer > div > b {
   font-size: 11px;
   letter-spacing: 0.13em;
   text-transform: uppercase;
-  color: #9ba79f;
+  color: var(--muted);
   margin-bottom: 4px;
 }
 footer a,
@@ -1077,12 +1116,12 @@ footer .logo b {
   font-size: 18px;
   letter-spacing: normal;
   text-transform: none;
-  color: white;
+  color: var(--ink);
 }
 footer > div > p {
   font-size: 13px;
   line-height: 1.6;
-  color: #9ba79f;
+  color: var(--muted);
 }
 /* Footer Download App buttons */
 .footer-app-group {
@@ -1094,7 +1133,7 @@ footer > div > p {
 .footer-app-group > span {
   font-size: 11px;
   font-weight: 700;
-  color: #78847d;
+  color: var(--muted);
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
@@ -1109,10 +1148,10 @@ footer > div > p {
   justify-content: center;
   width: 36px;
   height: 36px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(11, 23, 16, 0.04);
+  border: 1px solid var(--line);
   border-radius: 8px;
-  color: white;
+  color: var(--ink);
   text-decoration: none;
   transition: all 0.2s ease;
 }
@@ -1127,22 +1166,22 @@ footer > div > p {
 .coming-soon-badge {
   font-size: 10px;
   padding: 3px 8px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(11, 23, 16, 0.05);
+  border: 1px solid var(--line);
   border-radius: 4px;
-  color: #8fa397;
+  color: var(--muted);
   max-width: fit-content;
   font-weight: 600;
   margin-bottom: 4px;
 }
 .legal {
   grid-column: 1/-1;
-  border-top: 1px solid #ffffff32;
+  border-top: 1px solid var(--line);
   padding-top: 23px;
   display: flex;
   flex-direction: row;
   gap: 20px;
-  color: #9ba79f;
+  color: var(--muted);
 }
 .legal span {
   margin-right: auto;
@@ -1359,6 +1398,9 @@ footer > div > p {
   .implementation {
     grid-template-columns: 1fr;
   }
+  .why {
+    gap: 45px;
+  }
   .hero-art {
     height: 470px;
   }
@@ -1424,6 +1466,9 @@ footer > div > p {
   .support {
     padding: 85px 22px;
   }
+  .why {
+    gap: 35px;
+  }
   .problem-list,
   .role-grid,
   .solution-grid,
@@ -1478,7 +1523,9 @@ footer > div > p {
 /* Basic/legal page hero (About, Contact, Privacy, etc.) */
 .detail-hero {
   min-height: 720px;
-  padding: 8vw 5vw;
+  padding: 8vw var(--side-padding);
+  padding-left: var(--content-pad-x);
+  padding-right: var(--content-pad-x);
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 8vw;
@@ -1530,7 +1577,7 @@ footer > div > p {
   gap: 14px;
 }
 .ba-before {
-  background: #efece3;
+  background: var(--paper);
   border: 1px solid var(--line);
 }
 .ba-after {
@@ -1619,13 +1666,16 @@ footer > div > p {
 }
 /* Product detail page film section */
 .product-film {
-  padding: 7vw 12vw;
-  background: var(--ink);
+  padding: 7vw var(--side-padding);
+  padding-left: var(--content-pad-x);
+  padding-right: var(--content-pad-x);
+  background: var(--paper);
 }
 .product-film > div {
   aspect-ratio: 16/9;
-  border: 1px solid #ffffff45;
-  color: white;
+  border: 1px solid var(--line);
+  background: var(--cream);
+  color: var(--ink);
   display: flex;
   flex-direction: column;
   gap: 13px;
@@ -1634,34 +1684,34 @@ footer > div > p {
 }
 .product-film span {
   font-size: 50px;
-  color: #52a879;
+  color: var(--green);
 }
 /* Why MyCabify: Automate / Optimise / Grow pillars */
 .why-pillars {
   padding-left: var(--content-pad-x);
   padding-right: var(--content-pad-x);
-  background: var(--ink);
-  color: white;
+  background: var(--paper);
 }
 .why-pillars-head {
-  padding: 6vw 4vw 0;
+  padding: 6vw 0 0;
 }
 .why-pillars-head .kicker {
-  color: #68bd90;
+  color: var(--green);
 }
 .why-pillars-head h2 {
   font-size: clamp(38px, 4vw, 58px);
   letter-spacing: -0.04em;
   font-weight: 560;
   max-width: 700px;
+  margin: 14px 0 3vw;
 }
 .why-pillars-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 }
 .why-pillars article {
-  padding: 4vw 4vw 6vw;
-  border-left: 1px solid #ffffff1f;
+  padding: 40px 32px;
+  border-left: 1px solid var(--line);
 }
 .why-pillars article:first-child {
   border-left: none;
@@ -1672,17 +1722,17 @@ footer > div > p {
   font-weight: 800;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: #68bd90;
+  color: var(--green);
   margin-bottom: 18px;
 }
 .why-pillars h3 {
-  font-size: clamp(24px, 2.4vw, 30px);
+  font-size: 20px;
   letter-spacing: -0.03em;
   font-weight: 620;
   margin: 0 0 14px;
 }
 .why-pillars p {
-  color: #ffffffb0;
+  color: var(--muted);
   line-height: 1.7;
   font-size: 15px;
 }
@@ -1692,7 +1742,7 @@ footer > div > p {
   }
   .why-pillars article {
     border-left: none;
-    border-top: 1px solid #ffffff1f;
+    border-top: 1px solid var(--line);
   }
   .why-pillars article:first-child {
     border-top: none;
@@ -1704,55 +1754,72 @@ footer > div > p {
   padding-right: var(--content-pad-x);
   background: var(--paper);
 }
+.feature-grid.feature-grid-cream {
+  background: var(--cream);
+}
 .feature-grid-head {
-  padding: 7vw 6vw 0;
+  padding: 7vw 0 0;
 }
 .feature-grid-head h2 {
   font-size: clamp(38px, 4vw, 58px);
   letter-spacing: -0.04em;
   font-weight: 560;
   max-width: 700px;
+  margin: 14px 0 5vw;
 }
-.feature-grid-cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1px;
-  background: var(--line);
-}
-.feature-grid article {
-  background: var(--paper);
-  padding: 40px 32px;
-}
-.feature-grid article > span {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background: var(--green);
-  display: grid;
-  place-items: center;
-  margin-bottom: 26px;
+.feature-grid .benefit-icon {
   color: white;
   font-size: 14px;
   font-weight: 800;
   letter-spacing: 0.02em;
 }
-.feature-grid h3 {
-  font-size: 20px;
-  line-height: 1.25;
-  letter-spacing: -0.02em;
-  margin: 0 0 12px;
+.feature-grid .benefit-cards.benefit-cards-standardized {
+  gap: 20px;
+  background: transparent;
+  padding-bottom: 7vw;
 }
-.feature-grid p {
-  color: var(--muted);
-  line-height: 1.7;
+.feature-grid .benefit-cards-standardized .benefit-card {
+  min-height: 100%;
+  padding: 24px;
+  background: var(--paper);
+  border: 1px solid rgba(17, 116, 71, 0.18);
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(7, 21, 13, 0.05);
+  transition: background 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.feature-grid small {
-  display: block;
-  margin-top: 35px;
+.feature-grid .benefit-cards-standardized .benefit-card:hover {
+  background: white;
+  border-color: rgba(17, 116, 71, 0.4);
+  box-shadow: 0 16px 36px rgba(7, 21, 13, 0.08);
+  transform: translateY(-2px);
+}
+.feature-grid .benefit-cards-standardized .benefit-icon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 24px;
   color: var(--green);
-  font-size: 9px;
-  font-weight: 900;
-  letter-spacing: 0.13em;
+  background: rgba(17, 116, 71, 0.08);
+  border: 1px solid rgba(17, 116, 71, 0.2);
+}
+.feature-grid .benefit-cards-standardized .benefit-icon svg {
+  width: 24px;
+  height: 24px;
+}
+.feature-grid .benefit-cards-standardized .benefit-card h3 {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.25;
+  margin: 0 0 8px;
+  color: var(--ink);
+}
+.feature-grid .benefit-cards-standardized .benefit-card p {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.55;
+  margin: 0;
 }
 /* Shared closing/connected CTA band */
 .connected {
@@ -1760,8 +1827,10 @@ footer > div > p {
   padding-left: var(--content-pad-x);
   padding-right: var(--content-pad-x);
   text-align: center;
-  background: var(--green);
-  color: white;
+  background: var(--paper);
+}
+.connected.connected-cream {
+  background: var(--cream);
 }
 .connected h2 {
   max-width: 950px;
@@ -1779,15 +1848,12 @@ footer > div > p {
 }
 .outline {
   padding: 15px 20px;
-  border: 1px solid white;
+  border: 1px solid var(--ink);
   font-weight: 850;
 }
 @media (max-width: 900px) {
   .detail-hero {
     grid-template-columns: 1fr;
-  }
-  .feature-grid-cards {
-    grid-template-columns: 1fr 1fr;
   }
 }
 @media (max-width: 650px) {
@@ -1800,13 +1866,10 @@ footer > div > p {
   .connected > div {
     flex-direction: column;
   }
-  .feature-grid-cards {
-    grid-template-columns: 1fr;
-  }
 }
 /* Homepage testimonials carousel */
 .customer-proof {
-  background: var(--cream);
+  background: var(--paper);
   overflow: hidden;
   padding-top: 1.5vw;
 }
@@ -1823,108 +1886,21 @@ footer > div > p {
   font-weight: 520;
   margin: 0;
 }
+/* Compact variant (smaller heading) used where the testimonials block
+   appears alongside other dense content; single source of truth for
+   .proof-heading.compact — see app/header-and-testimonials.css for the
+   layout rules on .proof-heading.compact itself. */
+.proof-heading.compact h2 {
+  font-size: clamp(44px, 5vw, 76px);
+}
 .proof-heading > p {
   color: var(--muted);
   font-size: 16px;
   line-height: 1.7;
 }
-.testimonial-marquee {
-  overflow: hidden;
-  width: 100%;
-  margin-top: 1.5vw;
-  mask-image: linear-gradient(
-    to right,
-    transparent,
-    black 6%,
-    black 94%,
-    transparent
-  );
-}
-.testimonial-track {
-  display: flex;
-  align-items: center;
-  width: max-content;
-  animation: testimonial-scroll 32s linear infinite;
-}
-.testimonial-marquee:hover .testimonial-track {
-  animation-play-state: paused;
-}
-.testimonial-line {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  flex: 0 0 auto;
-  padding: 0 40px;
-  position: relative;
-}
-.testimonial-line::after {
-  content: "";
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 1px;
-  height: 24px;
-  background: var(--line);
-}
-.testimonial-line img {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  object-fit: cover;
-  flex: 0 0 auto;
-}
-.testimonial-line b {
-  white-space: nowrap;
-  font-weight: 600;
-  color: #fff;
-  background: var(--ink);
-  font-size: 13px;
-  padding: 4px 12px;
-  border-radius: 999px;
-}
-.testimonial-line blockquote {
-  position: relative;
-  margin: 0;
-  padding-left: 22px;
-  font-size: 18px;
-  line-height: 1.55;
-  letter-spacing: -0.01em;
-  color: var(--ink);
-  white-space: nowrap;
-}
-.testimonial-line blockquote::before {
-  content: "“";
-  position: absolute;
-  left: 0;
-  top: -6px;
-  font-size: 32px;
-  line-height: 1;
-  font-weight: 700;
-  color: var(--green);
-}
-@keyframes testimonial-scroll {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
 @media (max-width: 1000px) {
   .proof-heading {
     grid-template-columns: 1fr;
-  }
-  .testimonial-line {
-    padding: 0 24px;
-  }
-  .testimonial-line blockquote {
-    font-size: 15px;
-  }
-}
-@media (prefers-reduced-motion: reduce) {
-  .testimonial-track {
-    animation: none;
   }
 }
 @media (max-width: 480px) {
@@ -1954,11 +1930,5 @@ footer > div > p {
   }
   .proof-heading h2 {
     font-size: 34px;
-  }
-  .testimonial-line {
-    padding: 0 16px;
-  }
-  .testimonial-line blockquote {
-    font-size: 14px;
   }
 }

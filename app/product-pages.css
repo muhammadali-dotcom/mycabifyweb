@@ -2,7 +2,9 @@
 .solutions-hero,
 .product-hero {
   min-height: 740px;
-  padding: 7vw 5vw;
+  padding: 7vw var(--side-padding);
+  padding-left: var(--content-pad-x);
+  padding-right: var(--content-pad-x);
   display: grid;
   grid-template-columns: 0.85fr 1.15fr;
   gap: 4vw;
@@ -580,6 +582,7 @@
   grid-template-columns: 0.7fr 1.3fr;
   gap: 6vw;
   align-items: start;
+  background: var(--cream);
 }
 .features-grid-head h2 {
   font-size: clamp(34px, 3.4vw, 52px);
@@ -597,7 +600,7 @@
   padding: 28px;
   border: 1px solid var(--line);
   border-radius: 14px;
-  background: var(--cream);
+  background: var(--paper);
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -639,34 +642,41 @@
   padding: 9vw var(--side-padding);
   padding-left: var(--content-pad-x);
   padding-right: var(--content-pad-x);
-  background: var(--green);
-  color: white;
+  background: var(--paper);
 }
 .benefit-band > div {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   margin-top: 5vw;
-  border-top: 1px solid #ffffff55;
+  border-top: 1px solid var(--line);
 }
 .benefit-band article {
   padding: 27px;
-  border-right: 1px solid #ffffff55;
+  border-right: 1px solid var(--line);
   display: flex;
   flex-direction: column;
-  gap: 70px;
+  gap: 40px;
 }
 .benefit-band article span {
   display: block;
   width: 32px;
   height: 32px;
-  color: white;
+  color: var(--green);
 }
 .benefit-band article span svg {
   width: 100%;
   height: 100%;
 }
 .benefit-band article b {
+  display: block;
   font-size: 21px;
+  margin-bottom: 8px;
+}
+.benefit-band article p {
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.6;
+  margin: 0;
 }
 /* Product detail page: connected products */
 .connected-products {

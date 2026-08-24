@@ -11,15 +11,13 @@ export function ImplementationSection({ onDemo }: { onDemo: () => void }) {
   return (
     <section className="implementation">
       <div>
-        <p className="kicker">IMPLEMENTATION / BUILT AROUND YOU</p>
-        <h2>Changing systems should not disrupt your operation.</h2>
+        <p className="kicker">SWITCHING TO MYCABIFY</p>
+        <h2>Change your system. Keep your business moving.</h2>
         <p>
-          Our team can support setup, data migration, staff training, driver
-          onboarding, testing and go-live. The exact plan is tailored to your
-          fleet, current system and requirements.
+We’ll support you through setup, data migration, staff training, driver onboarding, testing and launch. Everything is planned around your fleet, your current system and the way your business works.
         </p>
         <button className="solid" onClick={onDemo}>
-          Discuss Your Requirements ↗
+          Plan Your Switch ↗
         </button>
       </div>
       <ol>
