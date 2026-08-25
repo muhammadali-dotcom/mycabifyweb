@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./site-and-home.css";
 import "./header-and-testimonials.css";
 import "./product-pages.css";
@@ -8,17 +8,13 @@ import { WhatsAppButton } from "./_components/home/WhatsAppButton";
 import { WhatsAppBubble } from "./_components/home/WhatsAppBubble";
 import { AnnouncementBanner } from "./_components/AnnouncementBanner";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const poppins = Poppins({
+  variable: "--font-poppins",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800", "900"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-const title = "MyCabify Content-Led Concept";
+const title = "MyCabify  - Taxi Dispatch Software";
 const description =
   "Complete taxi management, made simple for UK taxi operators.";
 
@@ -58,7 +54,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${poppins.variable} antialiased`}
       >
         <AnnouncementBanner />
         {children}

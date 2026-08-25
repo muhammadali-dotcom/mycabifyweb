@@ -21,7 +21,9 @@ export function WhyPillars() {
     <section className="why-pillars">
       <div className="why-pillars-head">
         <p className="kicker">HOW MYCABIFY CHANGES YOUR DAY</p>
-        <h2>Less time managing. More time growing.</h2>
+        <h2>
+          Less time managing. <em>More time growing.</em>
+        </h2>
       </div>
       <div className="why-pillars-grid">
         {pillars.map((p) => (

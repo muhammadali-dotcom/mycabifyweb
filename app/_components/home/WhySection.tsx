@@ -39,7 +39,9 @@ export function WhySection() {
     <section className="why">
       <div className="why-title">
         <p className="kicker">WHY OPERATORS CHOOSE MYCABIFY</p>
-        <h2>Everything you need. Made simple.</h2>
+        <h2>
+          Everything you need. <em>Made simple.</em>
+        </h2>
         <Link href="/why-mycabify" className="solid">
           Explore Why MyCabify ↗
         </Link>

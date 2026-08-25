@@ -9,9 +9,7 @@ export function EcosystemSection({ onPlayVideo }: { onPlayVideo: (name: string) 
         <div>
           <p className="kicker">THE MYCABIFY ECOSYSTEM</p>
           <h2>
-            Four connected solutions.
-            <br />
-            <em>One complete operation.</em>
+            Four connected solutions. <em>One complete operation.</em>
           </h2>
         </div>
 

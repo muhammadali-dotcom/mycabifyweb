@@ -19,7 +19,7 @@ export default function Home() {
   return (
     <main>
       <SiteHeader onDemo={() => setDemo(true)} />
-      <HeroSection onDemo={() => setDemo(true)} />
+      <HeroSection onPlayVideo={() => setVideo("hero")} />
       <TestimonialsSection />
       <EcosystemSection onPlayVideo={setVideo} />
       <WhySection />

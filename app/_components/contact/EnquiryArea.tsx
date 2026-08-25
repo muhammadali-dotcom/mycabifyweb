@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 
 const moments = [
   {
-    title: "Booked in 40 seconds",
+    title: "Booked in seconds",
     detail: "A passenger confirms pickup and drop-off in one smooth flow.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
@@ -13,7 +13,7 @@ const moments = [
     ),
   },
   {
-    title: "Driver arrived 3 minutes early",
+    title: "Driver arrived few minutes early",
     detail: "Live dispatch keeps every job moving on time.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">

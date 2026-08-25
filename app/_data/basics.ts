@@ -12,8 +12,8 @@ export type Basic = {
 export const basics: Record<string, Basic> = {
   "why-mycabify": {
     label: "WHY MYCABIFY",
-    title: "Complete when you need it. Simple where it matters.",
-    intro: "Complete, flexible taxi management technology with hands-on support.",
+    title: "What makes MyCabify the right choice for your taxi business?",
+    intro: "Because running a taxi company is already demanding. MyCabify brings your bookings, dispatch, drivers, customers and payments together in one simple system, helping you reduce daily stress, stay in control and grow with confidence.",
     gridLabel: "SIX REASONS TO SWITCH",
     gridTitle: "What makes MyCabify different.",
     items: [

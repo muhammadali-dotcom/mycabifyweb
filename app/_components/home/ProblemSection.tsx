@@ -33,8 +33,8 @@ export function ProblemSection() {
       <div className="intro">
         <p className="kicker pale">THE OPERATIONAL PROBLEM</p>
         <h2>
-          Busy is part of the business. Feeling out of control shouldn&apos;t
-          be.
+          Busy is part of the business.{" "}
+          <em>Feeling out of control shouldn&apos;t be.</em>
         </h2>
       </div>
       <div className="problem-list">

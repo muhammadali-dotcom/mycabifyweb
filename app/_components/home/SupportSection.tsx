@@ -38,9 +38,7 @@ export function SupportSection() {
     <section className="support dark">
       <p className="kicker pale">SUPPORT BEFORE, DURING AND AFTER LAUNCH</p>
       <h2>
-        Your operation never stops.
-        <br />
-        <em>Neither does our support.</em>
+        Your operation never stops. <em>Neither does our support.</em>
       </h2>
       <div className="support-cards">
         {support.map((x, i) => (

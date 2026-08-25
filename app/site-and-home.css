@@ -9,9 +9,9 @@
   --page-max-width: 1320px;
   --side-padding: 64px;
   --content-pad-x: max(var(--side-padding), calc((100% - var(--page-max-width)) / 2 + var(--side-padding)));
-  --h1-size: clamp(50px, 6.2vw, 96px);
-  --h2-size: clamp(38px, 4.5vw, 70px);
-  --h3-size: clamp(1.15rem, 1.6vw, 1.5rem);
+  --h1-size: clamp(28px, 4vw, 55px);
+  --h2-size: clamp(22px, 2.6vw, 38px);
+  --h3-size: clamp(1rem, 1.2vw, 1.5rem);
 }
 @media (max-width: 1000px) {
   :root {
@@ -34,7 +34,7 @@ body {
   margin: 0;
   background: var(--paper);
   color: var(--ink);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-poppins), Arial, Helvetica, sans-serif;
 }
 a {
   color: inherit;
@@ -145,8 +145,10 @@ header nav {
   width: 520px;
   background: var(--paper);
   border: 1px solid var(--line);
+  border-radius: 18px;
   box-shadow: 0 25px 70px #0002;
   padding: 10px;
+  overflow: hidden;
   transition: 0.2s;
 }
 .solution-nav.expanded .mega {
@@ -187,9 +189,9 @@ header nav {
   gap: 15px;
   align-items: center;
 }
-.header-cta > a {
-  font-size: 11px;
-  font-weight: 900;
+.phone-link {
+  font-size: 13px;
+  font-weight: 750;
 }
 .pill {
   display: flex;
@@ -221,8 +223,8 @@ header nav {
 }
 /* Hero */
 .hero {
-  min-height: 760px;
-  padding: 7vw var(--side-padding) 2vw;
+  min-height: 480px;
+  padding: 4vw var(--side-padding) 1.5vw;
   padding-left: var(--content-pad-x);
   padding-right: var(--content-pad-x);
   display: grid;
@@ -231,10 +233,15 @@ header nav {
   overflow: hidden;
   background: var(--cream);
 }
-/* Shared display-heading treatment (weight/spacing/line-height) for the
-   homepage hero h1 and the section h2s below; per-section font-size
-   overrides live with each section and stay in the --h2-size scale. */
-.hero h1,
+/* Homepage hero h1 uses the capped --h1-size scale (55px max).
+   Section h2s below keep their own larger display size unchanged. */
+.hero h1 {
+  font-size: var(--h1-size);
+  line-height: 0.94;
+  letter-spacing: -0.072em;
+  font-weight: 520;
+  margin: 0;
+}
 .intro h2,
 .section-head h2,
 .why-title h2,
@@ -242,7 +249,7 @@ header nav {
 .support h2,
 .faq h2,
 .closing h2 {
-  font-size: var(--h1-size);
+  font-size: var(--h2-size);
   line-height: 0.94;
   letter-spacing: -0.072em;
   font-weight: 520;
@@ -251,7 +258,7 @@ header nav {
 .hero-rotator {
   display: flex;
   align-items: center;
-  min-height: calc(clamp(50px, 6.2vw, 96px) * 0.94 * 2);
+  min-height: calc(clamp(28px, 4vw, 55px) * 0.94 * 2);
 }
 .hero-rotator span {
   display: block;
@@ -321,13 +328,78 @@ header nav {
   background: var(--cream);
   color: var(--ink);
 }
+.hero-video-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 28px;
+  font-size: 16px;
+  animation: pill-float 2.4s ease-in-out infinite, hero-video-glow 2.4s ease-in-out infinite;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+.hero-video-btn:hover {
+  transform: translateY(-3px);
+}
+@keyframes hero-video-glow {
+  0%, 100% {
+    box-shadow: 0 14px 30px #1174473d, 0 0 0 0 #11744700;
+  }
+  50% {
+    box-shadow: 0 14px 30px #1174473d, 0 0 0 14px #11744726;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-video-btn {
+    animation: none;
+  }
+}
+.hero-play-circle {
+  position: relative;
+  width: 26px;
+  height: 26px;
+  flex-shrink: 0;
+}
+.hero-play-icon {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: white;
+  color: var(--green);
+  display: grid;
+  place-items: center;
+  font-size: 11px;
+  transform: translateX(1px);
+}
+.hero-play-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid white;
+  animation: hero-play-pulse 1.8s ease-out infinite;
+}
+@keyframes hero-play-pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1.7);
+    opacity: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-play-ring {
+    animation: none;
+  }
+}
 .micro {
   padding: 16px 0;
   gap: 8px;
   color: var(--muted);
 }
 .hero-art {
-  height: 560px;
+  height: 480px;
   position: relative;
 }
 .device {
@@ -531,7 +603,7 @@ header nav {
   padding-top: 12px;
 }
 .intro h2 {
-  font-size: clamp(48px, 5.4vw, 82px);
+  font-size: var(--h2-size);
   max-width: 1100px;
 }
 .problem-list {
@@ -562,7 +634,7 @@ header nav {
 }
 .problem-list h3 {
   margin: 70px 0 14px;
-  font-size: 25px;
+  font-size: var(--h3-size);
   letter-spacing: -0.04em;
 }
 .problem-list p,
@@ -589,7 +661,7 @@ header nav {
   font-weight: 900;
 }
 .answer h2 {
-  font-size: clamp(38px, 4vw, 65px);
+  font-size: var(--h2-size);
   letter-spacing: -0.06em;
   line-height: 1;
   margin: 0;
@@ -600,7 +672,7 @@ header nav {
 .proof,
 .implementation,
 .faq {
-  padding: 9vw var(--side-padding);
+  padding: 5.5vw var(--side-padding);
   padding-left: var(--content-pad-x);
   padding-right: var(--content-pad-x);
 }
@@ -608,14 +680,16 @@ header nav {
   background: var(--cream);
 }
 .section-head {
-  display: grid;
-  grid-template-columns: 1.4fr 0.6fr;
-  gap: 8vw;
-  align-items: end;
+  display: block;
   margin-bottom: 6vw;
 }
+
 .section-head h2 {
-  font-size: clamp(48px, 5.6vw, 85px);
+  font-size: var(--h2-size);
+  white-space: nowrap;
+}
+.section-head h2 {
+  font-size: var(--h2-size);
 }
 .section-head > p {
   color: var(--muted);
@@ -717,7 +791,7 @@ header nav {
   background: var(--paper);
 }
 .solution-copy h3 {
-  font-size: 26px;
+  font-size: var(--h3-size);
   line-height: 1.05;
   letter-spacing: -0.045em;
   margin: 0 0 16px;
@@ -758,7 +832,7 @@ header nav {
   border-right: 1px solid var(--line);
 }
 .role-grid h3 {
-  font-size: 34px;
+  font-size: var(--h3-size);
   letter-spacing: -0.05em;
   margin: 85px 0 18px;
 }
@@ -768,26 +842,27 @@ header nav {
 }
 /* Why MyCabify section */
 .why {
-  padding: 9vw var(--side-padding);
+  padding: 5.5vw var(--side-padding);
   padding-left: var(--content-pad-x);
   padding-right: var(--content-pad-x);
   display: grid;
-  grid-template-columns: 1fr 1.4fr;
-  gap: 6vw;
+  grid-template-columns: 1fr;
+  gap: 3.5vw;
   background: var(--paper);
 }
 .why-title {
   align-self: start;
+  max-width: 640px;
 }
 .why-title h2 {
-  font-size: clamp(50px, 5.5vw, 84px);
+  font-size: var(--h2-size);
 }
 .why-title .solid {
   margin-top: 35px;
 }
 .why-list {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 20px;
 }
 .why-list article {
@@ -805,7 +880,7 @@ header nav {
   transform: translateY(-2px);
 }
 .why-list h3 {
-  font-size: 18px;
+  font-size: var(--h3-size);
   font-weight: 700;
   margin: 0 0 6px;
   color: var(--ink);
@@ -841,7 +916,7 @@ header nav {
   background: var(--cream);
 }
 .proof-layout h2 {
-  font-size: clamp(40px, 4vw, 65px);
+  font-size: var(--h2-size);
   letter-spacing: -0.06em;
   line-height: 1;
   margin: 0;
@@ -863,12 +938,13 @@ header nav {
   background: var(--cream);
 }
 .implementation h2 {
-  font-size: clamp(46px, 5vw, 75px);
+  font-size: var(--h2-size);
 }
 .implementation > div > p:not(.kicker) {
   color: var(--muted);
   font-size: 17px;
   line-height: 1.7;
+  margin: 20px 0 0;
 }
 .implementation ol {
   list-style: none;
@@ -879,24 +955,24 @@ header nav {
 .implementation li {
   display: flex;
   gap: 23px;
-  padding: 23px 4px;
+  padding: 50px 10px;
   border-bottom: 1px solid var(--line);
 }
 .implementation li span {
   font-size: 10px;
   color: var(--green);
 }
+.implementation > div .solid {
+  margin-top: 25px;
+}
 /* Support section */
 .support {
-  padding: 9vw var(--side-padding);
+  padding: 5.5vw var(--side-padding);
   padding-left: var(--content-pad-x);
   padding-right: var(--content-pad-x);
 }
 .support h2 {
-  font-size: clamp(50px, 6vw, 90px);
-}
-.support h2 em {
-  color: #50a879;
+  font-size: var(--h2-size);
 }
 .support > div {
   display: grid;
@@ -912,27 +988,96 @@ header nav {
 }
 /* FAQ section */
 .faq {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 5vw;
+  align-items: start;
   background: var(--paper);
 }
 .faq h2 {
-  font-size: clamp(48px, 5.5vw, 80px);
-  margin-bottom: 55px;
+  font-size: var(--h2-size);
+  margin-bottom: 22px;
 }
-.faq details {
+.faq-intro-panel {
+  display: flex;
+  flex-direction: column;
+}
+.faq-intro-copy {
+  max-width: 420px;
+  color: var(--muted);
+  line-height: 1.7;
+  margin: 0 0 5vw;
+}
+.faq-illustration {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+}
+.faq-car {
+  transform: translate(175px, 190px) rotate(-25deg);
+}
+.faq-accordion-panel {
+  min-width: 0;
+}
+.faq-card {
+  background: var(--cream);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  box-shadow: 0 14px 30px #07150d0f;
+  padding: 8px 28px;
+  overflow: hidden;
+}
+.faq-item {
   border-top: 1px solid var(--line);
-  padding: 22px 0;
 }
-.faq summary {
+.faq-item:first-child {
+  border-top: 0;
+}
+.faq-item-header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  background: none;
+  border: 0;
   cursor: pointer;
+  text-align: left;
+  font: inherit;
+  color: inherit;
   font-size: 18px;
+  font-weight: 500;
+  padding: 22px 0;
+}
+.faq-item-header[aria-expanded="true"] {
   font-weight: 800;
 }
-.faq details p {
+.faq-item-answer {
   max-width: 780px;
   color: var(--muted);
   line-height: 1.65;
+  margin: -8px 0 22px;
+}
+.faq-chevron {
+  flex-shrink: 0;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  display: grid;
+  place-items: center;
+  color: var(--green);
+  transition: transform 0.25s, background 0.25s, border-color 0.25s, color 0.25s;
+}
+.faq-chevron svg {
+  width: 12px;
+  height: 8px;
+}
+.faq-chevron.open {
+  transform: rotate(180deg);
+  background: var(--green);
+  border-color: var(--green);
+  color: white;
 }
 /* Phase 1 Enhancements */
 /* Why Section - Icon Badges */
@@ -1061,15 +1206,10 @@ header nav {
   flex: 1;
   text-align: left;
 }
-.faq summary {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
 /* Closing CTA */
 .closing {
   text-align: center;
-  padding: 10vw var(--side-padding);
+  padding: 6.5vw var(--side-padding);
   padding-left: var(--content-pad-x);
   padding-right: var(--content-pad-x);
   background: var(--cream);
@@ -1137,31 +1277,26 @@ footer > div > p {
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
-.footer-app-icons {
-  display: flex;
-  flex-direction: row;
+.footer-app-group .store-badges {
+  margin-top: 0;
+  flex-direction: column;
+  align-items: flex-start;
   gap: 8px;
 }
-.footer-app-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
-  background: rgba(11, 23, 16, 0.04);
-  border: 1px solid var(--line);
+.footer-app-group .store-badge {
+  padding: 6px 10px;
+  gap: 8px;
   border-radius: 8px;
-  color: var(--ink);
-  text-decoration: none;
-  transition: all 0.2s ease;
 }
-.footer-app-btn:hover {
-  background: var(--green);
-  border-color: var(--green);
-  color: white;
+.footer-app-group .store-badge svg {
+  width: 16px;
+  height: 16px;
 }
-.footer-app-btn svg {
-  flex-shrink: 0;
+.footer-app-group .store-badge small {
+  font-size: 8px;
+}
+.footer-app-group .store-badge b {
+  font-size: 12px;
 }
 .coming-soon-badge {
   font-size: 10px;
@@ -1329,6 +1464,9 @@ footer > div > p {
   background: var(--cream);
   padding: 42px;
 }
+.modal {
+  border-radius: 18px;
+}
 .close {
   position: absolute;
   right: 14px;
@@ -1339,7 +1477,7 @@ footer > div > p {
   cursor: pointer;
 }
 .modal h2 {
-  font-size: 44px;
+  font-size: var(--h2-size);
   line-height: 1;
   letter-spacing: -0.05em;
 }
@@ -1359,19 +1497,39 @@ footer > div > p {
   padding: 14px;
   background: transparent;
   border: 1px solid #929d97;
+  border-radius: 16px;
 }
 .modal textarea {
   min-height: 85px;
 }
+.video-overlay {
+  padding: 0;
+}
 .video-modal {
   background: var(--ink);
+  width: 100vw;
+  height: 100vh;
+  max-height: 100vh;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .video-modal .close {
   color: var(--cream);
+  right: 20px;
+  top: 16px;
+  font-size: 34px;
+  z-index: 1;
+}
+.video-modal > div,
+.video-modal > iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
 .video-modal > div {
-  aspect-ratio: 16/9;
-  border: 1px solid #ffffff42;
   color: white;
   display: flex;
   flex-direction: column;
@@ -1395,8 +1553,13 @@ footer > div > p {
   .hero,
   .section-head,
   .why,
-  .implementation {
+  .implementation,
+  .faq {
     grid-template-columns: 1fr;
+  }
+  .faq-illustration {
+    max-width: 320px;
+    margin: 0 auto;
   }
   .why {
     gap: 45px;
@@ -1435,13 +1598,13 @@ footer > div > p {
 }
 @media (max-width: 650px) {
   .hero {
-    padding: 70px 22px;
+    padding: 45px 22px 30px;
   }
   .hero h1 {
-    font-size: 52px;
+    font-size: 40px;
   }
   .hero-rotator {
-    min-height: calc(52px * 0.94 * 3);
+    min-height: calc(40px * 0.94 * 3);
   }
   .actions {
     flex-direction: column;
@@ -1464,7 +1627,14 @@ footer > div > p {
   .faq,
   .why,
   .support {
-    padding: 85px 22px;
+    padding: 55px 22px;
+  }
+  .faq-card {
+    padding: 8px var(--side-padding);
+  }
+  .faq-chevron {
+    width: 32px;
+    height: 32px;
   }
   .why {
     gap: 35px;
@@ -1484,9 +1654,6 @@ footer > div > p {
   .answer-mark {
     width: 65px;
     height: 65px;
-  }
-  .section-head h2 {
-    font-size: 48px;
   }
   .film {
     aspect-ratio: 1.05;
@@ -1522,8 +1689,8 @@ footer > div > p {
 }
 /* Basic/legal page hero (About, Contact, Privacy, etc.) */
 .detail-hero {
-  min-height: 720px;
-  padding: 8vw var(--side-padding);
+  min-height: 460px;
+  padding: 4.5vw var(--side-padding);
   padding-left: var(--content-pad-x);
   padding-right: var(--content-pad-x);
   display: grid;
@@ -1533,7 +1700,7 @@ footer > div > p {
   background: var(--cream);
 }
 .detail-hero h1 {
-  font-size: clamp(50px, 6vw, 90px);
+  font-size: clamp(28px, 4vw, 55px);
   line-height: 0.96;
   letter-spacing: -0.07em;
   font-weight: 520;
@@ -1695,14 +1862,12 @@ footer > div > p {
 .why-pillars-head {
   padding: 6vw 0 0;
 }
-.why-pillars-head .kicker {
-  color: var(--green);
-}
 .why-pillars-head h2 {
-  font-size: clamp(38px, 4vw, 58px);
+  font-size: var(--h2-size);
   letter-spacing: -0.04em;
   font-weight: 560;
-  max-width: 700px;
+  max-width: none;
+  white-space: nowrap;
   margin: 14px 0 3vw;
 }
 .why-pillars-grid {
@@ -1726,12 +1891,12 @@ footer > div > p {
   margin-bottom: 18px;
 }
 .why-pillars h3 {
-  font-size: 20px;
+  font-size: var(--h3-size);
   letter-spacing: -0.03em;
   font-weight: 620;
   margin: 0 0 14px;
 }
-.why-pillars p {
+.why-pillars p:not(.kicker) {
   color: var(--muted);
   line-height: 1.7;
   font-size: 15px;
@@ -1758,27 +1923,30 @@ footer > div > p {
   background: var(--cream);
 }
 .feature-grid-head {
-  padding: 7vw 0 0;
+  padding: 4.5vw 0 0;
 }
 .feature-grid-head h2 {
-  font-size: clamp(38px, 4vw, 58px);
+  font-size: var(--h2-size);
   letter-spacing: -0.04em;
   font-weight: 560;
   max-width: 700px;
   margin: 14px 0 5vw;
 }
-.feature-grid .benefit-icon {
+.feature-grid .benefit-icon,
+.why-mycabify .benefit-icon {
   color: white;
   font-size: 14px;
   font-weight: 800;
   letter-spacing: 0.02em;
 }
-.feature-grid .benefit-cards.benefit-cards-standardized {
+.feature-grid .benefit-cards.benefit-cards-standardized,
+.why-mycabify .benefit-cards.benefit-cards-standardized {
   gap: 20px;
   background: transparent;
   padding-bottom: 7vw;
 }
-.feature-grid .benefit-cards-standardized .benefit-card {
+.feature-grid .benefit-cards-standardized .benefit-card,
+.why-mycabify .benefit-cards-standardized .benefit-card {
   min-height: 100%;
   padding: 24px;
   background: var(--paper);
@@ -1790,13 +1958,15 @@ footer > div > p {
     box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1),
     transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.feature-grid .benefit-cards-standardized .benefit-card:hover {
+.feature-grid .benefit-cards-standardized .benefit-card:hover,
+.why-mycabify .benefit-cards-standardized .benefit-card:hover {
   background: white;
   border-color: rgba(17, 116, 71, 0.4);
   box-shadow: 0 16px 36px rgba(7, 21, 13, 0.08);
   transform: translateY(-2px);
 }
-.feature-grid .benefit-cards-standardized .benefit-icon {
+.feature-grid .benefit-cards-standardized .benefit-icon,
+.why-mycabify .benefit-cards-standardized .benefit-icon {
   width: 48px;
   height: 48px;
   margin-bottom: 24px;
@@ -1804,18 +1974,21 @@ footer > div > p {
   background: rgba(17, 116, 71, 0.08);
   border: 1px solid rgba(17, 116, 71, 0.2);
 }
-.feature-grid .benefit-cards-standardized .benefit-icon svg {
+.feature-grid .benefit-cards-standardized .benefit-icon svg,
+.why-mycabify .benefit-cards-standardized .benefit-icon svg {
   width: 24px;
   height: 24px;
 }
-.feature-grid .benefit-cards-standardized .benefit-card h3 {
-  font-size: 18px;
+.feature-grid .benefit-cards-standardized .benefit-card h3,
+.why-mycabify .benefit-cards-standardized .benefit-card h3 {
+  font-size: var(--h3-size);
   font-weight: 700;
   line-height: 1.25;
   margin: 0 0 8px;
   color: var(--ink);
 }
-.feature-grid .benefit-cards-standardized .benefit-card p {
+.feature-grid .benefit-cards-standardized .benefit-card p,
+.why-mycabify .benefit-cards-standardized .benefit-card p {
   color: var(--muted);
   font-size: 14px;
   line-height: 1.55;
@@ -1823,7 +1996,7 @@ footer > div > p {
 }
 /* Shared closing/connected CTA band */
 .connected {
-  padding: 10vw var(--side-padding);
+  padding: 6.5vw var(--side-padding);
   padding-left: var(--content-pad-x);
   padding-right: var(--content-pad-x);
   text-align: center;
@@ -1835,7 +2008,7 @@ footer > div > p {
 .connected h2 {
   max-width: 950px;
   margin: 0 auto;
-  font-size: clamp(50px, 6vw, 92px);
+  font-size: var(--h2-size);
   line-height: 0.95;
   letter-spacing: -0.07em;
   font-weight: 520;
@@ -1858,7 +2031,7 @@ footer > div > p {
 }
 @media (max-width: 650px) {
   .detail-hero {
-    padding: 75px 22px;
+    padding: 45px 22px;
   }
   .product-film {
     padding: 70px 22px;
@@ -1871,7 +2044,7 @@ footer > div > p {
 .customer-proof {
   background: var(--paper);
   overflow: hidden;
-  padding-top: 1.5vw;
+  padding-top: 4.5vw;
 }
 .proof-heading {
   display: grid;
@@ -1880,7 +2053,7 @@ footer > div > p {
   align-items: start;
 }
 .proof-heading h2 {
-  font-size: clamp(48px, 5.6vw, 86px);
+  font-size: var(--h2-size);
   line-height: 0.94;
   letter-spacing: -0.07em;
   font-weight: 520;
@@ -1891,7 +2064,7 @@ footer > div > p {
    .proof-heading.compact — see app/header-and-testimonials.css for the
    layout rules on .proof-heading.compact itself. */
 .proof-heading.compact h2 {
-  font-size: clamp(44px, 5vw, 76px);
+  font-size: var(--h2-size);
 }
 .proof-heading > p {
   color: var(--muted);
@@ -1905,10 +2078,10 @@ footer > div > p {
 }
 @media (max-width: 480px) {
   .hero h1 {
-    font-size: 40px;
+    font-size: 32px;
   }
   .hero-rotator {
-    min-height: calc(40px * 0.94 * 3);
+    min-height: calc(32px * 0.94 * 3);
   }
   .hero-art {
     height: 260px;
@@ -1921,14 +2094,8 @@ footer > div > p {
     grid-template-columns: 1fr;
     gap: 14px;
   }
-  .section-head h2 {
-    font-size: 36px;
-  }
   .answer-mark {
     width: 52px;
     height: 52px;
-  }
-  .proof-heading h2 {
-    font-size: 34px;
   }
 }

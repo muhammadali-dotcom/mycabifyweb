@@ -30,9 +30,7 @@ export function RolesSection() {
         <div>
           <p className="kicker">BUILT FOR EVERY ROLE</p>
           <h2>
-            One operation.
-            <br />
-            <em>The right view for everyone.</em>
+            One operation. <em>The right view for everyone.</em>
           </h2>
         </div>
         <p>

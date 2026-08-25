@@ -6,7 +6,6 @@ const MESSAGES = [
   "Have a question? Ask me anything!",
   "Need help getting started?",
   "Chat with our taxi ops experts",
-  "We usually reply in minutes",
 ];
 
 export function WhatsAppBubble() {

@@ -69,11 +69,7 @@ export function OfficeAndMap() {
       <div className="office-map-heading">
         <div className="office-map-heading-left">
           <p className="kicker">OUR HOUNSLOW OFFICE</p>
-          <h2>
-            Visit, call or
-            <br />
-            simply say hello.
-          </h2>
+          <h2>Visit, call or simply say hello.</h2>
         </div>
         
       </div>

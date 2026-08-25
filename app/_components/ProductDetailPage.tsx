@@ -30,22 +30,48 @@ const passengerAppScreens = {
 };
 
 type Shot = string | undefined;
-type FanImages = { front: Shot; left: [Shot, Shot, Shot]; right: [Shot, Shot, Shot] };
+type FanImages = {
+  front: Shot;
+  left: [Shot, Shot, Shot];
+  right: [Shot, Shot, Shot];
+};
 
 const heroFanImages: Record<string, FanImages> = {
   "driver-app": {
     front: driverAppScreens.front,
-    left: [driverAppScreens.dashboardLight, driverAppScreens.bookingLight, driverAppScreens.journeyLight],
-    right: [driverAppScreens.dashboardDark, driverAppScreens.bookingDark, driverAppScreens.journeyDark],
+    left: [
+      driverAppScreens.dashboardLight,
+      driverAppScreens.bookingLight,
+      driverAppScreens.journeyLight,
+    ],
+    right: [
+      driverAppScreens.dashboardDark,
+      driverAppScreens.bookingDark,
+      driverAppScreens.journeyDark,
+    ],
   },
   "passenger-app": {
     front: passengerAppScreens.front,
-    left: [passengerAppScreens.dashboardLight, passengerAppScreens.vehicleLight, passengerAppScreens.finalLight],
-    right: [passengerAppScreens.dashboardDark, passengerAppScreens.vehicleDark, passengerAppScreens.finalDark],
+    left: [
+      passengerAppScreens.dashboardLight,
+      passengerAppScreens.vehicleLight,
+      passengerAppScreens.finalLight,
+    ],
+    right: [
+      passengerAppScreens.dashboardDark,
+      passengerAppScreens.vehicleDark,
+      passengerAppScreens.finalDark,
+    ],
   },
 };
 
-export function ProductDetailPage({ data, slug }: { data: Product; slug: string }) {
+export function ProductDetailPage({
+  data,
+  slug,
+}: {
+  data: Product;
+  slug: string;
+}) {
   return (
     <>
       <SiteHeader />
@@ -62,12 +88,19 @@ export function ProductDetailPage({ data, slug }: { data: Product; slug: string 
               Book a Demo
             </Link>
           </div>
-          {(slug === "driver-app" || slug === "passenger-app") && <StoreBadges />}
+          {(slug === "driver-app" || slug === "passenger-app") && (
+            <StoreBadges />
+          )}
         </div>
         {slug === "driver-app" || slug === "passenger-app" ? (
           <PhoneFan kind={slug} images={heroFanImages[slug]} />
         ) : slug === "web-booker" ? (
-          <img className="wb-hero-img" src="/web-booker/webbooker_hero_final.png" alt="Web Booker" draggable={false} />
+          <img
+            className="wb-hero-img"
+            src="/web-booker/webbooker_hero_final.png"
+            alt="Web Booker"
+            draggable={false}
+          />
         ) : slug === "dispatch-system" ? (
           <DispatchMockup />
         ) : (
@@ -85,9 +118,7 @@ export function ProductDetailPage({ data, slug }: { data: Product; slug: string 
         <div className="features-grid-head">
           <p className="kicker">KEY FEATURES</p>
           <h2>
-            Built for the way
-            <br />
-            <em>your team works.</em>
+            Built for the way <em>your team works.</em>
           </h2>
         </div>
         <div className="features-cards">
@@ -102,7 +133,9 @@ export function ProductDetailPage({ data, slug }: { data: Product; slug: string 
       </section>
       <section className="benefit-band">
         <p className="kicker">WHAT MYCABIFY CHANGES</p>
-        <h2>Less daily stress. More control over your business.</h2>
+        <h2>
+          Less daily stress. <em>More control over your business.</em>
+        </h2>
         <div>
           {data.benefits.map((x) => (
             <article key={x.label}>

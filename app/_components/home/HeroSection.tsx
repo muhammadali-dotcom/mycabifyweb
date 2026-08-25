@@ -8,8 +8,8 @@ const heroHeadlines = [
     highlight: "all in one place.",
   },
   {
-    text: "Stay in control, even when everything gets busy.",
-    highlight: "Stay in control",
+    text: "Stay in control of every booking, driver and journey, even on your busiest days.",
+    highlight: "Stay in control of every booking,",
   },
   {
     text: "Spend less time managing chaos. More time growing your business.",
@@ -35,7 +35,7 @@ function HeadlineText({ text, highlight }: { text: string; highlight: string }) 
   );
 }
 
-export function HeroSection({ onDemo }: { onDemo: () => void }) {
+export function HeroSection({ onPlayVideo }: { onPlayVideo: () => void }) {
   const [i, setI] = useState(0);
   const paused = useRef(false);
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
@@ -61,7 +61,7 @@ export function HeroSection({ onDemo }: { onDemo: () => void }) {
   return (
     <section className="hero">
       <div className="hero-copy">
-        <p className="kicker">COMPLETE TAXI MANAGEMENT / UK</p>
+        <p className="kicker">COMPLETE TAXI MANAGEMENT SOLUTION</p>
         <h1
           className="hero-rotator"
           onMouseEnter={() => (paused.current = true)}
@@ -84,17 +84,19 @@ export function HeroSection({ onDemo }: { onDemo: () => void }) {
         </div>
 
         <div className="actions">
-          <a className="solid" href="#platform">
-            See MyCabify in Action ↗
-          </a>
-          <button className="line" onClick={onDemo}>
-            Book a Demo
+          <button
+            type="button"
+            className="solid hero-video-btn"
+            onClick={onPlayVideo}
+            aria-label="Watch the MyCabify overview video"
+          >
+            <span className="hero-play-circle">
+              <span className="hero-play-ring" />
+              <span className="hero-play-icon">▶</span>
+            </span>
+            Watch Overview
           </button>
         </div>
-        <p className="micro">
-          Bookings, dispatch, drivers, passengers and daily
-          operations, together in one platform.
-        </p>
       </div>
       <div className="hero-art">
         <div className="device main-device">
