@@ -832,10 +832,10 @@
     transform: translate(-50%, -50%) translate(102px, 10px) rotate(9deg) scale(0.88);
   }
   .phone-fan-item.back-left-3 {
-    transform: translate(-50%, -50%) translate(-100px, 16px) rotate(-13deg) scale(0.8);
+    transform: translate(-50%, -50%) translate(-148px, 16px) rotate(-13deg) scale(0.8);
   }
   .phone-fan-item.back-right-3 {
-    transform: translate(-50%, -50%) translate(100px, 16px) rotate(13deg) scale(0.8);
+    transform: translate(-50%, -50%) translate(148px, 16px) rotate(13deg) scale(0.8);
   }
   .wb-hero-img {
     max-width: 320px;
