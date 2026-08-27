@@ -180,6 +180,13 @@ export function EnquiryArea() {
                   placeholder="07000 000000"
                 />
               </div>
+              <div className="field">
+                <label htmlFor="enquiry-current-system">Current system</label>
+                <input
+                  id="enquiry-current-system"
+                  placeholder="Current System (if any)"
+                />
+              </div>
               <div className="field field-full">
                 <label htmlFor="enquiry-fleet-size">Fleet size</label>
                 <select id="enquiry-fleet-size" defaultValue="">

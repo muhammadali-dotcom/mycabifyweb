@@ -40,6 +40,13 @@ export function DemoModal({ close }: { close: () => void }) {
             </label>
             <input id="demo-phone" required placeholder="Phone number" />
           </div>
+          <label className="sr-only" htmlFor="demo-current-system">
+            Current system
+          </label>
+          <input
+            id="demo-current-system"
+            placeholder="Current system (if any)"
+          />
           <label className="sr-only" htmlFor="demo-fleet-size">
             Fleet size
           </label>

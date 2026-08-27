@@ -53,7 +53,7 @@ export default function SiteFooter() {
         <b>Download Apps</b>
         <div className="footer-app-group">
           <span>Driver App</span>
-          <StoreBadges />
+          <StoreBadges appStoreHref="https://apps.apple.com/pk/app/mycabify-driver/id1661506382" />
         </div>
       </div>
 

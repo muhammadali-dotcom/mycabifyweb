@@ -79,7 +79,19 @@ export function ProductDetailPage({
       <section className="product-hero">
         <div>
           <p className="kicker">{data.label}</p>
-          <h1>{data.title}</h1>
+          <h1>
+            {slug === "web-booker" ? (
+              <>
+                Turn website
+                <br />
+                visitors into
+                <br />
+                confirmed bookings.
+              </>
+            ) : (
+              data.title
+            )}
+          </h1>
           <p>{data.intro}</p>
           <div>
             <a className="solid" href="#film">
@@ -90,7 +102,13 @@ export function ProductDetailPage({
             </Link>
           </div>
           {(slug === "driver-app" || slug === "passenger-app") && (
-            <StoreBadges />
+            <StoreBadges
+              appStoreHref={
+                slug === "driver-app"
+                  ? "https://apps.apple.com/pk/app/mycabify-driver/id1661506382"
+                  : undefined
+              }
+            />
           )}
         </div>
         {slug === "driver-app" || slug === "passenger-app" ? (

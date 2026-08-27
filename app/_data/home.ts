@@ -3,7 +3,6 @@ export type HomeSolution = {
   name: string;
   role: string;
   href: string;
-  time: string;
   title: string;
   copy: string;
   type: string;
@@ -16,7 +15,6 @@ export const solutions: HomeSolution[] = [
     name: "Dispatch System",
     role: "DISPATCH SYSTEM",
     href: "/dispatch-system",
-    time: "01:30",
     title: "A booking enters. The whole operation moves.",
     copy: "Create, price, allocate and follow every journey from one clear operational view.",
     type: "desktop",
@@ -27,7 +25,6 @@ export const solutions: HomeSolution[] = [
     name: "Driver App",
     role: "DRIVER",
     href: "/driver-app",
-    time: "00:60",
     title: "Every instruction, exactly when it matters.",
     copy: "Keep drivers connected from job offer through pickup, journey and completion.",
     type: "phone",
@@ -38,7 +35,6 @@ export const solutions: HomeSolution[] = [
     name: "Passenger App",
     role: "PASSENGER",
     href: "/passenger-app",
-    time: "00:60",
     title: "Your service. Their easiest booking yet.",
     copy: "Give passengers a simple branded way to book, manage and follow their rides.",
     type: "passenger",
@@ -49,7 +45,6 @@ export const solutions: HomeSolution[] = [
     name: "Web Booker",
     role: "WEB BOOKER",
     href: "/web-booker",
-    time: "01:30",
     title: "Your website becomes a booking channel.",
     copy: "Send online bookings straight into dispatch, ready for your team to manage.",
     type: "browser",

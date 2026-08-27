@@ -21,7 +21,6 @@ export function EcosystemSection({ onPlayVideo }: { onPlayVideo: (name: string) 
               <span>
                 {s.no} / {s.role}
               </span>
-              <span>{s.time}</span>
             </div>
             <button className="film" onClick={() => onPlayVideo(s.name)}>
               <div>
