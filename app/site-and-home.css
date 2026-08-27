@@ -204,6 +204,11 @@ header nav {
   font-size: 13px;
   font-weight: 800;
   cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.pill:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
 .pill i {
   font-style: normal;
@@ -229,9 +234,12 @@ header nav {
   padding-right: var(--content-pad-x);
   display: grid;
   grid-template-columns: 0.92fr 1.08fr;
-  align-items: center;
+  align-items: start;
   overflow: hidden;
   background: var(--cream);
+}
+.hero > div:first-child {
+  padding-top: 24px;
 }
 /* Homepage hero h1 uses the capped --h1-size scale (55px max).
    Section h2s below keep their own larger display size unchanged. */
@@ -315,6 +323,13 @@ header nav {
   padding: 15px 20px;
   font-weight: 850;
   cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.solid:hover,
+.line:hover,
+.cream-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
 .solid {
   background: var(--green);
@@ -1725,7 +1740,7 @@ footer > div > p {
 /* Basic/legal page hero (About, Contact, Privacy, etc.) */
 .detail-hero {
   min-height: 460px;
-  padding: 4.5vw var(--side-padding);
+  padding: 4vw var(--side-padding);
   padding-left: var(--content-pad-x);
   padding-right: var(--content-pad-x);
   display: grid;
@@ -1733,6 +1748,9 @@ footer > div > p {
   gap: 8vw;
   align-items: center;
   background: var(--cream);
+}
+.detail-hero > div:first-child {
+  padding-top: 24px;
 }
 .detail-hero h1 {
   font-size: clamp(28px, 4vw, 55px);
@@ -1749,13 +1767,13 @@ footer > div > p {
 }
 .detail-media {
   aspect-ratio: 1.15;
-  background: var(--ink);
+  background: var(--green);
   color: white;
   padding: 40px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  box-shadow: 24px 24px var(--green);
+  box-shadow: 24px 24px var(--ink);
   font-size: 10px;
   letter-spacing: 0.12em;
 }
@@ -1768,7 +1786,7 @@ footer > div > p {
 .before-after {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
-  align-items: center;
+  align-items: stretch;
   gap: 14px;
 }
 .ba-card {
@@ -1783,7 +1801,7 @@ footer > div > p {
   border: 1px solid var(--line);
 }
 .ba-after {
-  background: var(--ink);
+  background: var(--green);
   color: white;
   box-shadow: 0 24px 50px #07150d2e;
   animation: ba-glow 3.2s ease-in-out infinite;
@@ -1819,10 +1837,10 @@ footer > div > p {
   text-decoration-color: #b8b2a0;
 }
 .ba-before .ba-row i {
-  color: #a89f8a;
+  color: var(--green);
 }
 .ba-after .ba-row i {
-  color: var(--green);
+  color: white;
 }
 .ba-row i {
   font-style: normal;
@@ -2066,6 +2084,11 @@ footer > div > p {
   padding: 15px 20px;
   border: 1px solid var(--ink);
   font-weight: 850;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.outline:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
 @media (max-width: 900px) {
   .detail-hero {

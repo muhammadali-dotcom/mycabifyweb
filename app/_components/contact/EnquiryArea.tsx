@@ -13,7 +13,7 @@ const moments = [
     ),
   },
   {
-    title: "Driver arrived few minutes early",
+    title: "Driver arrived in few minutes ",
     detail: "Live dispatch keeps every job moving on time.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">

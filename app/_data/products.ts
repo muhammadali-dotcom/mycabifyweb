@@ -165,7 +165,7 @@ export const products: Record<string, Product> = {
   },
   "web-booker": {
     label: "SOLUTION / WEB BOOKER",
-    title: "Turn website visitors into confirmed bookings.",
+    title: "  ",
     intro:
       "Give customers a simple online booking experience, with every journey sent directly into MyCabify Dispatch.",
     video: "1–2 MINUTE WEB BOOKING FLOW",
@@ -216,7 +216,15 @@ export const products: Record<string, Product> = {
   },
 };
 
-export const cards = [
+export type ProductCard = {
+  no: string;
+  name: string;
+  href: string;
+  copy: string;
+  goal: string;
+};
+
+export const cards: ProductCard[] = [
   {
     no: "01",
     name: "Dispatch System",

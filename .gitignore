@@ -33,6 +33,9 @@ yarn-error.log*
 # vercel
 .vercel
 
+# stray local runtime/npm cache
+.sites-runtime/
+
 # typescript
 next-env.d.ts
 *.tsbuildinfo

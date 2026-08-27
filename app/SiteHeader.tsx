@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
@@ -64,7 +65,7 @@ export default function SiteHeader({ onDemo }: { onDemo?: () => void }) {
   return (
     <header ref={wrap} className="shared-header">
       <Link className="logo" href="/" onClick={close}>
-        <img src="/mycabify-logo.png" alt="MyCabify" />
+        <Image src="/mycabify-logo.png" alt="MyCabify" width={44} height={44} priority />
         <b>MyCabify</b>
       </Link>
       <nav className={mobile ? "open" : ""}>

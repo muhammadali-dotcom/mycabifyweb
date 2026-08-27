@@ -1,8 +1,26 @@
-export function Screen({ type = "desktop", image }: { type?: string; image?: string }) {
+import Image from "next/image";
+
+export function Screen({
+  type = "desktop",
+  image,
+  priority = false,
+}: {
+  type?: string;
+  image?: string;
+  priority?: boolean;
+}) {
   if (image) {
     return (
       <div className={`screen ${type} has-image`}>
-        <img src={image} alt="" className="screen-shot" draggable={false} />
+        <Image
+          src={image}
+          alt=""
+          fill
+          className="screen-shot"
+          draggable={false}
+          priority={priority}
+          sizes="(max-width: 640px) 60vw, 320px"
+        />
       </div>
     );
   }
@@ -18,7 +36,7 @@ export function Screen({ type = "desktop", image }: { type?: string; image?: str
       <div className="screen-body">
         <aside>
           <strong>
-            <img src="/mycabify-logo.png" alt="" />
+            <Image src="/mycabify-logo.png" alt="" width={24} height={24} />
           </strong>
           {[1, 2, 3, 4, 5].map((x) => (
             <i key={x} />

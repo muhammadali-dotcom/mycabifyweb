@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { StoreBadges } from "./_components/StoreBadges";
 
@@ -13,7 +14,7 @@ export default function SiteFooter() {
     <footer className="site-footer">
       <div>
         <Link className="logo inverse" href="/">
-          <img src="/mycabify-logo.png" alt="MyCabify" />
+          <Image src="/mycabify-logo.png" alt="MyCabify" width={48} height={48} />
           <b>MyCabify</b>
         </Link>
         <p>Complete taxi management, made simple for UK taxi and private-hire operators.</p>

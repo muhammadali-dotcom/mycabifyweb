@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import SiteHeader from "../SiteHeader";
 import SiteFooter from "../SiteFooter";
@@ -25,7 +26,7 @@ export function BasicPage({ data, slug }: { data: Basic; slug?: string }) {
           <WhyBeforeAfter />
         ) : (
           <div className="detail-media">
-            <img src="/mycabify-logo.png" alt="MyCabify" />
+            <Image src="/mycabify-logo.png" alt="MyCabify" width={110} height={110} priority />
             <span>MYCABIFY / {data.label}</span>
           </div>
         )}

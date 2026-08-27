@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import SiteHeader from "../SiteHeader";
 import SiteFooter from "../SiteFooter";
@@ -96,11 +97,14 @@ export function ProductDetailPage({
           <PhoneFan kind={slug} images={heroFanImages[slug]} />
         ) : slug === "web-booker" ? (
           <div className="product-hero-visual">
-            <img
+            <Image
               className="wb-hero-img"
               src="/web-booker/webbooker_hero_final.png"
               alt="Web Booker"
+              width={1697}
+              height={927}
               draggable={false}
+              priority
             />
           </div>
         ) : slug === "dispatch-system" ? (

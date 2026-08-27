@@ -100,7 +100,7 @@ export function HeroSection({ onPlayVideo }: { onPlayVideo: () => void }) {
       </div>
       <div className="hero-art">
         <div className="device main-device">
-          <Screen image="/dispatch-system/dispatch-light.png" />
+          <Screen image="/dispatch-system/dispatch-light.png" priority />
         </div>
         <div className="device driver">
           <Screen type="phone" image="/driver-app/dashboard-light.png" />

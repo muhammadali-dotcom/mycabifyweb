@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { featureIcons } from "../../_data/featureIcons";
 
 const problems = [
@@ -50,7 +51,7 @@ export function ProblemSection() {
       </div>
       <div className="answer">
         <span className="answer-mark">
-          <img src="/mycabify-logo.png" alt="MyCabify" />
+          <Image src="/mycabify-logo.png" alt="MyCabify" width={90} height={90} />
         </span>
         <div>
           <p className="kicker pale">ONE CONNECTED ANSWER</p>

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { customers } from "../../_data/home";
 
 export function TestimonialsSection() {
@@ -17,7 +18,7 @@ export function TestimonialsSection() {
           {track.map((story, i) => (
             <div className="testimonial-card" key={`${story.name}-${i}`}>
               <div className="quote-logo">
-                <img src={story.logo} alt={`${story.name} logo`} />
+                <Image src={story.logo} alt={`${story.name} logo`} width={72} height={72} />
                 <b>{story.name}</b>
               </div>
               <blockquote>
