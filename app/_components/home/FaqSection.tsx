@@ -62,63 +62,57 @@ export function FaqSection() {
 
         <svg
           className="faq-illustration"
-          viewBox="0 0 400 320"
+          viewBox="0 0 560 390"
           fill="none"
           aria-hidden="true"
         >
           <path
-            d="M330,72 C 240,95 265,180 175,190 C 105,198 120,245 58,258"
-            stroke="var(--line)"
-            strokeWidth="10"
-            strokeLinecap="round"
+            className="faq-car-beam"
+            d="M78 384L178 88H382L482 384H78Z"
           />
-          <path
-            d="M330,72 C 240,95 265,180 175,190 C 105,198 120,245 58,258"
-            stroke="var(--paper)"
-            strokeWidth="2"
-            strokeDasharray="3 7"
-            strokeLinecap="round"
-            opacity="0.8"
-          />
-          <path
-            d="M330,72 C 240,95 265,180 175,190 C 105,198 120,245 58,258"
-            stroke="var(--green)"
-            strokeWidth="4"
-            strokeLinecap="round"
-          />
-
-          <g transform="translate(330,72)">
+          <ellipse className="faq-car-ground" cx="280" cy="342" rx="230" ry="18" />
+          <g className="faq-line-car">
             <path
-              d="M0,0 C-8,-10 -16,-18 -16,-27 C-16,-35.5 -8.8,-42 0,-42 C8.8,-42 16,-35.5 16,-27 C16,-18 8,-10 0,0 Z"
-              fill="var(--paper)"
-              stroke="var(--ink)"
-              strokeWidth="2.5"
+              className="faq-line-car-sign"
+              d="M212 152L217 102C218 92 226 84 236 84H324C334 84 342 92 343 102L348 152"
             />
-            <circle cx="0" cy="-27" r="6" fill="var(--ink)" />
-          </g>
-
-          <g transform="translate(58,258)">
+            <text
+              className="faq-line-car-label"
+              x="280"
+              y="119"
+              textAnchor="middle"
+            >
+              MyCabify
+            </text>
             <path
-              d="M0,0 C-8,-10 -16,-18 -16,-27 C-16,-35.5 -8.8,-42 0,-42 C8.8,-42 16,-35.5 16,-27 C16,-18 8,-10 0,0 Z"
-              fill="var(--green)"
+              d="M104 268C112 225 130 179 162 158C190 140 229 139 280 139C331 139 370 140 398 158C430 179 448 225 456 268"
             />
-            <circle cx="0" cy="-27" r="6" fill="white" />
-          </g>
-
-          <g className="faq-car">
             <path
-              d="M-38,10 L-38,0 Q-36,-6 -28,-8 L-20,-8 Q-14,-18 0,-18 L14,-16 Q22,-14 26,-8 L34,-8 Q40,-8 40,-2 L40,10 Z"
-              fill="var(--green)"
-              stroke="var(--ink)"
-              strokeWidth="1.5"
+              d="M143 269L165 188C170 171 184 160 202 159C254 157 306 157 358 159C376 160 390 171 395 188L417 269C325 264 235 264 143 269Z"
             />
-            <rect x="-20" y="-15" width="14" height="8" rx="2" fill="var(--paper)" />
-            <rect x="6" y="-13" width="16" height="7" rx="2" fill="var(--paper)" />
-            <circle cx="-24" cy="10" r="7" fill="var(--ink)" />
-            <circle cx="-24" cy="10" r="3" fill="var(--paper)" />
-            <circle cx="22" cy="10" r="7" fill="var(--ink)" />
-            <circle cx="22" cy="10" r="3" fill="var(--paper)" />
+            <path
+              d="M128 269L88 235H57C43 235 34 246 34 260V264C34 278 45 289 59 289H98"
+            />
+            <path
+              d="M432 269L472 235H503C517 235 526 246 526 260V264C526 278 515 289 501 289H462"
+            />
+            <path
+              d="M94 291C73 309 62 336 62 370V386"
+            />
+            <path
+              d="M466 291C487 309 498 336 498 370V386"
+            />
+            <path
+              d="M136 322C231 329 329 329 424 322"
+            />
+            <path
+              d="M181 322C247 326 313 326 379 322"
+            />
           </g>
+          <circle className="faq-line-wheel-glow" cx="119" cy="346" r="48" />
+          <circle className="faq-line-wheel-glow" cx="441" cy="346" r="48" />
+          <circle className="faq-line-wheel" cx="119" cy="346" r="27" />
+          <circle className="faq-line-wheel" cx="441" cy="346" r="27" />
         </svg>
       </div>
 

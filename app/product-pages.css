@@ -8,9 +8,19 @@
   display: grid;
   grid-template-columns: 0.85fr 1.15fr;
   gap: 4vw;
-  align-items: center;
+  align-items: start;
   background: var(--cream);
   overflow: hidden;
+}
+.solutions-hero > div:first-child,
+.product-hero > div:first-child {
+  padding-top: 24px;
+}
+.product-hero-visual {
+  min-height: 570px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .solutions-hero h1,
 .product-hero h1 {

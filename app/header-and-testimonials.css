@@ -144,6 +144,15 @@
     right: 1%;
     bottom: 1%;
   }
+}
+@media (max-width: 480px) {
+  .passenger-device {
+    width: 34%;
+    right: 0;
+    bottom: 0;
+  }
+}
+@media (max-width: 650px) {
   .testimonial-marquee {
     padding: 28px 0;
   }

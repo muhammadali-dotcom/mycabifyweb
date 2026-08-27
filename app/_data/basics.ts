@@ -67,12 +67,6 @@ export const basics: Record<string, Basic> = {
     intro: "Reserved for reviewed legal content before launch.",
     items: [],
   },
-  "cookie-policy": {
-    label: "LEGAL",
-    title: "Cookie Policy",
-    intro: "Reserved for reviewed legal content before launch.",
-    items: [],
-  },
   terms: {
     label: "LEGAL",
     title: "Terms and Conditions",

@@ -406,8 +406,9 @@
 .journey-road {
   position: relative;
   width: 100%;
-  aspect-ratio: 1080 / 430;
-  margin-top: 4vw;
+  max-width: 1000px;
+  aspect-ratio: 1080 / 260;
+  margin: 3vw auto 0;
 }
 .journey-road-svg {
   position: absolute;
@@ -419,19 +420,23 @@
 .journey-road-base {
   fill: none;
   stroke: var(--green);
-  stroke-width: 14;
+  stroke-width: 3;
   stroke-linecap: round;
   stroke-linejoin: round;
 }
-.journey-road-dashes {
+.journey-road-travelled {
   fill: none;
-  stroke: #ffffff8a;
-  stroke-width: 3;
+  stroke: var(--green);
+  stroke-width: 5;
   stroke-linecap: round;
-  stroke-dasharray: 14 18;
+  opacity: 0.9;
 }
 .journey-chevron {
-  fill: var(--paper);
+  fill: var(--green);
+}
+.journey-divider {
+  stroke: var(--line);
+  stroke-width: 1;
 }
 .journey-end-dash {
   stroke: var(--line);
@@ -439,104 +444,74 @@
   stroke-dasharray: 3 7;
   stroke-linecap: round;
 }
+.journey-end-dot {
+  fill: var(--ink);
+}
 .journey-car {
-  transform: translate(930px, 110px);
+  color: var(--ink);
 }
 .journey-car-body {
-  fill: var(--green);
-  stroke: var(--ink);
-  stroke-width: 1.5;
+  fill: var(--ink);
 }
 .journey-car-glass {
-  fill: rgba(255, 255, 255, 0.55);
+  fill: rgba(255, 255, 255, 0.6);
 }
 .journey-car-wheel {
   fill: var(--ink);
 }
-@media (prefers-reduced-motion: no-preference) {
-  .journey-road-dashes {
-    animation: journey-dash-flow 2.5s linear infinite;
-  }
-  .journey-car {
-    animation: journey-car-travel 14s ease-in-out infinite alternate;
-  }
-}
-@keyframes journey-dash-flow {
-  to {
-    stroke-dashoffset: -64;
-  }
-}
-@keyframes journey-car-travel {
-  0% {
-    transform: translate(180px, 110px) rotate(0deg);
-  }
-  39% {
-    transform: translate(930px, 110px) rotate(0deg);
-  }
-  44% {
-    transform: translate(997px, 154px) rotate(35deg);
-  }
-  50% {
-    transform: translate(1020px, 250px) rotate(90deg);
-  }
-  56% {
-    transform: translate(997px, 346px) rotate(145deg);
-  }
-  61% {
-    transform: translate(930px, 390px) rotate(180deg);
-  }
-  100% {
-    transform: translate(180px, 390px) rotate(180deg);
-  }
-}
 .journey-node {
   position: absolute;
-  transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 160px;
+  width: 170px;
+}
+.journey-node.top {
+  transform: translate(-50%, calc(-100% - 14px));
+}
+.journey-node.bottom {
+  transform: translate(-50%, 14px);
+}
+.journey-node-ghost {
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 46px;
+  font-weight: 600;
+  color: var(--ink);
+  opacity: 0.07;
+  line-height: 1;
+  margin-bottom: -20px;
+}
+.journey-node-icon {
+  width: 30px;
+  height: 30px;
+  color: var(--green);
+  margin-bottom: 12px;
+}
+.journey-node-icon svg {
+  width: 100%;
+  height: 100%;
 }
 .journey-node-label {
   font-size: 15px;
   line-height: 1.3;
   text-align: center;
-  margin-bottom: 8px;
-}
-.journey-node-connector {
-  width: 1px;
-  height: 20px;
-  background: var(--line);
-  margin-bottom: 8px;
-}
-.journey-node-circle {
-  width: 58px;
-  height: 58px;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  font-size: 14px;
-  font-weight: 800;
-  background: var(--paper);
-  border: 2px solid var(--green);
-  color: var(--green);
-}
-.journey-node-circle.solid {
-  background: var(--green);
-  border-color: var(--green);
-  color: white;
+  font-weight: 700;
 }
 .journey-end {
   position: absolute;
-  left: 0;
-  transform: translateY(-50%);
-  max-width: 130px;
-  text-align: right;
-  font-size: 13px;
+  transform: translate(-50%, -50%);
+}
+.journey-end-pill {
+  display: inline-block;
+  background: var(--ink);
+  color: white;
+  font-size: 11px;
   font-weight: 800;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--muted);
+  padding: 8px 16px;
+  border-radius: 999px;
+  white-space: nowrap;
 }
 .journey-road-mobile {
   display: none;
@@ -563,11 +538,11 @@
   .journey-road-mobile li:last-child {
     border-bottom: 1px solid var(--line);
   }
-  .journey-road-mobile .journey-node-circle {
-    width: 44px;
-    height: 44px;
-    font-size: 12px;
+  .journey-road-mobile .journey-node-icon {
+    width: 30px;
+    height: 30px;
     flex-shrink: 0;
+    margin-bottom: 0;
   }
 }
 /* ---------- Office & map ---------- */

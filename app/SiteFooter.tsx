@@ -59,7 +59,6 @@ export default function SiteFooter() {
       <div className="legal">
         <span>© 2026 MyCabify. All rights reserved.</span>
         <Link href="/privacy-policy">Privacy</Link>
-        <Link href="/cookie-policy">Cookies</Link>
         <Link href="/terms">Terms</Link>
       </div>
     </footer>

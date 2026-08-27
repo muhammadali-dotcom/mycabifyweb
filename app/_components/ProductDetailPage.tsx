@@ -95,16 +95,22 @@ export function ProductDetailPage({
         {slug === "driver-app" || slug === "passenger-app" ? (
           <PhoneFan kind={slug} images={heroFanImages[slug]} />
         ) : slug === "web-booker" ? (
-          <img
-            className="wb-hero-img"
-            src="/web-booker/webbooker_hero_final.png"
-            alt="Web Booker"
-            draggable={false}
-          />
+          <div className="product-hero-visual">
+            <img
+              className="wb-hero-img"
+              src="/web-booker/webbooker_hero_final.png"
+              alt="Web Booker"
+              draggable={false}
+            />
+          </div>
         ) : slug === "dispatch-system" ? (
-          <DispatchMockup />
+          <div className="product-hero-visual">
+            <DispatchMockup />
+          </div>
         ) : (
-          <ProductVisual kind={slug} />
+          <div className="product-hero-visual">
+            <ProductVisual kind={slug} />
+          </div>
         )}
       </section>
       <section id="film" className="product-film refined">
