@@ -120,7 +120,23 @@ const nodes = [
 const chevronMids = [305, 555, 805];
 
 const roadPath = "M180,70 L930,70 C1020,70 1020,190 930,190 L180,190";
-const travelledPath = "M180,70 L360,70";
+const travelledPath = roadPath;
+
+// Approximate fraction (0-1) of the total path length reached at each x
+// position, used to stagger the chevron pulse animation. Top row runs
+// left-to-right (180 -> 930), then the corner curve, then the bottom row
+// runs right-to-left (930 -> 180).
+const TOP_LEN = 750; // 930 - 180
+const CURVE_LEN = 200; // approx corner curve length
+const BOTTOM_LEN = 750;
+const TOTAL_LEN = TOP_LEN + CURVE_LEN + BOTTOM_LEN;
+
+function chevronDelay(x: number, row: "top" | "bottom") {
+  const distance =
+    row === "top" ? x - 180 : TOP_LEN + CURVE_LEN + (930 - x);
+  const fraction = distance / TOTAL_LEN;
+  return `${(fraction * 0.85 * 7).toFixed(2)}s`;
+}
 
 export function SupportJourney() {
   return (
@@ -139,12 +155,17 @@ export function SupportJourney() {
           aria-hidden="true"
         >
           <path d={roadPath} className="journey-road-base" />
-          <path d={travelledPath} className="journey-road-travelled" />
+          <path
+            d={travelledPath}
+            pathLength={100}
+            className="journey-road-travelled"
+          />
 
           {chevronMids.map((x) => (
             <polygon
               key={`chev-top-${x}`}
               className="journey-chevron"
+              style={{ animationDelay: chevronDelay(x, "top") }}
               points={`${x - 6},${rowY.top - 7} ${x - 6},${rowY.top + 7} ${x + 9},${rowY.top}`}
             />
           ))}
@@ -152,6 +173,7 @@ export function SupportJourney() {
             <polygon
               key={`chev-bottom-${x}`}
               className="journey-chevron"
+              style={{ animationDelay: chevronDelay(x, "bottom") }}
               points={`${x + 6},${rowY.bottom - 7} ${x + 6},${rowY.bottom + 7} ${x - 9},${rowY.bottom}`}
             />
           ))}
@@ -185,16 +207,6 @@ export function SupportJourney() {
               className="journey-divider"
             />
           ))}
-
-          <g className="journey-car" transform="translate(250, 70) scale(0.85)">
-            <rect x="-18" y="-8" width="36" height="16" rx="8" className="journey-car-body" />
-            <rect x="-10" y="-5" width="8" height="10" rx="2" className="journey-car-glass" />
-            <rect x="2" y="-5" width="8" height="10" rx="2" className="journey-car-glass" />
-            <rect x="-13" y="-9.5" width="7" height="3" rx="1.5" className="journey-car-wheel" />
-            <rect x="-13" y="6.5" width="7" height="3" rx="1.5" className="journey-car-wheel" />
-            <rect x="6" y="-9.5" width="7" height="3" rx="1.5" className="journey-car-wheel" />
-            <rect x="6" y="6.5" width="7" height="3" rx="1.5" className="journey-car-wheel" />
-          </g>
         </svg>
 
         {nodes.map((n) => (

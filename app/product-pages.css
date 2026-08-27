@@ -30,6 +30,9 @@
   font-weight: 520;
   margin: 0;
 }
+.web-booker-hero h1 {
+  font-size: clamp(28px, 4vw, 50px);
+}
 .solutions-hero > div > p:not(.kicker),
 .product-hero > div > p:not(.kicker) {
   max-width: 650px;

@@ -76,7 +76,9 @@ export function ProductDetailPage({
   return (
     <>
       <SiteHeader />
-      <section className="product-hero">
+      <section
+        className={`product-hero${slug === "web-booker" ? " web-booker-hero" : ""}`}
+      >
         <div>
           <p className="kicker">{data.label}</p>
           <h1>
