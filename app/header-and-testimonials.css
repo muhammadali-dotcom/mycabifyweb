@@ -54,11 +54,9 @@
 /* Testimonial marquee: one continuous full-bleed strip, scrolling continuously */
 .testimonial-marquee {
   position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-  width: 100vw;
+  margin-left: calc(-1 * var(--content-pad-x));
+  margin-right: calc(-1 * var(--content-pad-x));
+  width: calc(100% + var(--content-pad-x) * 2);
   overflow: hidden;
   background: var(--paper);
   padding: 40px 0;

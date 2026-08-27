@@ -1493,10 +1493,15 @@
     font-size: 32px;
   }
   .about-visual-stack {
-    height: 260px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
   }
   .value-card {
+    position: static;
     width: 100%;
+    animation: none;
   }
   .legal-hero h1 {
     font-size: 2.1rem;

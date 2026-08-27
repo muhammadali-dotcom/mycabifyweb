@@ -7,6 +7,7 @@ import "./about-contact.css";
 import { WhatsAppButton } from "./_components/home/WhatsAppButton";
 import { WhatsAppBubble } from "./_components/home/WhatsAppBubble";
 import { AnnouncementBanner } from "./_components/AnnouncementBanner";
+import { ScrollToTop } from "./_components/ScrollToTop";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -56,6 +57,7 @@ export default function RootLayout({
       <body
         className={`${poppins.variable} antialiased`}
       >
+        <ScrollToTop />
         <AnnouncementBanner />
         {children}
         <WhatsAppButton />
