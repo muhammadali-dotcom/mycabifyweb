@@ -1010,8 +1010,6 @@ header nav {
 .faq {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
   background: var(--paper);
 }
 .faq h2 {
@@ -1021,14 +1019,10 @@ header nav {
 .faq-intro-panel {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
 }
 .faq-accordion-panel {
   min-width: 0;
   width: 100%;
-  max-width: 720px;
-  margin: 0 auto;
 }
 .faq-card {
   background: var(--cream);

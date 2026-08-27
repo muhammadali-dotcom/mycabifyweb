@@ -48,7 +48,7 @@ const faqs = [
 ];
 
 export function FaqSection() {
-  const [openIndex, setOpenIndex] = useState(0);
+  const [openIndex, setOpenIndex] = useState(-1);
 
   return (
     <section className="faq">
