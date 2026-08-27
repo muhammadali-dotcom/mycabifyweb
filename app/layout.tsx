@@ -60,8 +60,9 @@ export default function RootLayout({
         <ScrollToTop />
         <AnnouncementBanner />
         {children}
-        <WhatsAppButton />
-        <WhatsAppBubble />
+        {/* WhatsApp icon disabled temporarily — re-enable by uncommenting below */}
+        {/* <WhatsAppButton /> */}
+        {/* <WhatsAppBubble /> */}
       </body>
     </html>
   );
