@@ -21,7 +21,7 @@ const heroHeadlines = [
   },
 ];
 
-const ROTATE_MS = 5800;
+const ROTATE_MS = 3000;
 
 function HeadlineText({ text, highlight }: { text: string; highlight: string }) {
   const idx = text.indexOf(highlight);
@@ -100,7 +100,11 @@ export function HeroSection({ onPlayVideo }: { onPlayVideo: () => void }) {
       </div>
       <div className="hero-art">
         <div className="device main-device">
-          <Screen image="/dispatch-system/dispatch-light.png" priority />
+          <Screen
+            image="/dispatch-system/dispatch-light.png"
+            priority
+            sizes="(max-width: 900px) 80vw, 650px"
+          />
         </div>
         <div className="device driver">
           <Screen type="phone" image="/driver-app/dashboard-light.png" />

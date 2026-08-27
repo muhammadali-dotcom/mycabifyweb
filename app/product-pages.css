@@ -182,9 +182,13 @@
 .wb-hero-img {
   display: block;
   width: 100%;
-  max-width: 720px;
+  max-width: 800px;
   height: auto;
   justify-self: end;
+  transition: transform 0.3s ease;
+}
+.wb-hero-img:hover {
+  transform: scale(1.04) translateY(-6px);
 }
 /* Hero: dispatch-system photo showcase — realistic 2 monitor + 2 laptop stage */
 .mc-device-showcase {
@@ -199,7 +203,7 @@
   transition: transform 0.35s ease;
 }
 .mc-device-showcase:hover {
-  transform: translateY(-4px);
+  transform: scale(1.04) translateY(-6px);
 }
 .mc-device-showcase::after {
   content: "";
@@ -794,7 +798,7 @@
     transform: translate(-50%, -50%) translate(236px, 22px) rotate(13deg) scale(0.8);
   }
   .wb-hero-img {
-    max-width: 560px;
+    max-width: 620px;
     justify-self: center;
   }
   .mc-device-showcase {

@@ -91,6 +91,10 @@
 .about-visual-stack {
   position: relative;
   height: 480px;
+  transition: transform 0.3s ease;
+}
+.about-visual-stack:hover {
+  transform: scale(1.04) translateY(-6px);
 }
 .about-stats {
   position: relative;

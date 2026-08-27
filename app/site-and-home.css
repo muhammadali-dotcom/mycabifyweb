@@ -416,6 +416,10 @@ header nav {
 .hero-art {
   height: 480px;
   position: relative;
+  transition: transform 0.3s ease;
+}
+.hero-art:hover {
+  transform: scale(1.04) translateY(-6px);
 }
 .device {
   position: absolute;
@@ -1003,10 +1007,10 @@ header nav {
 }
 /* FAQ section */
 .faq {
-  display: grid;
-  grid-template-columns: 0.85fr 1.15fr;
-  gap: 5vw;
-  align-items: start;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
   background: var(--paper);
 }
 .faq h2 {
@@ -1016,66 +1020,34 @@ header nav {
 .faq-intro-panel {
   display: flex;
   flex-direction: column;
-}
-.faq-intro-copy {
-  max-width: 420px;
-  color: var(--muted);
-  line-height: 1.7;
-  margin: 0 0 5vw;
-}
-.faq-illustration {
-  width: 100%;
-  max-width: 520px;
-  height: auto;
-  margin: 0 0 0 -18px;
-  display: block;
-}
-.faq-car-beam {
-  fill: rgba(17, 116, 71, 0.055);
-}
-.faq-car-ground {
-  fill: rgba(17, 116, 71, 0.045);
-}
-.faq-line-car {
-  stroke: #0b6840;
-  stroke-width: 2.6;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-.faq-line-car-sign {
-  fill: var(--paper);
-}
-.faq-line-car-label {
-  fill: var(--green);
-  stroke: none;
-  font-size: 17px;
-  font-weight: 900;
-  letter-spacing: -0.02em;
-}
-.faq-line-wheel-glow {
-  fill: rgba(17, 116, 71, 0.13);
-}
-.faq-line-wheel {
-  fill: var(--paper);
-  stroke: #0b6840;
-  stroke-width: 2.6;
+  align-items: center;
+  text-align: center;
 }
 .faq-accordion-panel {
   min-width: 0;
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
 }
 .faq-card {
   background: var(--cream);
   border: 1px solid var(--line);
   border-radius: 18px;
-  box-shadow: 0 14px 30px #07150d0f;
+  box-shadow: 0 20px 44px #07150d14;
   padding: 8px 28px;
   overflow: hidden;
 }
 .faq-item {
   border-top: 1px solid var(--line);
+  border-left: 3px solid transparent;
+  padding-left: 14px;
+  transition: border-color 0.25s;
 }
 .faq-item:first-child {
   border-top: 0;
+}
+.faq-item.is-open {
+  border-left-color: var(--green);
 }
 .faq-item-header {
   display: flex;
@@ -1093,14 +1065,34 @@ header nav {
   font-weight: 500;
   padding: 22px 0;
 }
+.faq-item-header:hover .faq-question {
+  color: var(--green);
+}
 .faq-item-header[aria-expanded="true"] {
   font-weight: 800;
+}
+.faq-item-header[aria-expanded="true"] .faq-question {
+  color: var(--green);
+}
+.faq-question {
+  transition: color 0.2s;
 }
 .faq-item-answer {
   max-width: 780px;
   color: var(--muted);
   line-height: 1.65;
   margin: -8px 0 22px;
+  animation: faq-answer-in 0.25s ease;
+}
+@keyframes faq-answer-in {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 .faq-chevron {
   flex-shrink: 0;
@@ -1547,24 +1539,34 @@ footer > div > p {
   min-height: 85px;
 }
 .video-overlay {
-  padding: 0;
+  padding: clamp(18px, 4vw, 56px);
 }
 .video-modal {
   background: var(--ink);
-  width: 100vw;
-  height: 100vh;
-  max-height: 100vh;
+  width: min(1080px, 92vw);
+  aspect-ratio: 16 / 9;
+  height: auto;
+  max-height: calc(100vh - clamp(36px, 8vw, 112px));
   padding: 0;
   overflow: hidden;
+  border: 1px solid rgba(241, 237, 227, 0.26);
+  border-radius: 24px;
+  box-shadow: 0 34px 90px rgba(0, 0, 0, 0.42), 0 0 0 1px rgba(17, 116, 71, 0.28);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .video-modal .close {
   color: var(--cream);
-  right: 20px;
-  top: 16px;
-  font-size: 34px;
+  right: 14px;
+  top: 12px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(6, 18, 12, 0.72);
+  border: 1px solid rgba(241, 237, 227, 0.28);
+  font-size: 30px;
+  line-height: 1;
   z-index: 1;
 }
 .video-modal > div,
@@ -1597,13 +1599,8 @@ footer > div > p {
   .hero,
   .section-head,
   .why,
-  .implementation,
-  .faq {
+  .implementation {
     grid-template-columns: 1fr;
-  }
-  .faq-illustration {
-    max-width: 320px;
-    margin: 0 auto;
   }
   .why {
     gap: 45px;
@@ -1776,6 +1773,10 @@ footer > div > p {
   box-shadow: 24px 24px var(--ink);
   font-size: 10px;
   letter-spacing: 0.12em;
+  transition: transform 0.3s ease;
+}
+.detail-media:hover {
+  transform: scale(1.04) translateY(-6px);
 }
 .detail-media i {
   height: 1px;

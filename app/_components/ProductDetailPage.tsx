@@ -83,7 +83,7 @@ export function ProductDetailPage({
           <p>{data.intro}</p>
           <div>
             <a className="solid" href="#film">
-              Watch It in Action ↗
+              Watch Overview ↗
             </a>
             <Link className="line" href="/contact">
               Book a Demo

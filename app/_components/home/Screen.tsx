@@ -4,10 +4,12 @@ export function Screen({
   type = "desktop",
   image,
   priority = false,
+  sizes = "(max-width: 640px) 60vw, 320px",
 }: {
   type?: string;
   image?: string;
   priority?: boolean;
+  sizes?: string;
 }) {
   if (image) {
     return (
@@ -19,7 +21,7 @@ export function Screen({
           className="screen-shot"
           draggable={false}
           priority={priority}
-          sizes="(max-width: 640px) 60vw, 320px"
+          sizes={sizes}
         />
       </div>
     );
