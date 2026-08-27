@@ -216,7 +216,12 @@ export function SupportJourney() {
             style={{ left: `${(n.x / 1080) * 100}%`, top: `${(n.y / 260) * 100}%` }}
           >
             <span className="journey-node-ghost">{String(n.number).padStart(2, "0")}</span>
-            <span className="journey-node-icon">
+            <span
+              className="journey-node-icon"
+              style={{
+                animationDelay: chevronDelay(n.x, n.y === rowY.top ? "top" : "bottom"),
+              }}
+            >
               <n.Icon />
             </span>
             <b className="journey-node-label">{n.label}</b>
