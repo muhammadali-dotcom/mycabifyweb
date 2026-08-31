@@ -1694,6 +1694,7 @@ footer > div > p {
   }
   .hero-art {
     height: 300px;
+    margin-top: 20px;
   }
   .main-device {
     width: 78%;
@@ -2228,6 +2229,7 @@ footer > div > p {
   }
   .hero-art {
     height: 230px;
+    margin-top: 24px;
   }
   .main-device {
     width: 70%;
