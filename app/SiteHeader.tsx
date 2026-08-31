@@ -102,43 +102,58 @@ export default function SiteHeader({ onDemo }: { onDemo?: () => void }) {
     open: boolean;
     setOpen: (open: boolean) => void;
     active: boolean;
-  }) => (
-    <div
-      className={`solution-nav ${open ? "expanded" : ""}`}
-      {...(canHover
-        ? {
-            onMouseEnter: () => setOpen(true),
-            onMouseLeave: () => setOpen(false),
-          }
-        : {})}
-    >
+  }) => {
+    const menuId = `mega-menu-${label.toLowerCase().replaceAll(" ", "-")}`;
+    return (
       <div
-        className="solutions-trigger"
-        onClick={() => setOpen(!open)}
+        className={`solution-nav ${open ? "expanded" : ""}`}
+        {...(canHover
+          ? {
+              onMouseEnter: () => setOpen(true),
+              onMouseLeave: () => setOpen(false),
+            }
+          : {})}
       >
-        <span className={active ? "active" : ""}>{label}</span>
-        <button aria-expanded={open} aria-label={`Toggle ${label.toLowerCase()} menu`}>
+        <button
+          type="button"
+          className="solutions-trigger"
+          onClick={() => setOpen(!open)}
+          aria-expanded={open}
+          aria-controls={menuId}
+          aria-label={`Toggle ${label.toLowerCase()} menu`}
+        >
+          <span className={active ? "active" : ""}>{label}</span>
           <i>
-            <svg viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+            <svg
+              viewBox="0 0 16 16"
+              width="12"
+              height="12"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden="true"
+            >
               <path d="m3 5.5 5 5 5-5" />
             </svg>
           </i>
         </button>
+        <div className="mega" id={menuId}>
+          {items.map((s) => (
+            <Link key={s.name} href={s.href} onClick={close}>
+              <span className="mega-icon">{s.icon}</span>
+              <div>
+                <b>{s.name}</b>
+                <small>{s.copy}</small>
+              </div>
+              <i>↗</i>
+            </Link>
+          ))}
+        </div>
       </div>
-      <div className="mega">
-        {items.map((s) => (
-          <Link key={s.name} href={s.href} onClick={close}>
-            <span className="mega-icon">{s.icon}</span>
-            <div>
-              <b>{s.name}</b>
-              <small>{s.copy}</small>
-            </div>
-            <i>↗</i>
-          </Link>
-        ))}
-      </div>
-    </div>
-  );
+    );
+  };
 
   useEffect(() => {
     const outside = (e: MouseEvent) => {
@@ -165,7 +180,7 @@ export default function SiteHeader({ onDemo }: { onDemo?: () => void }) {
         <Image src="/mycabify-logo.png" alt="MyCabify" width={44} height={44} priority />
         <b>MyCabify</b>
       </Link>
-      <nav className={mobile ? "open" : ""}>
+      <nav id="site-nav" className={mobile ? "open" : ""}>
         <Link href="/" onClick={close} className={isActive("/") ? "active" : ""}>
           Home
         </Link>
@@ -183,7 +198,11 @@ export default function SiteHeader({ onDemo }: { onDemo?: () => void }) {
           setOpen: setNewSolutionOpen,
           active: isSolutionsActive,
         })}
-        <Link href="/why-mycabify" onClick={close} className={isActive("/why-mycabify") ? "active" : ""}>
+        <Link
+          href="/why-mycabify"
+          onClick={close}
+          className={isActive("/why-mycabify") ? "active" : ""}
+        >
           Why MyCabify
         </Link>
         <Link href="/about" onClick={close} className={isActive("/about") ? "active" : ""}>
@@ -193,7 +212,9 @@ export default function SiteHeader({ onDemo }: { onDemo?: () => void }) {
           Contact
         </Link>
         <div className="mobile-actions">
-          <a className="phone-link" href="tel:02084558888">🇬🇧 020 8455 8888</a>
+          <a className="phone-link" href="tel:02084558888">
+            🇬🇧 020 8455 8888
+          </a>
           {onDemo ? (
             <button
               className="pill"
@@ -212,7 +233,9 @@ export default function SiteHeader({ onDemo }: { onDemo?: () => void }) {
         </div>
       </nav>
       <div className="header-cta">
-        <a className="phone-link" href="tel:02084558888">🇬🇧 020 8455 8888</a>
+        <a className="phone-link" href="tel:02084558888">
+          🇬🇧 020 8455 8888
+        </a>
         {onDemo ? (
           <button className="pill" onClick={onDemo}>
             Book a Demo <i>↗</i>
@@ -228,6 +251,7 @@ export default function SiteHeader({ onDemo }: { onDemo?: () => void }) {
         onClick={() => setMobile(!mobile)}
         aria-label="Toggle navigation"
         aria-expanded={mobile}
+        aria-controls="site-nav"
       >
         {mobile ? "×" : "☰"}
       </button>

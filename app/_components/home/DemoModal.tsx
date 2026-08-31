@@ -1,16 +1,13 @@
 export function DemoModal({ close }: { close: () => void }) {
   return (
-    <div className="overlay">
+    <div className="overlay" role="dialog" aria-modal="true" aria-label="Book a personalised demo">
       <div className="modal">
-        <button className="close" onClick={close}>
+        <button className="close" onClick={close} aria-label="Close">
           ×
         </button>
         <p className="kicker">BOOK A PERSONALISED DEMO</p>
         <h2>Tell us about your operation.</h2>
-        <p>
-          Share a few details and our team will contact you to arrange the right
-          conversation.
-        </p>
+        <p>Share a few details and our team will contact you to arrange the right conversation.</p>
         <form
           onSubmit={(e) => {
             e.preventDefault();
@@ -29,12 +26,7 @@ export function DemoModal({ close }: { close: () => void }) {
             <label className="sr-only" htmlFor="demo-email">
               Work email
             </label>
-            <input
-              id="demo-email"
-              required
-              type="email"
-              placeholder="Work email"
-            />
+            <input id="demo-email" required type="email" placeholder="Work email" />
             <label className="sr-only" htmlFor="demo-phone">
               Phone number
             </label>
@@ -43,10 +35,7 @@ export function DemoModal({ close }: { close: () => void }) {
           <label className="sr-only" htmlFor="demo-current-system">
             Current system
           </label>
-          <input
-            id="demo-current-system"
-            placeholder="Current system (if any)"
-          />
+          <input id="demo-current-system" placeholder="Current system (if any)" />
           <label className="sr-only" htmlFor="demo-fleet-size">
             Fleet size
           </label>
@@ -61,10 +50,7 @@ export function DemoModal({ close }: { close: () => void }) {
           <label className="sr-only" htmlFor="demo-message">
             What would you like to improve?
           </label>
-          <textarea
-            id="demo-message"
-            placeholder="What would you like to improve?"
-          />
+          <textarea id="demo-message" placeholder="What would you like to improve?" />
           <button className="solid">Send enquiry ↗</button>
         </form>
       </div>

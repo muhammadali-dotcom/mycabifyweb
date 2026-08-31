@@ -70,7 +70,9 @@
   color: white;
   border-radius: 10px;
   padding: 9px 16px;
-  transition: transform 0.25s, background 0.25s;
+  transition:
+    transform 0.25s,
+    background 0.25s;
 }
 .store-badge:hover {
   background: var(--green);
@@ -389,7 +391,9 @@
   align-items: center;
   justify-content: center;
   gap: 6px;
-  box-shadow: 0 28px 55px #07150d2e, 0 0 0 10px #1174470f;
+  box-shadow:
+    0 28px 55px #07150d2e,
+    0 0 0 10px #1174470f;
   text-align: center;
   animation: eco-pulse 3.2s ease-in-out infinite;
 }
@@ -404,11 +408,16 @@
   color: #9fd6b6;
 }
 @keyframes eco-pulse {
-  0%, 100% {
-    box-shadow: 0 28px 55px #07150d2e, 0 0 0 10px #11744714;
+  0%,
+  100% {
+    box-shadow:
+      0 28px 55px #07150d2e,
+      0 0 0 10px #11744714;
   }
   50% {
-    box-shadow: 0 28px 55px #07150d2e, 0 0 0 18px #11744705;
+    box-shadow:
+      0 28px 55px #07150d2e,
+      0 0 0 18px #11744705;
   }
 }
 .eco-nodes {
@@ -427,7 +436,10 @@
   flex-direction: column;
   gap: 4px;
   box-shadow: 0 14px 30px #07150d14;
-  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s,
+    border-color 0.3s;
   animation: eco-float 4.5s ease-in-out infinite;
 }
 .eco-node:hover {
@@ -467,7 +479,8 @@
   animation-delay: -3.3s;
 }
 @keyframes eco-float {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0);
   }
   50% {
@@ -636,7 +649,10 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
-  transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+  transition:
+    transform 0.25s,
+    box-shadow 0.25s,
+    border-color 0.25s;
 }
 .features-grid article:hover {
   transform: translateY(-4px);

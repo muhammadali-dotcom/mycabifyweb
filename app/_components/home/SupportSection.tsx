@@ -43,12 +43,10 @@ export function SupportSection() {
       <div className="support-cards">
         {support.map((x) => (
           <div key={x[0]} className="support-card">
-            <div className="support-icon">
-              {featureIcons[x[1]]}
-            </div>
+            <div className="support-icon">{featureIcons[x[1]]}</div>
             <span className="support-label">{x[0]}</span>
-              <p className="support-description">{x[2]}</p>
-            </div>
+            <p className="support-description">{x[2]}</p>
+          </div>
         ))}
       </div>
     </section>

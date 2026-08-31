@@ -6,11 +6,7 @@ import SiteFooter from "../SiteFooter";
 import type { Solution } from "../_data/solutions";
 import { featureIcons } from "../_data/featureIcons";
 
-export function SolutionDetailPage({
-  data,
-}: {
-  data: Solution;
-}) {
+export function SolutionDetailPage({ data }: { data: Solution }) {
   return (
     <>
       <SiteHeader />

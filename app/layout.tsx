@@ -14,8 +14,7 @@ const poppins = Poppins({
 });
 
 const title = "MyCabify  - Taxi Dispatch Software";
-const description =
-  "Complete taxi management, made simple for UK taxi operators.";
+const description = "Complete taxi management, made simple for UK taxi operators.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://mycabify.com"),
@@ -42,6 +41,15 @@ export const metadata: Metadata = {
   },
 };
 
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "MyCabify",
+  url: "https://mycabify.com",
+  logo: "https://mycabify.com/mycabify-logo.png",
+  description,
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -49,9 +57,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${poppins.variable} antialiased`}
-      >
+      <body className={`${poppins.variable} antialiased`}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
         <ScrollToTop />
         <AnnouncementBanner />
         {children}

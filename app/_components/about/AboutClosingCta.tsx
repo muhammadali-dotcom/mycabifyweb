@@ -6,8 +6,8 @@ export function AboutClosingCta() {
       <p className="kicker">WORK WITH MYCABIFY</p>
       <h2>Let’s build the right platform around your business.</h2>
       <p>
-        Tell us about your fleet, current system and operational requirements.
-        We’ll show you how MyCabify can fit your business.
+        Tell us about your fleet, current system and operational requirements. We’ll show you how
+        MyCabify can fit your business.
       </p>
       <div>
         <Link className="solid" href="/contact#enquiry">

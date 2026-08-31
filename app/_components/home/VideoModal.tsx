@@ -4,9 +4,14 @@ export function VideoModal({ video, close }: { video: string; close: () => void 
   const id = videoIds[video];
 
   return (
-    <div className="overlay video-overlay">
+    <div
+      className="overlay video-overlay"
+      role="dialog"
+      aria-modal="true"
+      aria-label={`${video} video`}
+    >
       <div className="video-modal">
-        <button className="close" onClick={close}>
+        <button className="close" onClick={close} aria-label="Close">
           ×
         </button>
         {id ? (

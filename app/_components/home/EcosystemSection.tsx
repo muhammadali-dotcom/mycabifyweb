@@ -12,7 +12,6 @@ export function EcosystemSection({ onPlayVideo }: { onPlayVideo: (name: string) 
             Four connected features. <em>One complete operation.</em>
           </h2>
         </div>
-
       </div>
       <div className="solution-grid">
         {solutions.map((s) => (

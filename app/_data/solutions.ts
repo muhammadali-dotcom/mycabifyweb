@@ -113,7 +113,8 @@ export const solutions: Record<string, Solution> = {
         icon: "dispatch",
         title: "Preferred driver handling",
         copy: "Give regular business travellers the familiar, reliable service they expect, with account preferences visible before every journey.",
-        problem: "Valued clients can feel like just another booking when their needs are not remembered.",
+        problem:
+          "Valued clients can feel like just another booking when their needs are not remembered.",
       },
       {
         icon: "calendar",
@@ -172,7 +173,8 @@ export const solutions: Record<string, Solution> = {
         icon: "booking",
         title: "Journeys built around the passenger",
         copy: "Match every booking with the vehicle, driver and support details that make the journey feel easier.",
-        problem: "Passengers should not have to fit around a system that does not remember their needs.",
+        problem:
+          "Passengers should not have to fit around a system that does not remember their needs.",
       },
       {
         icon: "clarity",

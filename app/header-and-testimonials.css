@@ -446,7 +446,10 @@
 .pill i {
   width: 28px;
   height: 28px;
-  transition: transform 0.25s, background 0.25s, color 0.25s;
+  transition:
+    transform 0.25s,
+    background 0.25s,
+    color 0.25s;
 }
 .pill:hover {
   background: var(--green);

@@ -36,7 +36,11 @@ export const solutionIcons: Record<string, ReactElement> = {
   "corporate-travel": (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
       <rect x="3" y="8" width="18" height="12" rx="1.5" />
-      <path d="M8 8V5.5A1.5 1.5 0 0 1 9.5 4h5A1.5 1.5 0 0 1 16 5.5V8M3 13h18" strokeLinecap="round" strokeLinejoin="round" />
+      <path
+        d="M8 8V5.5A1.5 1.5 0 0 1 9.5 4h5A1.5 1.5 0 0 1 16 5.5V8M3 13h18"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
     </svg>
   ),
   "private-hire-taxi-firms": (
@@ -51,7 +55,11 @@ export const solutionIcons: Record<string, ReactElement> = {
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
       <circle cx="17" cy="18.5" r="3.2" />
       <circle cx="10" cy="6" r="1.6" />
-      <path d="M10 8v5l3.2 2.2M10 13H6.5M13 8.5h4l2 3.5" strokeLinecap="round" strokeLinejoin="round" />
+      <path
+        d="M10 8v5l3.2 2.2M10 13H6.5M13 8.5h4l2 3.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
     </svg>
   ),
 };

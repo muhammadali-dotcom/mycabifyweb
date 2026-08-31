@@ -132,8 +132,7 @@ const BOTTOM_LEN = 750;
 const TOTAL_LEN = TOP_LEN + CURVE_LEN + BOTTOM_LEN;
 
 function chevronDelay(x: number, row: "top" | "bottom") {
-  const distance =
-    row === "top" ? x - 180 : TOP_LEN + CURVE_LEN + (930 - x);
+  const distance = row === "top" ? x - 180 : TOP_LEN + CURVE_LEN + (930 - x);
   const fraction = distance / TOTAL_LEN;
   return `${(fraction * 0.85 * 7).toFixed(2)}s`;
 }
@@ -143,9 +142,7 @@ export function SupportJourney() {
     <section className="mc-section support-journey">
       <p className="kicker">CUSTOMER JOURNEY / FROM SETUP TO ONGOING USE</p>
       <h2>Support does not stop when the software goes live.</h2>
-      <p className="clarify">
-        A guided process from the first conversation to everyday support.
-      </p>
+      <p className="clarify">A guided process from the first conversation to everyday support.</p>
 
       <div className="journey-road">
         <svg
@@ -155,11 +152,7 @@ export function SupportJourney() {
           aria-hidden="true"
         >
           <path d={roadPath} className="journey-road-base" />
-          <path
-            d={travelledPath}
-            pathLength={100}
-            className="journey-road-travelled"
-          />
+          <path d={travelledPath} pathLength={100} className="journey-road-travelled" />
 
           {chevronMids.map((x) => (
             <polygon
@@ -178,13 +171,7 @@ export function SupportJourney() {
             />
           ))}
 
-          <line
-            x1="60"
-            y1={rowY.bottom}
-            x2="180"
-            y2={rowY.bottom}
-            className="journey-end-dash"
-          />
+          <line x1="60" y1={rowY.bottom} x2="180" y2={rowY.bottom} className="journey-end-dash" />
           <circle cx="60" cy={rowY.bottom} r="5" className="journey-end-dot" />
 
           {chevronMids.map((x) => (

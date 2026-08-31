@@ -18,12 +18,12 @@ export const legal: Record<"terms" | "privacy-policy", LegalDoc> = {
     title: "Terms and Conditions",
     updated: "Effective 31 August 2026",
     intro:
-      "These Terms and Conditions (\"Terms\") govern your access to and use of the MyCabify website, mobile application and ride-hailing service (together, the \"Platform\") operated by MyCabify Ltd (\"MyCabify\", \"we\", \"us\", \"our\"). By creating an account, booking a ride, or otherwise using the Platform, you (\"you\", \"your\", the \"User\") agree to be bound by these Terms. If you do not agree, you must not use the Platform.",
+      'These Terms and Conditions ("Terms") govern your access to and use of the MyCabify website, mobile application and ride-hailing service (together, the "Platform") operated by MyCabify Ltd ("MyCabify", "we", "us", "our"). By creating an account, booking a ride, or otherwise using the Platform, you ("you", "your", the "User") agree to be bound by these Terms. If you do not agree, you must not use the Platform.',
     sections: [
       {
         heading: "About the Service",
         paragraphs: [
-          "MyCabify operates a technology platform that connects Users seeking transport (\"Riders\") with independent, licensed drivers (\"Drivers\") who provide private hire vehicle services. MyCabify is a booking intermediary. Except where MyCabify itself holds the relevant private hire operator licence for a journey, the transport service is provided by the Driver or the licensed operator dispatching that Driver, and not directly by MyCabify.",
+          'MyCabify operates a technology platform that connects Users seeking transport ("Riders") with independent, licensed drivers ("Drivers") who provide private hire vehicle services. MyCabify is a booking intermediary. Except where MyCabify itself holds the relevant private hire operator licence for a journey, the transport service is provided by the Driver or the licensed operator dispatching that Driver, and not directly by MyCabify.',
         ],
       },
       {
@@ -153,7 +153,7 @@ export const legal: Record<"terms" | "privacy-policy", LegalDoc> = {
     title: "Privacy Policy",
     updated: "Last updated: 31 August 2026",
     intro:
-      "This Privacy Policy explains how MyCabify Ltd (\"MyCabify\", \"we\", \"us\", \"our\") collects, uses, shares and protects your personal data when you use the MyCabify website, mobile application and ride-booking service (the \"Service\"), and explains your rights under UK data protection law. By using the Service, you acknowledge that your personal data will be processed as described in this Policy.",
+      'This Privacy Policy explains how MyCabify Ltd ("MyCabify", "we", "us", "our") collects, uses, shares and protects your personal data when you use the MyCabify website, mobile application and ride-booking service (the "Service"), and explains your rights under UK data protection law. By using the Service, you acknowledge that your personal data will be processed as described in this Policy.',
     sections: [
       {
         heading: "Who We Are",
@@ -270,7 +270,7 @@ export const legal: Record<"terms" | "privacy-policy", LegalDoc> = {
       {
         heading: "Changes to This Policy",
         paragraphs: [
-          "We may update this Privacy Policy from time to time to reflect changes in our practices, technology, legal requirements, or other operational reasons. Where changes are material, we will notify you by email and/or a prominent notice on the Service before the changes take effect, and update the \"Last updated\" date above.",
+          'We may update this Privacy Policy from time to time to reflect changes in our practices, technology, legal requirements, or other operational reasons. Where changes are material, we will notify you by email and/or a prominent notice on the Service before the changes take effect, and update the "Last updated" date above.',
         ],
       },
       {

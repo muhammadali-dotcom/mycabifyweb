@@ -12,11 +12,16 @@ export function ProductVisual({
   priority?: boolean;
 }) {
   return (
-    <div
-      className={`solution-ui ${kind}${phone ? " phone" : ""}${image ? " has-image" : ""}`}
-    >
+    <div className={`solution-ui ${kind}${phone ? " phone" : ""}${image ? " has-image" : ""}`}>
       {image ? (
-        <Image src={image} alt="" fill className="phone-shot" priority={priority} sizes="(max-width: 640px) 60vw, 320px" />
+        <Image
+          src={image}
+          alt={`${kind.replaceAll("-", " ")} screenshot`}
+          fill
+          className="phone-shot"
+          priority={priority}
+          sizes="(max-width: 640px) 60vw, 320px"
+        />
       ) : (
         <>
           <div>

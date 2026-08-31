@@ -80,23 +80,25 @@ export function EnquiryArea() {
           <p className="kicker">BOOK A PERSONALISED DEMO</p>
           <h2>How to contact us</h2>
           <p className="enquiry-intro-copy">
-            Getting in touch with MyCabify is simple. Fill out the form, email us, or book a demo directly, whichever works best for you. Whether you have questions about our platform, pricing, or support, our team will get back to you with the answers you need.
+            Getting in touch with MyCabify is simple. Fill out the form, email us, or book a demo
+            directly, whichever works best for you. Whether you have questions about our platform,
+            pricing, or support, our team will get back to you with the answers you need.
           </p>
-                      <a className="enquiry-contact-email" href="mailto:info@mycabify.com">
-              <svg
-                viewBox="0 0 24 24"
-                width="18"
-                height="18"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.8"
-                aria-hidden="true"
-              >
-                <rect x="3" y="5" width="18" height="14" rx="2" />
-                <path d="m4 7 8 6 8-6" />
-              </svg>
-              info@mycabify.com
-            </a>
+          <a className="enquiry-contact-email" href="mailto:info@mycabify.com">
+            <svg
+              viewBox="0 0 24 24"
+              width="18"
+              height="18"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.8"
+              aria-hidden="true"
+            >
+              <rect x="3" y="5" width="18" height="14" rx="2" />
+              <path d="m4 7 8 6 8-6" />
+            </svg>
+            info@mycabify.com
+          </a>
           <div
             className="moment-card"
             onMouseEnter={() => (paused.current = true)}
@@ -128,9 +130,7 @@ export function EnquiryArea() {
             </div>
           </div>
 
-          <div className="enquiry-contact-block">
-
-          </div>
+          <div className="enquiry-contact-block"></div>
         </div>
 
         <div className="enquiry-panel modal">
@@ -147,7 +147,7 @@ export function EnquiryArea() {
                 <label htmlFor="enquiry-name">
                   Full name<span className="req">*</span>
                 </label>
-                <input id="enquiry-name" required placeholder="Jane Smith" />
+                <input id="enquiry-name" required aria-required="true" placeholder="Jane Smith" />
               </div>
               <div className="field">
                 <label htmlFor="enquiry-company">
@@ -156,6 +156,7 @@ export function EnquiryArea() {
                 <input
                   id="enquiry-company"
                   required
+                  aria-required="true"
                   placeholder="Your fleet name"
                 />
               </div>
@@ -166,6 +167,7 @@ export function EnquiryArea() {
                 <input
                   id="enquiry-email"
                   required
+                  aria-required="true"
                   type="email"
                   placeholder="jane@yourfleet.com"
                 />
@@ -177,15 +179,13 @@ export function EnquiryArea() {
                 <input
                   id="enquiry-phone"
                   required
+                  aria-required="true"
                   placeholder="07000 000000"
                 />
               </div>
               <div className="field">
                 <label htmlFor="enquiry-current-system">Current system</label>
-                <input
-                  id="enquiry-current-system"
-                  placeholder="Current System (if any)"
-                />
+                <input id="enquiry-current-system" placeholder="Current System (if any)" />
               </div>
               <div className="field field-full">
                 <label htmlFor="enquiry-fleet-size">Fleet size</label>
@@ -199,9 +199,7 @@ export function EnquiryArea() {
                 </select>
               </div>
               <div className="field field-full">
-                <label htmlFor="enquiry-message">
-                  What would you like to improve?
-                </label>
+                <label htmlFor="enquiry-message">What would you like to improve?</label>
                 <textarea
                   id="enquiry-message"
                   placeholder="Tell us a bit about your current setup"

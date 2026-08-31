@@ -5,7 +5,11 @@ const baseUrl = "https://mycabify.com";
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
 
-  const routes: { path: string; priority: number; changeFrequency: "daily" | "weekly" | "monthly" | "yearly" }[] = [
+  const routes: {
+    path: string;
+    priority: number;
+    changeFrequency: "daily" | "weekly" | "monthly" | "yearly";
+  }[] = [
     { path: "/", priority: 1, changeFrequency: "weekly" },
     { path: "/why-mycabify", priority: 0.8, changeFrequency: "monthly" },
     { path: "/dispatch-system", priority: 0.8, changeFrequency: "monthly" },

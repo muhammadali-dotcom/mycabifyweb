@@ -34,8 +34,8 @@ export function RolesSection() {
           </h2>
         </div>
         <p>
-          MyCabify connects the people running, delivering and using your
-          service without overwhelming them with irrelevant information.
+          MyCabify connects the people running, delivering and using your service without
+          overwhelming them with irrelevant information.
         </p>
       </div>
       <div className="role-grid">

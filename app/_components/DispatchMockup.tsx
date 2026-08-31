@@ -10,7 +10,10 @@ export function DispatchMockup({
   priority?: boolean;
 }) {
   return (
-    <figure className="mc-device-showcase mc-photo-showcase" aria-label="MyCabify dispatch system across control room displays">
+    <figure
+      className="mc-device-showcase mc-photo-showcase"
+      aria-label="MyCabify dispatch system across control room displays"
+    >
       <Image
         className="mc-hardware-photo"
         src={hero}

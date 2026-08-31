@@ -8,7 +8,10 @@
   --line: #18261d2b;
   --page-max-width: 1320px;
   --side-padding: 64px;
-  --content-pad-x: max(var(--side-padding), calc((100% - var(--page-max-width)) / 2 + var(--side-padding)));
+  --content-pad-x: max(
+    var(--side-padding),
+    calc((100% - var(--page-max-width)) / 2 + var(--side-padding))
+  );
   --h1-size: clamp(28px, 4vw, 55px);
   --h2-size: clamp(22px, 2.6vw, 38px);
   --h3-size: clamp(1rem, 1.2vw, 1.5rem);
@@ -205,7 +208,9 @@ header nav {
   font-size: 13px;
   font-weight: 800;
   cursor: pointer;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
 .pill:hover {
   transform: translateY(-3px);
@@ -298,7 +303,9 @@ header nav {
   border-radius: 99px;
   background: var(--line);
   cursor: pointer;
-  transition: background 0.25s, width 0.25s;
+  transition:
+    background 0.25s,
+    width 0.25s;
 }
 .hero-rotator-dots button.active {
   width: 20px;
@@ -324,7 +331,9 @@ header nav {
   padding: 15px 20px;
   font-weight: 850;
   cursor: pointer;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
 .solid:hover,
 .line:hover,
@@ -350,18 +359,27 @@ header nav {
   gap: 12px;
   padding: 18px 28px;
   font-size: 16px;
-  animation: pill-float 2.4s ease-in-out infinite, hero-video-glow 2.4s ease-in-out infinite;
-  transition: transform 0.25s, box-shadow 0.25s;
+  animation:
+    pill-float 2.4s ease-in-out infinite,
+    hero-video-glow 2.4s ease-in-out infinite;
+  transition:
+    transform 0.25s,
+    box-shadow 0.25s;
 }
 .hero-video-btn:hover {
   transform: translateY(-3px);
 }
 @keyframes hero-video-glow {
-  0%, 100% {
-    box-shadow: 0 14px 30px #1174473d, 0 0 0 0 #11744700;
+  0%,
+  100% {
+    box-shadow:
+      0 14px 30px #1174473d,
+      0 0 0 0 #11744700;
   }
   50% {
-    box-shadow: 0 14px 30px #1174473d, 0 0 0 14px #11744726;
+    box-shadow:
+      0 14px 30px #1174473d,
+      0 0 0 14px #11744726;
   }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -1098,7 +1116,11 @@ header nav {
   display: grid;
   place-items: center;
   color: var(--green);
-  transition: transform 0.25s, background 0.25s, border-color 0.25s, color 0.25s;
+  transition:
+    transform 0.25s,
+    background 0.25s,
+    border-color 0.25s,
+    color 0.25s;
 }
 .faq-chevron svg {
   width: 12px;
@@ -1448,7 +1470,9 @@ footer > div > p {
   font-size: 11px;
   font-weight: 700;
   text-decoration: none;
-  transition: background 0.2s ease, color 0.2s ease;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
 }
 .announcement-banner-cta:hover {
   background: var(--ink);
@@ -1554,7 +1578,9 @@ footer > div > p {
   overflow: hidden;
   border: 1px solid rgba(241, 237, 227, 0.26);
   border-radius: 24px;
-  box-shadow: 0 34px 90px rgba(0, 0, 0, 0.42), 0 0 0 1px rgba(17, 116, 71, 0.28);
+  box-shadow:
+    0 34px 90px rgba(0, 0, 0, 0.42),
+    0 0 0 1px rgba(17, 116, 71, 0.28);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1824,11 +1850,16 @@ footer > div > p {
   animation: ba-glow 3.2s ease-in-out infinite;
 }
 @keyframes ba-glow {
-  0%, 100% {
-    box-shadow: 0 24px 50px #07150d2e, 0 0 0 0 #11744700;
+  0%,
+  100% {
+    box-shadow:
+      0 24px 50px #07150d2e,
+      0 0 0 0 #11744700;
   }
   50% {
-    box-shadow: 0 24px 50px #07150d2e, 0 0 0 10px #1174471f;
+    box-shadow:
+      0 24px 50px #07150d2e,
+      0 0 0 10px #1174471f;
   }
 }
 .ba-label {
@@ -1879,7 +1910,8 @@ footer > div > p {
   animation: ba-arrow-move 1.8s ease-in-out infinite;
 }
 @keyframes ba-arrow-move {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateX(0);
   }
   50% {
@@ -1887,7 +1919,8 @@ footer > div > p {
   }
 }
 @keyframes ba-arrow-move-vertical {
-  0%, 100% {
+  0%,
+  100% {
     transform: rotate(90deg) translateX(0);
   }
   50% {
@@ -2036,7 +2069,8 @@ footer > div > p {
   border: 1px solid rgba(17, 116, 71, 0.18);
   border-radius: 12px;
   box-shadow: 0 12px 30px rgba(7, 21, 13, 0.05);
-  transition: background 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+  transition:
+    background 0.3s cubic-bezier(0.16, 1, 0.3, 1),
     border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1),
     box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1),
     transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
@@ -2106,7 +2140,9 @@ footer > div > p {
   padding: 15px 20px;
   border: 1px solid var(--ink);
   font-weight: 850;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
 .outline:hover {
   transform: translateY(-3px);

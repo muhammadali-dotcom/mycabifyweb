@@ -117,7 +117,10 @@ export const featureIcons: Record<string, ReactElement> = {
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
       <circle cx="12" cy="12" r="6" />
       <circle cx="12" cy="12" r="2" />
-      <path d="M3.5 10.5c1-3 3.5-5 8.5-5s7.5 2 8.5 5M3.5 13.5c1 3 3.5 5 8.5 5s7.5-2 8.5-5" strokeLinecap="round" />
+      <path
+        d="M3.5 10.5c1-3 3.5-5 8.5-5s7.5 2 8.5 5M3.5 13.5c1 3 3.5 5 8.5 5s7.5-2 8.5-5"
+        strokeLinecap="round"
+      />
     </svg>
   ),
   flexible: (
@@ -135,7 +138,11 @@ export const featureIcons: Record<string, ReactElement> = {
   ),
   support: (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
-      <path d="M5 21v-8l3-6h8l3 6v8M9 9l3-4l3 4M6 21h12" strokeLinecap="round" strokeLinejoin="round" />
+      <path
+        d="M5 21v-8l3-6h8l3 6v8M9 9l3-4l3 4M6 21h12"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
     </svg>
   ),
   clock247: (
@@ -166,7 +173,11 @@ export const featureIcons: Record<string, ReactElement> = {
   ),
   rocket: (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
-      <path d="M12 2v12m-3-1h6m-1.5 7l-2-3h4l-2 3M6 18a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm12 0a2 2 0 1 1-4 0 2 2 0 0 1 4 0z" strokeLinecap="round" strokeLinejoin="round" />
+      <path
+        d="M12 2v12m-3-1h6m-1.5 7l-2-3h4l-2 3M6 18a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm12 0a2 2 0 1 1-4 0 2 2 0 0 1 4 0z"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
     </svg>
   ),
   lock: (
@@ -179,7 +190,11 @@ export const featureIcons: Record<string, ReactElement> = {
   question: (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
       <circle cx="12" cy="12" r="10" />
-      <path d="M9 9c0-1.5 1-2.5 3-2.5s3 1 3 2c0 1.5-1.5 2-2.5 3.5M12 18h.01" strokeLinecap="round" strokeLinejoin="round" />
+      <path
+        d="M9 9c0-1.5 1-2.5 3-2.5s3 1 3 2c0 1.5-1.5 2-2.5 3.5M12 18h.01"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
     </svg>
   ),
   pricing: (
@@ -191,18 +206,29 @@ export const featureIcons: Record<string, ReactElement> = {
   gear: (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
       <circle cx="12" cy="12" r="4" />
-      <path d="M12 2v3M12 19v3M22 12h-3M5 12H2M19.1 19.1l-2.1-2.1M7 7l-2.1-2.1M19.1 4.9l-2.1 2.1M7 17l-2.1 2.1" strokeLinecap="round" />
+      <path
+        d="M12 2v3M12 19v3M22 12h-3M5 12H2M19.1 19.1l-2.1-2.1M7 7l-2.1-2.1M19.1 4.9l-2.1 2.1M7 17l-2.1 2.1"
+        strokeLinecap="round"
+      />
     </svg>
   ),
   integration: (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
-      <path d="M6 12a3 3 0 1 0 6 0 3 3 0 0 0-6 0zm6 0a3 3 0 1 0 6 0 3 3 0 0 0-6 0zM9 12h6" strokeLinecap="round" strokeLinejoin="round" />
+      <path
+        d="M6 12a3 3 0 1 0 6 0 3 3 0 0 0-6 0zm6 0a3 3 0 1 0 6 0 3 3 0 0 0-6 0zM9 12h6"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
     </svg>
   ),
   // Why MyCabify / Product benefits icons
   understand: (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
-      <path d="M12 6c-1.8-1.3-4-2-6.5-2v13.5c2.5 0 4.7.7 6.5 2m0-13.5c1.8-1.3 4-2 6.5-2v13.5c-2.5 0-4.7.7-6.5 2m0-13.5v13.5" strokeLinecap="round" strokeLinejoin="round" />
+      <path
+        d="M12 6c-1.8-1.3-4-2-6.5-2v13.5c2.5 0 4.7.7 6.5 2m0-13.5c1.8-1.3 4-2 6.5-2v13.5c-2.5 0-4.7.7-6.5 2m0-13.5v13.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
     </svg>
   ),
   brand: (

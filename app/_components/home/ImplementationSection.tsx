@@ -16,7 +16,9 @@ export function ImplementationSection({ onDemo }: { onDemo: () => void }) {
           Change your system. <em>Keep your business moving.</em>
         </h2>
         <p>
-We’ll support you through setup, data migration, staff training, driver onboarding, testing and launch. Everything is planned around your fleet, your current system and the way your business works.
+          We’ll support you through setup, data migration, staff training, driver onboarding,
+          testing and launch. Everything is planned around your fleet, your current system and the
+          way your business works.
         </p>
         <button className="solid" onClick={onDemo}>
           Plan Your Switch ↗

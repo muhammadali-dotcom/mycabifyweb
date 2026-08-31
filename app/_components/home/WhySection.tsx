@@ -7,11 +7,7 @@ const reasons = [
     "Dispatch, drivers, passengers, bookings and operations work as one ecosystem.",
     "connected",
   ],
-  [
-    "Easy to understand",
-    "A clear interface designed around practical daily work.",
-    "clarity",
-  ],
+  ["Easy to understand", "A clear interface designed around practical daily work.", "clarity"],
   [
     "Flexible by design",
     "Configure MyCabify around your fleet, workflows and business requirements.",
@@ -49,9 +45,7 @@ export function WhySection() {
       <div className="why-list">
         {reasons.map((x) => (
           <article key={x[0]}>
-            <div className="why-icon-badge">
-              {featureIcons[x[2]]}
-            </div>
+            <div className="why-icon-badge">{featureIcons[x[2]]}</div>
             <div>
               <h3>{x[0]}</h3>
               <p>{x[1]}</p>

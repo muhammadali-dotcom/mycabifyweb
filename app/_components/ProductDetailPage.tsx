@@ -66,19 +66,11 @@ const heroFanImages: Record<string, FanImages> = {
   },
 };
 
-export function ProductDetailPage({
-  data,
-  slug,
-}: {
-  data: Product;
-  slug: string;
-}) {
+export function ProductDetailPage({ data, slug }: { data: Product; slug: string }) {
   return (
     <>
       <SiteHeader />
-      <section
-        className={`product-hero${slug === "web-booker" ? " web-booker-hero" : ""}`}
-      >
+      <section className={`product-hero${slug === "web-booker" ? " web-booker-hero" : ""}`}>
         <div>
           <p className="kicker">{data.label}</p>
           <h1>

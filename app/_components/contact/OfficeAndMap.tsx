@@ -2,16 +2,16 @@
 import { useEffect, useRef } from "react";
 import "leaflet/dist/leaflet.css";
 
-const address = "MyCabify, 66 Kingsley Road, Hounslow, Middlesex, TW3 1QA";
+export const address = "MyCabify, 66 Kingsley Road, Hounslow, Middlesex, TW3 1QA";
 const mapsHref = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(address);
 const officePosition: [number, number] = [51.4685, -0.3639];
-const phone = "020 8455 8888";
-const email = "info@mycabify.com";
-const officeHours = "Mon–Fri · 9:00–17:30";
+export const phone = "020 8455 8888";
+export const email = "info@mycabify.com";
+export const officeHours = "Mon–Fri · 9:00–17:30";
 
 const pinIconHtml = `
   <span class="office-map-pin">
-    <img src="/mycabify-logo.png" alt="" />
+    <img src="/mycabify-logo.png" alt="MyCabify logo" />
   </span>
 `;
 
@@ -43,10 +43,14 @@ export function OfficeAndMap() {
         popupAnchor: [-4, -30],
       });
 
-      const map = L.map(mapContainer.current, { attributionControl: false }).setView(officePosition, 15);
+      const map = L.map(mapContainer.current, { attributionControl: false }).setView(
+        officePosition,
+        15,
+      );
       L.control.attribution({ prefix: false }).addTo(map);
       L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+        attribution:
+          '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
         maxZoom: 19,
       }).addTo(map);
 
@@ -71,7 +75,6 @@ export function OfficeAndMap() {
           <p className="kicker">OUR HOUNSLOW OFFICE</p>
           <h2>Visit, call or simply say hello.</h2>
         </div>
-        
       </div>
 
       <div className="office-info-strip">

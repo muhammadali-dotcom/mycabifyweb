@@ -62,10 +62,7 @@ export function FaqSection() {
           {faqs.map((x, i) => {
             const isOpen = i === openIndex;
             return (
-              <div
-                className={`faq-item${isOpen ? " is-open" : ""}`}
-                key={x[0]}
-              >
+              <div className={`faq-item${isOpen ? " is-open" : ""}`} key={x[0]}>
                 <button
                   type="button"
                   className="faq-item-header"

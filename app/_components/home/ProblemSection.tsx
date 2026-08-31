@@ -34,16 +34,13 @@ export function ProblemSection() {
       <div className="intro">
         <p className="kicker pale">THE OPERATIONAL PROBLEM</p>
         <h2>
-          Busy is part of the business.{" "}
-          <em>Feeling out of control shouldn&apos;t be.</em>
+          Busy is part of the business. <em>Feeling out of control shouldn&apos;t be.</em>
         </h2>
       </div>
       <div className="problem-list">
         {problems.map((x) => (
           <article key={x[0]}>
-            <div className="problem-icon">
-              {featureIcons[x[3]]}
-            </div>
+            <div className="problem-icon">{featureIcons[x[3]]}</div>
             <h3>{x[1]}</h3>
             <p>{x[2]}</p>
           </article>
@@ -58,8 +55,8 @@ export function ProblemSection() {
           <h2>Give your team clarity when the pressure is highest.</h2>
         </div>
         <p>
-          MyCabify keeps the complete operation connected, so everyone knows
-          what is happening and what needs to happen next.
+          MyCabify keeps the complete operation connected, so everyone knows what is happening and
+          what needs to happen next.
         </p>
       </div>
     </section>

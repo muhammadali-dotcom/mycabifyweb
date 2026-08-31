@@ -1,8 +1,4 @@
-export function StoreBadges({
-  appStoreHref = "#",
-}: {
-  appStoreHref?: string;
-}) {
+export function StoreBadges({ appStoreHref = "#" }: { appStoreHref?: string }) {
   return (
     <div className="store-badges">
       <a className="store-badge" href={appStoreHref}>
@@ -17,7 +13,10 @@ export function StoreBadges({
       <a className="store-badge" href="#">
         <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
           <path d="M3.6 2.6c-.4.4-.6.9-.6 1.5v15.8c0 .6.2 1.1.6 1.5l.1.1L13 12.2v-.4L3.7 2.5l-.1.1z" />
-          <path d="M16.2 15.4l-3.2-3.2v-.4l3.2-3.2 3.6 2.1c1 .6 1 1.6 0 2.2l-3.6 2.5z" opacity=".6" />
+          <path
+            d="M16.2 15.4l-3.2-3.2v-.4l3.2-3.2 3.6 2.1c1 .6 1 1.6 0 2.2l-3.6 2.5z"
+            opacity=".6"
+          />
           <path d="M16.2 15.4L13 12.2 3.7 21.5c.4.4 1 .4 1.7 0l10.8-6.1z" opacity=".8" />
           <path d="M16.2 8.6L5.4 2.5c-.7-.4-1.3-.4-1.7 0L13 12l3.2-3.4z" opacity=".9" />
         </svg>
