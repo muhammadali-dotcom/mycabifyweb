@@ -4,8 +4,6 @@ import "./site-and-home.css";
 import "./header-and-testimonials.css";
 import "./product-pages.css";
 import "./about-contact.css";
-import { WhatsAppButton } from "./_components/home/WhatsAppButton";
-import { WhatsAppBubble } from "./_components/home/WhatsAppBubble";
 import { AnnouncementBanner } from "./_components/AnnouncementBanner";
 import { ScrollToTop } from "./_components/ScrollToTop";
 
@@ -23,9 +21,6 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://mycabify.com"),
   title,
   description,
-  other: {
-    "codex-preview": "development",
-  },
   icons: {
     icon: "/mycabify-logo.png",
     shortcut: "/mycabify-logo.png",
@@ -60,9 +55,7 @@ export default function RootLayout({
         <ScrollToTop />
         <AnnouncementBanner />
         {children}
-        {/* WhatsApp icon disabled temporarily — re-enable by uncommenting below */}
-        {/* <WhatsAppButton /> */}
-        {/* <WhatsAppBubble /> */}
+        {/* WhatsApp entry points intentionally disabled. */}
       </body>
     </html>
   );

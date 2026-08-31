@@ -4,8 +4,10 @@ import Image from "next/image";
 
 export function DispatchMockup({
   hero = "/dispatch-system/dispatch-hero.png",
+  priority = false,
 }: {
   hero?: string;
+  priority?: boolean;
 }) {
   return (
     <figure className="mc-device-showcase mc-photo-showcase" aria-label="MyCabify dispatch system across control room displays">
@@ -15,6 +17,7 @@ export function DispatchMockup({
         alt="Dispatch dashboard and wallboard screens shown on office monitors and laptops"
         fill
         draggable={false}
+        priority={priority}
         sizes="(max-width: 720px) 100vw, 680px"
       />
     </figure>

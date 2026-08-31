@@ -21,7 +21,7 @@ export default function SiteFooter() {
       </div>
 
       <div>
-        <b>Solutions</b>
+        <b>Features</b>
         {solutions.map((s) => (
           <Link key={s.name} href={s.href}>
             {s.name}
@@ -39,7 +39,7 @@ export default function SiteFooter() {
       <div>
         <b>Contact</b>
         <span>
-          Call now: <a href="tel:02084558888">020 8455 8888</a>
+          <a href="tel:02084558888">020 8455 8888</a>
         </span>
         <a href="mailto:info@mycabify.com">info@mycabify.com</a>
         <span>

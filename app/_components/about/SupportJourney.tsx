@@ -237,7 +237,7 @@ export function SupportJourney() {
       </div>
 
       <ol className="journey-road-mobile">
-        {steps.map((s, i) => (
+        {steps.map((s) => (
           <li key={s.label}>
             <span className="journey-node-icon">
               <s.icon />

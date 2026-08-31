@@ -47,7 +47,7 @@ export function WhySection() {
         </Link>
       </div>
       <div className="why-list">
-        {reasons.map((x, i) => (
+        {reasons.map((x) => (
           <article key={x[0]}>
             <div className="why-icon-badge">
               {featureIcons[x[2]]}

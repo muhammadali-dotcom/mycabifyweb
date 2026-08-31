@@ -221,7 +221,7 @@
   left: 50%;
   width: 560px;
   transform: translateX(-50%);
-  border-radius: 3px;
+  border-radius: 10px;
 }
 .shared-header .mega a {
   display: grid;
@@ -300,6 +300,7 @@
     margin-top: 0;
     padding: 0;
     border: 0;
+    border-radius: 10px;
     box-shadow: none;
     background: transparent;
     max-height: 0;
@@ -309,7 +310,7 @@
       margin-top 0.3s;
   }
   .shared-header .solution-nav.expanded .mega {
-    max-height: 390px;
+    max-height: none;
     margin-top: 14px;
   }
   .shared-header .mega a {
@@ -422,7 +423,7 @@
   }
 }
 .pill {
-  min-height: 38px;
+  min-height: 44px;
   padding: 5px 5px 5px 18px;
   border-width: 1.5px;
   box-shadow: 0 7px 20px #11744712;

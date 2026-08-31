@@ -2,32 +2,70 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import type { ReactNode } from "react";
 import { useEffect, useRef, useState } from "react";
 import { solutionIcons } from "./_data/solutionIcons";
-const solutions = [
+
+type HeaderMenuItem = {
+  name: string;
+  href: string;
+  copy: string;
+  icon: ReactNode;
+};
+
+const solutionItems: HeaderMenuItem[] = [
   {
-    no: "01",
+    name: "Airport Transfers",
+    href: "/airport-transfers",
+    copy: "Flight-linked pickups and pre-booked returns.",
+    icon: solutionIcons["airport-transfers"],
+  },
+  {
+    name: "School Run",
+    href: "/school-run",
+    copy: "Recurring routes with real-time pickup tracking.",
+    icon: solutionIcons["school-run"],
+  },
+  {
+    name: "Corporate Travel",
+    href: "/corporate-travel",
+    copy: "Account billing and self-service booking for business clients.",
+    icon: solutionIcons["corporate-travel"],
+  },
+  {
+    name: "Private Hire & Taxi Firms",
+    href: "/private-hire-taxi-firms",
+    copy: "Multi-channel bookings and live driver allocation.",
+    icon: solutionIcons["private-hire-taxi-firms"],
+  },
+  {
+    name: "Special Educational Needs Transport (SEN)",
+    href: "/sen-transport",
+    copy: "Trained drivers and accessible vehicles for children with SEN.",
+    icon: solutionIcons["sen-transport"],
+  },
+];
+
+const featureItems: HeaderMenuItem[] = [
+  {
     name: "Dispatch System",
     href: "/dispatch-system",
     copy: "Bookings, allocation and live operational control.",
     icon: solutionIcons["dispatch-system"],
   },
   {
-    no: "02",
     name: "Driver App",
     href: "/driver-app",
     copy: "Keep drivers connected through every journey.",
     icon: solutionIcons["driver-app"],
   },
   {
-    no: "03",
     name: "Passenger App",
     href: "/passenger-app",
     copy: "A simple branded passenger booking experience.",
     icon: solutionIcons["passenger-app"],
   },
   {
-    no: "04",
     name: "Web Booker",
     href: "/web-booker",
     copy: "Turn website visitors into direct bookings.",
@@ -37,18 +75,77 @@ const solutions = [
 export default function SiteHeader({ onDemo }: { onDemo?: () => void }) {
   const [mobile, setMobile] = useState(false);
   const [solutionsOpen, setSolutionsOpen] = useState(false);
+  const [newSolutionOpen, setNewSolutionOpen] = useState(false);
+  const [canHover] = useState(() => {
+    if (typeof window === "undefined") return true;
+    return window.matchMedia("(hover: hover)").matches;
+  });
   const wrap = useRef<HTMLElement>(null);
   const pathname = usePathname();
   const isActive = (href: string) => pathname === href;
-  const isSolutionsActive = solutions.some((s) => pathname === s.href);
+  const isFeaturesActive = featureItems.some((s) => pathname === s.href);
+  const isSolutionsActive = solutionItems.some((s) => pathname === s.href);
   const close = () => {
     setMobile(false);
     setSolutionsOpen(false);
+    setNewSolutionOpen(false);
   };
+  const renderMenu = ({
+    label,
+    items,
+    open,
+    setOpen,
+    active,
+  }: {
+    label: string;
+    items: HeaderMenuItem[];
+    open: boolean;
+    setOpen: (open: boolean) => void;
+    active: boolean;
+  }) => (
+    <div
+      className={`solution-nav ${open ? "expanded" : ""}`}
+      {...(canHover
+        ? {
+            onMouseEnter: () => setOpen(true),
+            onMouseLeave: () => setOpen(false),
+          }
+        : {})}
+    >
+      <div
+        className="solutions-trigger"
+        onClick={() => setOpen(!open)}
+      >
+        <span className={active ? "active" : ""}>{label}</span>
+        <button aria-expanded={open} aria-label={`Toggle ${label.toLowerCase()} menu`}>
+          <i>
+            <svg viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <path d="m3 5.5 5 5 5-5" />
+            </svg>
+          </i>
+        </button>
+      </div>
+      <div className="mega">
+        {items.map((s) => (
+          <Link key={s.name} href={s.href} onClick={close}>
+            <span className="mega-icon">{s.icon}</span>
+            <div>
+              <b>{s.name}</b>
+              <small>{s.copy}</small>
+            </div>
+            <i>↗</i>
+          </Link>
+        ))}
+      </div>
+    </div>
+  );
+
   useEffect(() => {
     const outside = (e: MouseEvent) => {
-      if (wrap.current && !wrap.current.contains(e.target as Node))
+      if (wrap.current && !wrap.current.contains(e.target as Node)) {
         setSolutionsOpen(false);
+        setNewSolutionOpen(false);
+      }
     };
     const key = (e: KeyboardEvent) => {
       if (e.key === "Escape") close();
@@ -72,34 +169,20 @@ export default function SiteHeader({ onDemo }: { onDemo?: () => void }) {
         <Link href="/" onClick={close} className={isActive("/") ? "active" : ""}>
           Home
         </Link>
-        <div
-          className={`solution-nav ${solutionsOpen ? "expanded" : ""}`}
-          onMouseEnter={() => setSolutionsOpen(true)}
-          onMouseLeave={() => setSolutionsOpen(false)}
-        >
-          <div className="solutions-trigger">
-            <span className={isSolutionsActive ? "active" : ""}>Solutions</span>
-            <button onClick={() => setSolutionsOpen(!solutionsOpen)} aria-expanded={solutionsOpen} aria-label="Toggle solutions menu">
-              <i>
-                <svg viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  <path d="m3 5.5 5 5 5-5" />
-                </svg>
-              </i>
-            </button>
-          </div>
-          <div className="mega">
-            {solutions.map((s) => (
-              <Link key={s.name} href={s.href} onClick={close}>
-                <span className="mega-icon">{s.icon}</span>
-                <div>
-                  <b>{s.name}</b>
-                  <small>{s.copy}</small>
-                </div>
-                <i>↗</i>
-              </Link>
-            ))}
-          </div>
-        </div>
+        {renderMenu({
+          label: "Features",
+          items: featureItems,
+          open: solutionsOpen,
+          setOpen: setSolutionsOpen,
+          active: isFeaturesActive,
+        })}
+        {renderMenu({
+          label: "Solutions",
+          items: solutionItems,
+          open: newSolutionOpen,
+          setOpen: setNewSolutionOpen,
+          active: isSolutionsActive,
+        })}
         <Link href="/why-mycabify" onClick={close} className={isActive("/why-mycabify") ? "active" : ""}>
           Why MyCabify
         </Link>

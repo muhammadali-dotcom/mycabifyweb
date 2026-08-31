@@ -5,9 +5,11 @@ type Shot = string | undefined;
 export function PhoneFan({
   kind,
   images,
+  priority = false,
 }: {
   kind: string;
   images: { front: Shot; left: [Shot, Shot, Shot]; right: [Shot, Shot, Shot] };
+  priority?: boolean;
 }) {
   const { front, left, right } = images;
   return (
@@ -31,7 +33,7 @@ export function PhoneFan({
         <ProductVisual kind={`${kind}-r1`} phone image={right[0]} />
       </div>
       <div className="phone-fan-item center">
-        <ProductVisual kind={`${kind}-front`} phone image={front} />
+        <ProductVisual kind={`${kind}-front`} phone image={front} priority={priority} />
       </div>
     </div>
   );

@@ -41,7 +41,7 @@ export function SupportSection() {
         Your operation never stops. <em>Neither does our support.</em>
       </h2>
       <div className="support-cards">
-        {support.map((x, i) => (
+        {support.map((x) => (
           <div key={x[0]} className="support-card">
             <div className="support-icon">
               {featureIcons[x[1]]}

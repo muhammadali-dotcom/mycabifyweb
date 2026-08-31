@@ -9,7 +9,7 @@ export function EcosystemSection({ onPlayVideo }: { onPlayVideo: (name: string) 
         <div>
           <p className="kicker">THE MYCABIFY ECOSYSTEM</p>
           <h2>
-            Four connected solutions. <em>One complete operation.</em>
+            Four connected features. <em>One complete operation.</em>
           </h2>
         </div>
 
@@ -34,7 +34,7 @@ export function EcosystemSection({ onPlayVideo }: { onPlayVideo: (name: string) 
               <p>{s.copy}</p>
               <div>
                 <button onClick={() => onPlayVideo(s.name)}>Watch film</button>
-                <Link href={s.href}>Explore solution ↗</Link>
+                <Link href={s.href}>Explore feature ↗</Link>
               </div>
             </div>
           </article>

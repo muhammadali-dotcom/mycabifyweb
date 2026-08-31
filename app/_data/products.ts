@@ -1,6 +1,7 @@
 export type Feature = { title: string; copy: string; icon: string };
 export type Benefit = { label: string; copy: string; icon: string };
 export type Product = {
+  slug: string;
   label: string;
   title: string;
   intro: string;
@@ -11,7 +12,8 @@ export type Product = {
 
 export const products: Record<string, Product> = {
   "dispatch-system": {
-    label: "SOLUTION / DISPATCH SYSTEM",
+    slug: "dispatch-system",
+    label: "FEATURE / DISPATCH SYSTEM",
     title: "Stay ahead of every booking, driver and decision.",
     intro:
       "Create bookings, allocate jobs, follow drivers and manage everyday taxi operations from one clear workspace.",
@@ -62,7 +64,8 @@ export const products: Record<string, Product> = {
     ],
   },
   "driver-app": {
-    label: "SOLUTION / DRIVER APP",
+    slug: "driver-app",
+    label: "FEATURE / DRIVER APP",
     title: "Give drivers everything they need for the next journey.",
     intro:
       "From receiving a job to completing the trip, the MyCabify Driver App keeps drivers informed and connected with control.",
@@ -113,7 +116,8 @@ export const products: Record<string, Product> = {
     ],
   },
   "passenger-app": {
-    label: "SOLUTION / PASSENGER APP",
+    slug: "passenger-app",
+    label: "FEATURE / PASSENGER APP",
     title: "Make every booking feel simple and reassuring.",
     intro:
       "Give passengers an easy way to book, manage and follow journeys through your taxi company’s branded app.",
@@ -164,7 +168,8 @@ export const products: Record<string, Product> = {
     ],
   },
   "web-booker": {
-    label: "SOLUTION / WEB BOOKER",
+    slug: "web-booker",
+    label: "FEATURE / WEB BOOKER",
     title: "Turn website visitors into confirmed bookings.",
     intro:
       "Give customers a simple online booking experience, with every journey sent directly into MyCabify Dispatch.",

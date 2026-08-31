@@ -1470,9 +1470,17 @@ footer > div > p {
 @media (max-width: 650px) {
   .announcement-banner {
     padding: 3px 40px;
+    flex-wrap: nowrap;
+    gap: 8px;
   }
   .announcement-banner p {
     font-size: 11px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  .announcement-banner p span {
+    display: none;
   }
 }
 /* Demo / video modals */
@@ -1633,6 +1641,9 @@ footer > div > p {
   }
 }
 @media (max-width: 650px) {
+  .section-head h2 {
+    white-space: normal;
+  }
   .hero {
     padding: 45px 22px 30px;
   }
@@ -1644,6 +1655,16 @@ footer > div > p {
   }
   .actions {
     flex-direction: column;
+  }
+  .actions .solid,
+  .actions .line {
+    width: 100%;
+    text-align: center;
+  }
+  .closing .solid,
+  .connected .solid {
+    width: 100%;
+    text-align: center;
   }
   .hero-art {
     height: 300px;
@@ -1675,8 +1696,8 @@ footer > div > p {
     padding: 8px var(--side-padding);
   }
   .faq-chevron {
-    width: 32px;
-    height: 32px;
+    width: 44px;
+    height: 44px;
   }
   .why {
     gap: 35px;
@@ -1927,6 +1948,11 @@ footer > div > p {
   white-space: nowrap;
   margin: 14px 0 3vw;
 }
+@media (max-width: 650px) {
+  .why-pillars-head h2 {
+    white-space: normal;
+  }
+}
 .why-pillars-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -2086,7 +2112,7 @@ footer > div > p {
   transform: translateY(-3px);
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
   .detail-hero {
     grid-template-columns: 1fr;
   }

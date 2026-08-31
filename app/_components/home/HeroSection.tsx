@@ -61,7 +61,7 @@ export function HeroSection({ onPlayVideo }: { onPlayVideo: () => void }) {
   return (
     <section className="hero">
       <div className="hero-copy">
-        <p className="kicker">COMPLETE TAXI MANAGEMENT SOLUTION</p>
+        <p className="kicker">COMPLETE TAXI MANAGEMENT PLATFORM</p>
         <h1
           className="hero-rotator"
           onMouseEnter={() => (paused.current = true)}
@@ -107,10 +107,10 @@ export function HeroSection({ onPlayVideo }: { onPlayVideo: () => void }) {
           />
         </div>
         <div className="device driver">
-          <Screen type="phone" image="/driver-app/dashboard-light.png" />
+          <Screen type="phone" image="/driver-app/dashboard-light.png" priority />
         </div>
         <div className="device passenger-device">
-          <Screen type="passenger" image="/passenger-app/dashboard-light.png" />
+          <Screen type="passenger" image="/passenger-app/dashboard-light.png" priority />
         </div>
         <span className="tag t1">DISPATCH</span>
         <span className="tag t2">DRIVER</span>

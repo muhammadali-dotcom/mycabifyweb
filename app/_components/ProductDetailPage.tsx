@@ -114,7 +114,7 @@ export function ProductDetailPage({
           )}
         </div>
         {slug === "driver-app" || slug === "passenger-app" ? (
-          <PhoneFan kind={slug} images={heroFanImages[slug]} />
+          <PhoneFan kind={slug} images={heroFanImages[slug]} priority />
         ) : slug === "web-booker" ? (
           <div className="product-hero-visual">
             <Image
@@ -129,7 +129,7 @@ export function ProductDetailPage({
           </div>
         ) : slug === "dispatch-system" ? (
           <div className="product-hero-visual">
-            <DispatchMockup />
+            <DispatchMockup priority />
           </div>
         ) : (
           <div className="product-hero-visual">

@@ -35,7 +35,7 @@ const faqs = [
   ],
   [
     "How does pricing work?",
-    "Pricing depends on your fleet, required solutions and implementation needs. Request a tailored quote from our team.",
+    "Pricing depends on your fleet, required features and implementation needs. Request a tailored quote from our team.",
     "pricing",
     "Pricing",
   ],

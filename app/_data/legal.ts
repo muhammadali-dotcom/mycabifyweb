@@ -16,7 +16,7 @@ export const legal: Record<"terms" | "privacy-policy", LegalDoc> = {
   terms: {
     label: "LEGAL",
     title: "Terms and Conditions",
-    updated: "Effective 27 August 2026",
+    updated: "Effective 31 August 2026",
     intro:
       "These Terms and Conditions (\"Terms\") govern your access to and use of the MyCabify website, mobile application and ride-hailing service (together, the \"Platform\") operated by MyCabify Ltd (\"MyCabify\", \"we\", \"us\", \"our\"). By creating an account, booking a ride, or otherwise using the Platform, you (\"you\", \"your\", the \"User\") agree to be bound by these Terms. If you do not agree, you must not use the Platform.",
     sections: [
@@ -142,7 +142,7 @@ export const legal: Record<"terms" | "privacy-policy", LegalDoc> = {
         heading: "Contact Us",
         paragraphs: ["If you have any questions about these Terms, please contact us at:"],
         list: [
-          "Email: support@mycabify.com",
+          "Email: info@mycabify.com",
           "Post: MyCabify Ltd, 66 Kingsley Road, Hounslow, Middlesex TW3 1QA, United Kingdom",
         ],
       },
@@ -151,7 +151,7 @@ export const legal: Record<"terms" | "privacy-policy", LegalDoc> = {
   "privacy-policy": {
     label: "LEGAL",
     title: "Privacy Policy",
-    updated: "Last updated: 27 August 2026",
+    updated: "Last updated: 31 August 2026",
     intro:
       "This Privacy Policy explains how MyCabify Ltd (\"MyCabify\", \"we\", \"us\", \"our\") collects, uses, shares and protects your personal data when you use the MyCabify website, mobile application and ride-booking service (the \"Service\"), and explains your rights under UK data protection law. By using the Service, you acknowledge that your personal data will be processed as described in this Policy.",
     sections: [
@@ -291,7 +291,7 @@ export const legal: Record<"terms" | "privacy-policy", LegalDoc> = {
           "If you have any questions about this Privacy Policy, or wish to exercise your data protection rights, you can contact us:",
         ],
         list: [
-          "By email: privacy@mycabify.com",
+          "By email: info@mycabify.com",
           "By phone: 020 845 588 88",
           "By post: 66 Kingsley Road, Hounslow, Middlesex TW3 1QA",
         ],

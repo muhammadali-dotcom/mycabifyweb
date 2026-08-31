@@ -14,7 +14,7 @@ export function AboutHero() {
         </p>
         <div className="actions">
           <Link className="solid" href="/dispatch-system">
-            Explore Our Solutions ↗
+            Explore Our Features ↗
           </Link>
           <Link className="line" href="/contact">
             Contact MyCabify
