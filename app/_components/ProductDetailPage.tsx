@@ -3,12 +3,14 @@ import Link from "next/link";
 import SiteHeader from "../SiteHeader";
 import SiteFooter from "../SiteFooter";
 import { cards, type Product } from "../_data/products";
+import { videoIds } from "../_data/videos";
 import { solutionIcons } from "../_data/solutionIcons";
 import { featureIcons } from "../_data/featureIcons";
 import { ProductVisual } from "./ProductVisual";
 import { PhoneFan } from "./PhoneFan";
 import { DispatchMockup } from "./DispatchMockup";
 import { StoreBadges } from "./StoreBadges";
+import { ProductFilmEmbed } from "./ProductFilmEmbed";
 
 const driverAppScreens = {
   front: "/driver-app/front.jpeg",
@@ -67,6 +69,9 @@ const heroFanImages: Record<string, FanImages> = {
 };
 
 export function ProductDetailPage({ data, slug }: { data: Product; slug: string }) {
+  const productName = cards.find((c) => c.href === `/${slug}`)?.name;
+  const videoId = productName ? videoIds[productName] : undefined;
+
   return (
     <>
       <SiteHeader />
@@ -131,9 +136,15 @@ export function ProductDetailPage({ data, slug }: { data: Product; slug: string 
       </section>
       <section id="film" className="product-film refined">
         <div>
-          <span>▶</span>
-          <b>{data.video}</b>
-          <small>PUBLIC YOUTUBE PRODUCT WALKTHROUGH</small>
+          {videoId ? (
+            <ProductFilmEmbed videoId={videoId} title={data.title} />
+          ) : (
+            <>
+              <span>▶</span>
+              <b>{data.video}</b>
+              <small>PUBLIC YOUTUBE PRODUCT WALKTHROUGH</small>
+            </>
+          )}
         </div>
       </section>
       <section className="features-grid">

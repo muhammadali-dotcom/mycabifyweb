@@ -43,9 +43,10 @@ export function DemoModal({ close }: { close: () => void }) {
             <option value="" disabled>
               Fleet size
             </option>
-            <option>1–20 vehicles</option>
-            <option>21–100 vehicles</option>
-            <option>100+ vehicles</option>
+            <option>1–10 vehicles</option>
+            <option>11–20 vehicles</option>
+            <option>21–50 vehicles</option>
+            <option>51–100+ vehicles</option>
           </select>
           <label className="sr-only" htmlFor="demo-message">
             What would you like to improve?

@@ -329,7 +329,10 @@
   }
   .mobile-actions {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
     gap: 14px;
     padding-top: 24px;
   }
@@ -338,7 +341,6 @@
     font-weight: 900;
   }
   .mobile-actions .pill {
-    align-self: flex-start;
     font-size: 14px;
   }
   .answer-mark img {
@@ -412,6 +414,10 @@
 .phone-link {
   color: var(--green);
   text-decoration: none;
+  white-space: nowrap;
+}
+.phone-link .flag {
+  margin-right: 6px;
 }
 @keyframes pill-float {
   0%,

@@ -213,7 +213,7 @@ export default function SiteHeader({ onDemo }: { onDemo?: () => void }) {
         </Link>
         <div className="mobile-actions">
           <a className="phone-link" href="tel:02084558888">
-            🇬🇧 020 8455 8888
+            <span className="flag">🇬🇧</span>020 8455 8888
           </a>
           {onDemo ? (
             <button
@@ -234,7 +234,7 @@ export default function SiteHeader({ onDemo }: { onDemo?: () => void }) {
       </nav>
       <div className="header-cta">
         <a className="phone-link" href="tel:02084558888">
-          🇬🇧 020 8455 8888
+          <span className="flag">🇬🇧</span>020 8455 8888
         </a>
         {onDemo ? (
           <button className="pill" onClick={onDemo}>
