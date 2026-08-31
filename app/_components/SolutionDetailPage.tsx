@@ -37,6 +37,7 @@ export function SolutionDetailPage({ data }: { data: Solution }) {
               alt={data.title}
               width={data.heroImageWidth}
               height={data.heroImageHeight}
+              sizes="(max-width: 768px) 100vw, 50vw"
               priority
             />
           </div>
