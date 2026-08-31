@@ -310,7 +310,7 @@
       margin-top 0.3s;
   }
   .shared-header .solution-nav.expanded .mega {
-    max-height: none;
+    max-height: 600px;
     margin-top: 14px;
   }
   .shared-header .mega a {
