@@ -107,7 +107,7 @@ export default function SiteHeader({ onDemo }: { onDemo?: () => void }) {
     return (
       <div
         className={`solution-nav ${open ? "expanded" : ""}`}
-        {...(canHover
+        {...(canHover && !mobile
           ? {
               onMouseEnter: () => setOpen(true),
               onMouseLeave: () => setOpen(false),

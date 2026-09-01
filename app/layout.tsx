@@ -6,6 +6,7 @@ import "./product-pages.css";
 import "./about-contact.css";
 import { AnnouncementBanner } from "./_components/AnnouncementBanner";
 import { ScrollToTop } from "./_components/ScrollToTop";
+import { baseUrl } from "./_lib/site";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -13,11 +14,11 @@ const poppins = Poppins({
   weight: ["400", "500", "600", "700", "800", "900"],
 });
 
-const title = "MyCabify  - Taxi Dispatch Software";
+const title = "MyCabify - Taxi Dispatch Software";
 const description = "Complete taxi management, made simple for UK taxi operators.";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://mycabify.com"),
+  metadataBase: new URL(baseUrl),
   title,
   description,
   icons: {
@@ -45,8 +46,8 @@ const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "MyCabify",
-  url: "https://mycabify.com",
-  logo: "https://mycabify.com/mycabify-logo.png",
+  url: baseUrl,
+  logo: `${baseUrl}/mycabify-logo.png`,
   description,
 };
 
@@ -65,7 +66,6 @@ export default function RootLayout({
         <ScrollToTop />
         <AnnouncementBanner />
         {children}
-        {/* WhatsApp entry points intentionally disabled. */}
       </body>
     </html>
   );

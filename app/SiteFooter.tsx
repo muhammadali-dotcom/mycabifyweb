@@ -2,17 +2,25 @@ import Image from "next/image";
 import Link from "next/link";
 import { StoreBadges } from "./_components/StoreBadges";
 
-const solutions = [
+const features = [
   { name: "Dispatch System", href: "/dispatch-system" },
   { name: "Driver App", href: "/driver-app" },
   { name: "Passenger App", href: "/passenger-app" },
   { name: "Web Booker", href: "/web-booker" },
 ];
 
+const solutions = [
+  { name: "Airport Transfers", href: "/airport-transfers" },
+  { name: "School Run", href: "/school-run" },
+  { name: "Corporate Travel", href: "/corporate-travel" },
+  { name: "Private Hire & Taxi Firms", href: "/private-hire-taxi-firms" },
+  { name: "SEN Transport", href: "/sen-transport" },
+];
+
 export default function SiteFooter() {
   return (
     <footer className="site-footer">
-      <div>
+      <div className="footer-brand">
         <Link className="logo inverse" href="/">
           <Image src="/mycabify-logo.png" alt="MyCabify" width={48} height={48} />
           <b>MyCabify</b>
@@ -22,6 +30,15 @@ export default function SiteFooter() {
 
       <div>
         <b>Features</b>
+        {features.map((f) => (
+          <Link key={f.name} href={f.href}>
+            {f.name}
+          </Link>
+        ))}
+      </div>
+
+      <div>
+        <b>Solutions</b>
         {solutions.map((s) => (
           <Link key={s.name} href={s.href}>
             {s.name}
@@ -49,7 +66,7 @@ export default function SiteFooter() {
         </span>
       </div>
 
-      <div>
+      <div className="footer-apps">
         <b>Download Apps</b>
         <div className="footer-app-group">
           <span>Driver App</span>

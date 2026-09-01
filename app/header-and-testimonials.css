@@ -287,11 +287,16 @@
     padding: 17px 2px;
     border-bottom: 1px solid var(--line);
     font-size: 20px;
+    font-weight: 400;
   }
   .shared-header .solutions-trigger {
     width: 100%;
     justify-content: space-between;
     font-size: 20px;
+    font-weight: 400;
+  }
+  .shared-header .solutions-trigger > span {
+    font-weight: 400;
   }
   .shared-header .mega {
     position: static;
@@ -316,6 +321,9 @@
   .shared-header .mega a {
     padding: 13px 8px;
     font-size: 14px;
+  }
+  .shared-header .mega a b {
+    font-weight: 400;
   }
   .shared-header .mega small {
     font-size: 11px;
@@ -389,7 +397,7 @@
 .solutions-trigger button {
   font-size: 13px;
   line-height: 1;
-  font-weight: 750;
+  font-weight: 400;
 }
 .solutions-trigger {
   height: 100%;

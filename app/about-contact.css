@@ -1346,7 +1346,7 @@
 }
 @media (max-width: 650px) {
   .about-hero {
-    padding: 45px 22px 30px;
+    padding: 45px 22px 50px;
   }
   .about-hero .actions {
     flex-direction: column;
@@ -1357,7 +1357,57 @@
     text-align: center;
   }
   .about-visual-stack {
-    height: 360px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    margin-top: 8px;
+  }
+  .value-card {
+    position: static;
+    width: 100%;
+    animation: none;
+    padding: 20px 22px;
+    gap: 4px;
+    border-left: 3px solid var(--green);
+  }
+  .value-card::before {
+    display: block;
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 0.1em;
+    color: var(--green);
+    margin-bottom: 2px;
+  }
+  .value-card.v0::before {
+    content: "01";
+  }
+  .value-card.v1::before {
+    content: "02";
+  }
+  .value-card.v2::before {
+    content: "03";
+  }
+  .value-card.v3::before {
+    content: "04";
+  }
+  .value-card.v1,
+  .value-card.v3 {
+    background: white;
+    border-color: var(--line);
+    border-left: 3px solid var(--green);
+  }
+  .value-card.v1 b,
+  .value-card.v1 span,
+  .value-card.v3 b,
+  .value-card.v3 span {
+    color: unset;
+  }
+  .value-card b {
+    color: var(--ink);
+  }
+  .value-card span {
+    color: var(--muted);
   }
   .moment-card {
     min-height: clamp(180px, 55vw, 220px);
@@ -1423,7 +1473,7 @@
 /* ---------- Legal pages (Terms, Privacy Policy) ---------- */
 .legal-hero {
   min-height: 300px;
-  padding: 72px var(--side-padding) 56px;
+  padding: clamp(2.8rem, 6vw, 4.5rem) var(--side-padding) clamp(2.2rem, 4.5vw, 3.5rem);
   padding-left: var(--content-pad-x);
   padding-right: var(--content-pad-x);
   display: flex;
@@ -1449,7 +1499,7 @@
   display: block;
   max-width: calc(880px + (var(--content-pad-x) * 2));
   margin: 0;
-  padding: 72px var(--content-pad-x) 96px;
+  padding: clamp(3rem, 6vw, 6rem) var(--content-pad-x) clamp(4rem, 8vw, 8rem);
 }
 .legal-intro {
   color: var(--ink);
@@ -1511,10 +1561,6 @@
 @media (max-width: 650px) {
   .legal-hero {
     min-height: 0;
-    padding: 45px 22px 36px;
-  }
-  .legal-body {
-    padding: 48px 22px 64px;
   }
   .legal-intro {
     font-size: 16px;
@@ -1536,57 +1582,5 @@
   }
   .about-hero {
     gap: 28px;
-  }
-  .about-visual-stack {
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
-  .value-card {
-    position: static;
-    width: 100%;
-    animation: none;
-    padding: 18px 20px;
-    gap: 4px;
-    border-left: 3px solid var(--green);
-  }
-  .value-card::before {
-    display: block;
-    font-size: 11px;
-    font-weight: 900;
-    letter-spacing: 0.1em;
-    color: var(--green);
-    margin-bottom: 2px;
-  }
-  .value-card.v0::before {
-    content: "01";
-  }
-  .value-card.v1::before {
-    content: "02";
-  }
-  .value-card.v2::before {
-    content: "03";
-  }
-  .value-card.v3::before {
-    content: "04";
-  }
-  .value-card.v1,
-  .value-card.v3 {
-    background: white;
-    border-color: var(--line);
-    border-left: 3px solid var(--green);
-  }
-  .value-card.v1 b,
-  .value-card.v1 span,
-  .value-card.v3 b,
-  .value-card.v3 span {
-    color: unset;
-  }
-  .value-card b {
-    color: var(--ink);
-  }
-  .value-card span {
-    color: var(--muted);
   }
 }

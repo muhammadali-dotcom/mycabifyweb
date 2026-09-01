@@ -1,6 +1,6 @@
 @import "tailwindcss";
 :root {
-  --ink: #0b1710;
+  --ink: #000000;
   --green: #117447;
   --cream: #f1ede3;
   --paper: #fbfaf6;
@@ -1282,7 +1282,7 @@ footer {
   background: #fbfaf6ed;
   color: var(--ink);
   display: grid;
-  grid-template-columns: 1.1fr repeat(4, 1fr);
+  grid-template-columns: 1.1fr repeat(5, 1fr);
   gap: 40px;
   font-size: 13px;
   border-top: 1px solid var(--line);
@@ -1292,6 +1292,12 @@ footer > div {
   flex-direction: column;
   align-items: flex-start;
   gap: 11px;
+}
+.footer-brand {
+  gap: 6px;
+}
+.footer-brand p {
+  margin: 0;
 }
 footer > div > b {
   font-size: 11px;
@@ -1665,6 +1671,10 @@ footer > div > p {
   footer {
     grid-template-columns: 1fr 1fr;
   }
+  .footer-brand,
+  .footer-apps {
+    grid-column: 1 / -1;
+  }
 }
 @media (max-width: 650px) {
   .section-head h2 {
@@ -1759,13 +1769,18 @@ footer > div > p {
     grid-template-columns: 1fr;
   }
   footer {
-    grid-template-columns: 1fr;
     padding: 60px 24px;
   }
   .legal {
+    flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 10px 16px;
   }
   .legal span {
+    margin-right: 0;
     width: 100%;
   }
 }
