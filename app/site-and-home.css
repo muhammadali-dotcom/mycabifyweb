@@ -1,4 +1,13 @@
 @import "tailwindcss";
+/* CSS convention note:
+   Avoid bare child-combinator selectors like `.section > div` when a section
+   might later gain an unrelated sibling <div> — the selector will silently
+   match both. Real example: `.implementation > div` was meant only for the
+   heading block, but later also matched the sibling `.implementation-steps`
+   div, capping its width to 640px unintentionally. Prefer a dedicated
+   className on each child instead (e.g. `.implementation-intro`) unless the
+   children are guaranteed structurally fixed (e.g. exactly 2, differentiated
+   via :first-child/:last-child, as in `.mission-vision > div`). */
 :root {
   --ink: #000000;
   --green: #117447;
@@ -1334,6 +1343,18 @@ footer > div > p {
   font-size: 13px;
   line-height: 1.6;
   color: var(--muted);
+}
+.footer-contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+.footer-contact-item svg {
+  width: 15px;
+  height: 15px;
+  color: var(--green);
+  flex-shrink: 0;
+  margin-top: 2px;
 }
 /* Footer Download App buttons */
 .footer-app-group {
