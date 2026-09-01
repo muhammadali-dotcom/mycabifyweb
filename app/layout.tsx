@@ -14,8 +14,8 @@ const poppins = Poppins({
   weight: ["400", "500", "600", "700", "800", "900"],
 });
 
-const title = "MyCabify - Taxi Dispatch Software";
-const description = "Complete taxi management, made simple for UK taxi operators.";
+const title = "MyCabify - Minicab Dispatch Software";
+const description = "Complete minicab management, made simple for UK minicab operators.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),

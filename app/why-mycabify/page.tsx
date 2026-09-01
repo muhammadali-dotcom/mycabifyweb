@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { BasicPage } from "../_components/BasicPage";
 import { basics } from "../_data/basics";
 
-const title = "Why MyCabify | Taxi Dispatch Software";
+const title = "Why MyCabify | Minicab Dispatch Software";
 const description =
-  "See what makes MyCabify the right choice for UK taxi operators: simpler bookings, dispatch, drivers and payments in one system.";
+  "See what makes MyCabify the right choice for UK minicab operators: simpler bookings, dispatch, drivers and payments in one system.";
 
 export const metadata: Metadata = {
   title,

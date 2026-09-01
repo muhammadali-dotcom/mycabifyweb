@@ -2,9 +2,9 @@ export function WhoWeAre() {
   return (
     <section className="mc-section who-we-are">
       <p className="kicker">WHO WE ARE / PRACTICAL BY DESIGN</p>
-      <h2>A technology partner for UK taxi companies.</h2>
+      <h2>A technology partner for UK minicab companies.</h2>
       <p>
-        MyCabify is a UK-focused taxi technology company providing connected software for companies
+        MyCabify is a UK-focused minicab technology company providing connected software for companies
         of different sizes. We believe powerful software does not need to feel difficult. Our goal
         is to combine complete operational capability with an experience that teams can understand
         and use confidently.
@@ -12,7 +12,7 @@ export function WhoWeAre() {
       <div className="who-grid">
         <article>
           <h3>Professional</h3>
-          <p>Reliable technology and support for business-critical taxi operations.</p>
+          <p>Reliable technology and support for business-critical minicab operations.</p>
         </article>
         <article>
           <h3>Practical</h3>
@@ -20,7 +20,7 @@ export function WhoWeAre() {
         </article>
         <article>
           <h3>Forward-looking</h3>
-          <p>A platform designed to adapt as customer expectations and taxi businesses evolve.</p>
+          <p>A platform designed to adapt as customer expectations and minicab businesses evolve.</p>
         </article>
       </div>
     </section>

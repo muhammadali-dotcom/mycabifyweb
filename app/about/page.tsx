@@ -12,7 +12,7 @@ import { AboutClosingCta } from "../_components/about/AboutClosingCta";
 
 const title = "About Us | MyCabify";
 const description =
-  "Meet the team behind MyCabify and learn why UK taxi operators trust our dispatch software to run their business.";
+  "Meet the team behind MyCabify and learn why UK minicab operators trust our dispatch software to run their business.";
 
 export const metadata: Metadata = {
   title,

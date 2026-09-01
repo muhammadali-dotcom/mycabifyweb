@@ -5,13 +5,13 @@ import { useState } from "react";
 const faqs = [
   [
     "What is MyCabify?",
-    "MyCabify is a complete taxi management platform connecting bookings, dispatch, drivers, passengers and daily operational work.",
+    "MyCabify is a complete minicab management platform connecting bookings, dispatch, drivers, passengers and daily operational work.",
     "question",
     "General",
   ],
   [
     "What fleet sizes can use MyCabify?",
-    "MyCabify is designed for UK taxi and private-hire operators of every size, with configuration based on business requirements.",
+    "MyCabify is designed for UK minicab and private-hire operators of every size, with configuration based on business requirements.",
     "gear",
     "General",
   ],

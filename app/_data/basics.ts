@@ -12,9 +12,9 @@ export type Basic = {
 export const basics: Record<string, Basic> = {
   "why-mycabify": {
     label: "WHY MYCABIFY",
-    title: "What makes MyCabify the right choice for your taxi business?",
+    title: "What makes MyCabify the right choice for your minicab business?",
     intro:
-      "Because running a taxi company is already demanding. MyCabify brings your bookings, dispatch, drivers, customers and payments together in one simple system, helping you reduce daily stress, stay in control and grow with confidence.",
+      "Because running a minicab company is already demanding. MyCabify brings your bookings, dispatch, drivers, customers and payments together in one simple system, helping you reduce daily stress, stay in control and grow with confidence.",
     gridLabel: "SIX REASONS TO SWITCH",
     gridTitle: "What makes MyCabify different.",
     items: [
@@ -52,13 +52,13 @@ export const basics: Record<string, Basic> = {
   },
   about: {
     label: "ABOUT MYCABIFY",
-    title: "Practical technology for UK taxi companies.",
-    intro: "We make complete taxi management easier and more accessible.",
+    title: "Practical technology for UK minicab companies.",
+    intro: "We make complete minicab management easier and more accessible.",
     items: [],
   },
   contact: {
     label: "CONTACT MYCABIFY",
-    title: "Let’s make your taxi operation simpler.",
+    title: "Let’s make your minicab operation simpler.",
     intro: "Contact our team for a demo, quote, implementation discussion or support.",
     items: [],
   },

@@ -16,7 +16,7 @@ export const products: Record<string, Product> = {
     label: "FEATURE / DISPATCH SYSTEM",
     title: "Stay ahead of every booking, driver and decision.",
     intro:
-      "Create bookings, allocate jobs, follow drivers and manage everyday taxi operations from one clear workspace.",
+      "Create bookings, allocate jobs, follow drivers and manage everyday minicab operations from one clear workspace.",
     video: "1–2 MINUTE DISPATCH WORKFLOW",
     features: [
       {
@@ -120,7 +120,7 @@ export const products: Record<string, Product> = {
     label: "FEATURE / PASSENGER APP",
     title: "Make every booking feel simple and reassuring.",
     intro:
-      "Give passengers an easy way to book, manage and follow journeys through your taxi company’s branded app.",
+      "Give passengers an easy way to book, manage and follow journeys through your minicab company’s branded app.",
     video: "45–60 SECOND PASSENGER JOURNEY",
     features: [
       {

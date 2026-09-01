@@ -5,10 +5,10 @@ export function AboutHero() {
   return (
     <section className="about-hero">
       <div>
-        <p className="kicker">ABOUT MYCABIFY / COMPLETE TAXI TECHNOLOGY</p>
-        <h1>Complete taxi management technology, built around real business needs.</h1>
+        <p className="kicker">ABOUT MYCABIFY / COMPLETE MINICAB TECHNOLOGY</p>
+        <h1>Complete minicab management technology, built around real business needs.</h1>
         <p>
-          MyCabify provides a complete, connected platform that helps UK taxi and private-hire
+          MyCabify provides a complete, connected platform that helps UK minicab and private-hire
           companies manage bookings, dispatch, drivers, passengers and everyday operations.
         </p>
         <div className="actions">

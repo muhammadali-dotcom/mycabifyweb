@@ -6,7 +6,7 @@ import { OfficeAndMap, phone, email, officeHours } from "../_components/contact/
 
 const title = "Contact Us | MyCabify";
 const description =
-  "Get in touch with MyCabify. Visit our Hounslow office, call, email, or send an enquiry to talk about taxi dispatch software for your business.";
+  "Get in touch with MyCabify. Visit our Hounslow office, call, email, or send an enquiry to talk about minicab dispatch software for your business.";
 
 export const metadata: Metadata = {
   title,

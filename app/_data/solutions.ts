@@ -125,8 +125,8 @@ export const solutions: Record<string, Solution> = {
     ],
   },
   "private-hire-taxi-firms": {
-    label: "SOLUTION / PRIVATE HIRE & TAXI FIRMS",
-    title: "Built for taxi and private hire firms.",
+    label: "SOLUTION / PRIVATE HIRE & MINICAB FIRMS",
+    title: "Built for minicab and private hire firms.",
     intro:
       "Automate every booking, track your drivers in real time, and run a more profitable private hire business.",
     heroImage: "/solutions/private-hire-taxi-firms.png",

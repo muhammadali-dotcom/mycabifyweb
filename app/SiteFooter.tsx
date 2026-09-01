@@ -13,7 +13,7 @@ const solutions = [
   { name: "Airport Transfers", href: "/airport-transfers" },
   { name: "School Run", href: "/school-run" },
   { name: "Corporate Travel", href: "/corporate-travel" },
-  { name: "Private Hire & Taxi Firms", href: "/private-hire-taxi-firms" },
+  { name: "Private Hire & Minicab Firms", href: "/private-hire-taxi-firms" },
   { name: "SEN Transport", href: "/sen-transport" },
 ];
 
@@ -25,7 +25,7 @@ export default function SiteFooter() {
           <Image src="/mycabify-logo.png" alt="MyCabify" width={48} height={48} />
           <b>MyCabify</b>
         </Link>
-        <p>Complete taxi management, made simple for UK taxi and private-hire operators.</p>
+        <p>Complete minicab management, made simple for UK minicab and private-hire operators.</p>
       </div>
 
       <div>

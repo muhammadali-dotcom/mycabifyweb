@@ -13,7 +13,7 @@ const values = [
   },
   {
     title: "Reliability",
-    copy: "Treat taxi operations as the business-critical services they are.",
+    copy: "Treat minicab operations as the business-critical services they are.",
     icon: "lock",
   },
   {

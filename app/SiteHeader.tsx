@@ -33,7 +33,7 @@ const solutionItems: HeaderMenuItem[] = [
     icon: solutionIcons["corporate-travel"],
   },
   {
-    name: "Private Hire & Taxi Firms",
+    name: "Private Hire & Minicab Firms",
     href: "/private-hire-taxi-firms",
     copy: "Multi-channel bookings and live driver allocation.",
     icon: solutionIcons["private-hire-taxi-firms"],

@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 const MESSAGES = [
   "Have a question? Ask me anything!",
   "Need help getting started?",
-  "Chat with our taxi ops experts",
+  "Chat with our minicab ops experts",
 ];
 
 export function WhatsAppBubble() {

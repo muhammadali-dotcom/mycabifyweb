@@ -75,7 +75,7 @@ const benefits = [
   },
   {
     title: "Complete capability, sensible cost",
-    copy: "Everything a taxi operation needs, without paying for enterprise complexity you'll never use.",
+    copy: "Everything a minicab operation needs, without paying for enterprise complexity you'll never use.",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -116,7 +116,7 @@ export function WhyMyCabify() {
   return (
     <section className="mc-section why-mycabify">
       <p className="kicker">WHY MYCABIFY / MORE THAN SOFTWARE</p>
-      <h2>A partner that makes taxi management easier, not harder.</h2>
+      <h2>A partner that makes minicab management easier, not harder.</h2>
       <div className="benefit-cards benefit-cards-standardized">
         {benefits.map((b) => (
           <article className="benefit-card" key={b.title}>

@@ -4,7 +4,7 @@ import { legal } from "../_data/legal";
 
 const title = "Terms & Conditions | MyCabify";
 const description =
-  "Read the terms and conditions for using MyCabify's taxi dispatch software and services.";
+  "Read the terms and conditions for using MyCabify's minicab dispatch software and services.";
 
 export const metadata: Metadata = {
   title,

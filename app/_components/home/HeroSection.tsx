@@ -1,10 +1,10 @@
 "use client";
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import { Screen } from "./Screen";
 
 const heroHeadlines = [
   {
-    text: "Everything you need to run your taxi company, all in one place.",
+    text: "Everything you need to run your minicab company, all in one place.",
     highlight: "all in one place.",
   },
   {
@@ -16,7 +16,7 @@ const heroHeadlines = [
     highlight: "growing your business.",
   },
   {
-    text: "When bookings get busy, your taxi operation stays under control.",
+    text: "When bookings get busy, your minicab operation stays under control.",
     highlight: "stays under control.",
   },
 ];
@@ -61,7 +61,7 @@ export function HeroSection({ onPlayVideo }: { onPlayVideo: () => void }) {
   return (
     <section className="hero">
       <div className="hero-copy">
-        <p className="kicker">COMPLETE TAXI MANAGEMENT PLATFORM</p>
+        <p className="kicker">COMPLETE MINICAB MANAGEMENT PLATFORM</p>
         <h1
           className="hero-rotator"
           onMouseEnter={() => (paused.current = true)}
@@ -99,22 +99,14 @@ export function HeroSection({ onPlayVideo }: { onPlayVideo: () => void }) {
         </div>
       </div>
       <div className="hero-art">
-        <div className="device main-device">
-          <Screen
-            image="/dispatch-system/dispatch-light.png"
-            priority
-            sizes="(max-width: 900px) 80vw, 650px"
-          />
-        </div>
-        <div className="device driver">
-          <Screen type="phone" image="/driver-app/dashboard-light.png" priority />
-        </div>
-        <div className="device passenger-device">
-          <Screen type="passenger" image="/passenger-app/dashboard-light.png" priority />
-        </div>
-        <span className="tag t1">DISPATCH</span>
-        <span className="tag t2">DRIVER</span>
-        <span className="tag t3">PASSENGER</span>
+        <Image
+          src="/hero/hero-transparent-4k.png"
+          alt="MyCabify dispatch, driver and passenger apps"
+          fill
+          priority
+          sizes="(max-width: 900px) 90vw, 650px"
+          className="hero-art-image"
+        />
       </div>
     </section>
   );
