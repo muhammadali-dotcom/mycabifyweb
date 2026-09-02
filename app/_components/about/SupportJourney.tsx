@@ -1,3 +1,5 @@
+import styles from "./SupportJourney.module.css";
+
 function IconChat() {
   return (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -139,25 +141,25 @@ function chevronDelay(x: number, row: "top" | "bottom") {
 
 export function SupportJourney() {
   return (
-    <section className="mc-section support-journey">
+    <section className={`mc-section ${styles.supportJourney}`}>
       <p className="kicker">CUSTOMER JOURNEY / FROM SETUP TO ONGOING USE</p>
       <h2>Support does not stop when the software goes live.</h2>
-      <p className="clarify">A guided process from the first conversation to everyday support.</p>
+      <p className={styles.clarify}>A guided process from the first conversation to everyday support.</p>
 
-      <div className="journey-road">
+      <div className={styles.journeyRoad}>
         <svg
-          className="journey-road-svg"
+          className={styles.journeyRoadSvg}
           viewBox="0 0 1080 260"
           preserveAspectRatio="none"
           aria-hidden="true"
         >
-          <path d={roadPath} className="journey-road-base" />
-          <path d={travelledPath} pathLength={100} className="journey-road-travelled" />
+          <path d={roadPath} className={styles.journeyRoadBase} />
+          <path d={travelledPath} pathLength={100} className={styles.journeyRoadTravelled} />
 
           {chevronMids.map((x) => (
             <polygon
               key={`chev-top-${x}`}
-              className="journey-chevron"
+              className={styles.journeyChevron}
               style={{ animationDelay: chevronDelay(x, "top") }}
               points={`${x - 6},${rowY.top - 7} ${x - 6},${rowY.top + 7} ${x + 9},${rowY.top}`}
             />
@@ -165,14 +167,20 @@ export function SupportJourney() {
           {chevronMids.map((x) => (
             <polygon
               key={`chev-bottom-${x}`}
-              className="journey-chevron"
+              className={styles.journeyChevron}
               style={{ animationDelay: chevronDelay(x, "bottom") }}
               points={`${x + 6},${rowY.bottom - 7} ${x + 6},${rowY.bottom + 7} ${x - 9},${rowY.bottom}`}
             />
           ))}
 
-          <line x1="60" y1={rowY.bottom} x2="180" y2={rowY.bottom} className="journey-end-dash" />
-          <circle cx="60" cy={rowY.bottom} r="5" className="journey-end-dot" />
+          <line
+            x1="60"
+            y1={rowY.bottom}
+            x2="180"
+            y2={rowY.bottom}
+            className={styles.journeyEndDash}
+          />
+          <circle cx="60" cy={rowY.bottom} r="5" className={styles.journeyEndDot} />
 
           {chevronMids.map((x) => (
             <line
@@ -181,7 +189,7 @@ export function SupportJourney() {
               y1="0"
               x2={x}
               y2={rowY.top}
-              className="journey-divider"
+              className={styles.journeyDivider}
             />
           ))}
           {chevronMids.map((x) => (
@@ -191,7 +199,7 @@ export function SupportJourney() {
               y1={rowY.bottom}
               x2={x}
               y2="260"
-              className="journey-divider"
+              className={styles.journeyDivider}
             />
           ))}
         </svg>
@@ -199,34 +207,34 @@ export function SupportJourney() {
         {nodes.map((n) => (
           <div
             key={n.number}
-            className={`journey-node ${n.y === rowY.top ? "top" : "bottom"}`}
+            className={`${styles.journeyNode} ${n.y === rowY.top ? styles.top : styles.bottom}`}
             style={{ left: `${(n.x / 1080) * 100}%`, top: `${(n.y / 260) * 100}%` }}
           >
-            <span className="journey-node-ghost">{String(n.number).padStart(2, "0")}</span>
+            <span className={styles.journeyNodeGhost}>{String(n.number).padStart(2, "0")}</span>
             <span
-              className="journey-node-icon"
+              className={styles.journeyNodeIcon}
               style={{
                 animationDelay: chevronDelay(n.x, n.y === rowY.top ? "top" : "bottom"),
               }}
             >
               <n.Icon />
             </span>
-            <b className="journey-node-label">{n.label}</b>
+            <b className={styles.journeyNodeLabel}>{n.label}</b>
           </div>
         ))}
 
         <div
-          className="journey-end"
+          className={styles.journeyEnd}
           style={{ top: `${(rowY.bottom / 260) * 100}%`, left: `${(60 / 1080) * 100}%` }}
         >
-          <span className="journey-end-pill">Ongoing partnership</span>
+          <span className={styles.journeyEndPill}>Ongoing partnership</span>
         </div>
       </div>
 
-      <ol className="journey-road-mobile">
+      <ol className={styles.journeyRoadMobile}>
         {steps.map((s) => (
           <li key={s.label}>
-            <span className="journey-node-icon">
+            <span className={styles.journeyNodeIcon}>
               <s.icon />
             </span>
             <b>{s.label}</b>

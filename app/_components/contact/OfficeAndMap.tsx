@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useRef } from "react";
 import "leaflet/dist/leaflet.css";
+import styles from "./OfficeAndMap.module.css";
 
 export const address = "MyCabify, 66 Kingsley Road, Hounslow, Middlesex, TW3 1QA";
 const mapsHref = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(address);
@@ -10,13 +11,13 @@ export const email = "info@mycabify.com";
 export const officeHours = "Mon–Fri · 9:00–17:30";
 
 const pinIconHtml = `
-  <span class="office-map-pin">
+  <span class="${styles.officeMapPin}">
     <img src="/mycabify-logo.png" alt="MyCabify logo" />
   </span>
 `;
 
 const popupHtml = `
-  <div class="office-popup">
+  <div class="${styles.officePopup}">
     <b>MyCabify HQ</b>
     <span>66 Kingsley Road, Hounslow</span>
     <a href="${mapsHref}" target="_blank" rel="noopener noreferrer">Open in Google Maps ↗</a>
@@ -69,17 +70,17 @@ export function OfficeAndMap() {
   }, []);
 
   return (
-    <section className="office-map">
-      <div className="office-map-heading">
-        <div className="office-map-heading-left">
+    <section className={styles.officeMap}>
+      <div className={styles.officeMapHeading}>
+        <div className={styles.officeMapHeadingLeft}>
           <p className="kicker">OUR HOUNSLOW OFFICE</p>
           <h2>Visit, call or simply say hello.</h2>
         </div>
       </div>
 
-      <div className="office-info-strip">
-        <div className="office-info-item">
-          <span className="office-info-icon">
+      <div className={styles.officeInfoStrip}>
+        <div className={styles.officeInfoItem}>
+          <span className={styles.officeInfoIcon}>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
               <circle cx="12" cy="12" r="8.5" />
               <circle cx="12" cy="12" r="2.4" fill="currentColor" stroke="none" />
@@ -94,8 +95,8 @@ export function OfficeAndMap() {
             </span>
           </div>
         </div>
-        <div className="office-info-item">
-          <span className="office-info-icon">
+        <div className={styles.officeInfoItem}>
+          <span className={styles.officeInfoIcon}>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
               <path d="M4.5 4.5c0-.7.6-1.3 1.3-1.3h2.2c.6 0 1.1.4 1.3 1l1 2.9c.2.5 0 1.1-.4 1.4L8.4 9.8c1 2.1 2.7 3.9 4.9 4.9l1.3-1.5c.4-.4 1-.5 1.4-.4l2.9 1c.6.2 1 .7 1 1.3v2.2c0 .7-.6 1.3-1.3 1.3C10.9 18.6 5.4 13.1 4.5 4.5z" />
             </svg>
@@ -105,8 +106,8 @@ export function OfficeAndMap() {
             <span>{phone}</span>
           </div>
         </div>
-        <div className="office-info-item">
-          <span className="office-info-icon">
+        <div className={styles.officeInfoItem}>
+          <span className={styles.officeInfoIcon}>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
               <rect x="3" y="5" width="18" height="14" rx="2" />
               <path d="m4 7 8 6 8-6" />
@@ -117,8 +118,8 @@ export function OfficeAndMap() {
             <span>{email}</span>
           </div>
         </div>
-        <div className="office-info-item">
-          <span className="office-info-icon">
+        <div className={styles.officeInfoItem}>
+          <span className={styles.officeInfoIcon}>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
               <circle cx="12" cy="12" r="8.5" />
               <path d="M12 7v5l3.2 1.9" strokeLinecap="round" strokeLinejoin="round" />
@@ -131,8 +132,8 @@ export function OfficeAndMap() {
         </div>
       </div>
 
-      <div className="map-placeholder">
-        <div ref={mapContainer} className="leaflet-mount" />
+      <div className={styles.mapPlaceholder}>
+        <div ref={mapContainer} className={styles.leafletMount} />
       </div>
     </section>
   );

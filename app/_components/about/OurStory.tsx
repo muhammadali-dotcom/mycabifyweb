@@ -1,4 +1,5 @@
 import { featureIcons } from "../../_data/featureIcons";
+import styles from "./OurStory.module.css";
 
 const direction = [
   {
@@ -25,16 +26,16 @@ const direction = [
 
 export function OurStory() {
   return (
-    <section className="mc-section our-story">
+    <section className={`mc-section ${styles.ourStory}`}>
       <p className="kicker">OUR STORY / WHY MYCABIFY</p>
       <h2>A simpler approach to complete minicab management.</h2>
       <p>
         MyCabify brings booking, dispatch, drivers and passengers together in one connected
         platform, built to stay practical as your fleet grows.
       </p>
-      <div className="story-direction">
+      <div className={styles.storyDirection}>
         <p className="kicker">OUR CONTINUING DIRECTION</p>
-        <div className="direction-list">
+        <div className={styles.directionList}>
           {direction.map((d) => (
             <article key={d.title}>
               <span>{featureIcons[d.icon]}</span>

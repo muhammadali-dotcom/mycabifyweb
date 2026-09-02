@@ -1,4 +1,5 @@
 import Image from "next/image";
+import styles from "./Screen.module.css";
 
 export function Screen({
   type = "desktop",
@@ -13,12 +14,12 @@ export function Screen({
 }) {
   if (image) {
     return (
-      <div className={`screen ${type} has-image`}>
+      <div className={`${styles.screen} ${styles[type] ?? ""} ${styles.hasImage}`}>
         <Image
           src={image}
           alt=""
           fill
-          className="screen-shot"
+          className={styles.screenShot}
           draggable={false}
           priority={priority}
           sizes={sizes}
@@ -27,15 +28,15 @@ export function Screen({
     );
   }
   return (
-    <div className={`screen ${type}`}>
-      <div className="screen-top">
+    <div className={`${styles.screen} ${styles[type] ?? ""}`}>
+      <div className={styles.screenTop}>
         <i />
         <i />
         <i />
         <b>MYCABIFY</b>
         <span>LIVE OPERATION</span>
       </div>
-      <div className="screen-body">
+      <div className={styles.screenBody}>
         <aside>
           <strong>
             <Image src="/mycabify-logo.png" alt="" width={24} height={24} />
@@ -44,18 +45,18 @@ export function Screen({
             <i key={x} />
           ))}
         </aside>
-        <div className="screen-main">
-          <div className="metrics">
+        <div className={styles.screenMain}>
+          <div className={styles.metrics}>
             <i />
             <i />
             <i />
           </div>
-          <div className="map">
+          <div className={styles.map}>
             <span>●</span>
             <span>●</span>
             <span>●</span>
           </div>
-          <div className="rows">
+          <div className={styles.rows}>
             <i />
             <i />
             <i />

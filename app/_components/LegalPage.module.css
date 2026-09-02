@@ -1,0 +1,105 @@
+.legalHero {
+  min-height: 300px;
+  padding: clamp(2.8rem, 6vw, 4.5rem) var(--side-padding) clamp(2.2rem, 4.5vw, 3.5rem);
+  padding-left: var(--content-pad-x);
+  padding-right: var(--content-pad-x);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: var(--cream);
+}
+.legalHero h1 {
+  max-width: 900px;
+  font-size: var(--h1-size);
+  line-height: 0.94;
+  letter-spacing: -0.06em;
+  font-weight: 520;
+  margin: 0;
+}
+.legalUpdated {
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 650;
+  margin: 18px 0 0;
+}
+.legalBody {
+  display: block;
+  max-width: calc(880px + (var(--content-pad-x) * 2));
+  margin: 0;
+  padding: clamp(3rem, 6vw, 6rem) var(--content-pad-x) clamp(4rem, 8vw, 8rem);
+}
+.legalIntro {
+  color: var(--ink);
+  font-size: 18px;
+  line-height: 1.72;
+  margin: 0 0 48px;
+  padding-bottom: 42px;
+  border-bottom: 1px solid var(--line);
+}
+.legalBody > div {
+  margin: 0 0 42px;
+}
+.legalBody h2 {
+  font-size: clamp(21px, 2vw, 28px);
+  line-height: 1.18;
+  font-weight: 700;
+  letter-spacing: 0;
+  margin: 0 0 18px;
+  padding-top: 40px;
+  border-top: 1px solid var(--line);
+}
+.legalBody > div:first-of-type h2 {
+  padding-top: 0;
+  border-top: 0;
+}
+.legalBody p {
+  color: var(--muted);
+  line-height: 1.75;
+  margin: 0 0 16px;
+}
+.legalBody p:last-child {
+  margin-bottom: 0;
+}
+.legalBody ul {
+  list-style: none;
+  margin: 0 0 18px;
+  padding-left: 0;
+  color: var(--muted);
+  line-height: 1.75;
+}
+.legalBody ul:last-child {
+  margin-bottom: 0;
+}
+.legalBody li {
+  position: relative;
+  margin-bottom: 10px;
+  padding-left: 22px;
+}
+.legalBody li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.65em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--green);
+}
+@media (max-width: 650px) {
+  .legalHero {
+    min-height: 0;
+  }
+  .legalIntro {
+    font-size: 16px;
+    line-height: 1.68;
+    margin-bottom: 36px;
+    padding-bottom: 32px;
+  }
+  .legalBody > div {
+    margin-bottom: 34px;
+  }
+  .legalBody h2 {
+    padding-top: 32px;
+    margin-bottom: 14px;
+  }
+}

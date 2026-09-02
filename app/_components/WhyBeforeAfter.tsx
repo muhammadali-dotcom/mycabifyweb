@@ -1,3 +1,5 @@
+import styles from "./WhyBeforeAfter.module.css";
+
 const before = [
   "Missed bookings",
   "Phones ringing off the hook",
@@ -13,21 +15,21 @@ const after = [
 
 export function WhyBeforeAfter() {
   return (
-    <div className="before-after">
-      <div className="ba-card ba-before">
-        <span className="ba-label">Before</span>
+    <div className={styles.beforeAfter}>
+      <div className={`${styles.baCard} ${styles.baBefore}`}>
+        <span className={styles.baLabel}>Before</span>
         {before.map((x) => (
-          <div className="ba-row" key={x}>
+          <div className={styles.baRow} key={x}>
             <i>✕</i>
             <span>{x}</span>
           </div>
         ))}
       </div>
-      <div className="ba-arrow">→</div>
-      <div className="ba-card ba-after">
-        <span className="ba-label">The MyCabify Way</span>
+      <div className={styles.baArrow}>→</div>
+      <div className={`${styles.baCard} ${styles.baAfter}`}>
+        <span className={styles.baLabel}>The MyCabify Way</span>
         {after.map((x) => (
-          <div className="ba-row" key={x}>
+          <div className={styles.baRow} key={x}>
             <i>✓</i>
             <span>{x}</span>
           </div>

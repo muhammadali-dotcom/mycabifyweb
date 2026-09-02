@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
+import styles from "./EnquiryArea.module.css";
 
 const moments = [
   {
@@ -74,17 +75,17 @@ export function EnquiryArea() {
   };
 
   return (
-    <section id="enquiry" className="mc-section enquiry-form-section">
-      <div className="enquiry-layout">
-        <div className="enquiry-intro">
+    <section id="enquiry" className={`mc-section ${styles.enquiryFormSection}`}>
+      <div className={styles.enquiryLayout}>
+        <div className={styles.enquiryIntro}>
           <p className="kicker">BOOK A PERSONALISED DEMO</p>
           <h2>How to contact us</h2>
-          <p className="enquiry-intro-copy">
+          <p className={styles.enquiryIntroCopy}>
             Getting in touch with MyCabify is simple. Fill out the form, email us, or book a demo
             directly, whichever works best for you. Whether you have questions about our platform,
             pricing, or support, our team will get back to you with the answers you need.
           </p>
-          <a className="enquiry-contact-email" href="mailto:info@mycabify.com">
+          <a className={styles.enquiryContactEmail} href="mailto:info@mycabify.com">
             <svg
               viewBox="0 0 24 24"
               width="18"
@@ -100,29 +101,29 @@ export function EnquiryArea() {
             info@mycabify.com
           </a>
           <div
-            className="moment-card"
+            className={styles.momentCard}
             onMouseEnter={() => (paused.current = true)}
             onMouseLeave={() => (paused.current = false)}
           >
-            <div className="moment-content" key={i}>
-              <span className="moment-icon">{moments[i].icon}</span>
+            <div className={styles.momentContent} key={i}>
+              <span className={styles.momentIcon}>{moments[i].icon}</span>
               <div>
-                <b className="moment-title">{moments[i].title}</b>
-                <p className="moment-detail">{moments[i].detail}</p>
+                <b className={styles.momentTitle}>{moments[i].title}</b>
+                <p className={styles.momentDetail}>{moments[i].detail}</p>
               </div>
             </div>
-            <div className="moment-progress">
+            <div className={styles.momentProgress}>
               {moments.map((m, idx) => (
                 <button
                   key={m.title}
                   type="button"
-                  className={`moment-progress-segment ${idx < i ? "done" : ""}`}
+                  className={`${styles.momentProgressSegment} ${idx < i ? "done" : ""}`}
                   aria-label={`Show moment ${idx + 1}`}
                   onClick={() => jumpTo(idx)}
                 >
                   <span
                     key={idx === i ? i : `static-${idx}`}
-                    className={`moment-progress-fill ${idx === i ? "active" : ""}`}
+                    className={`${styles.momentProgressFill} ${idx === i ? "active" : ""}`}
                     style={idx === i ? { animationDuration: `${ROTATE_MS}ms` } : undefined}
                   />
                 </button>
@@ -130,10 +131,10 @@ export function EnquiryArea() {
             </div>
           </div>
 
-          <div className="enquiry-contact-block"></div>
+          <div className={styles.enquiryContactBlock}></div>
         </div>
 
-        <div className="enquiry-panel modal">
+        <div className={`${styles.enquiryPanel} modal`}>
           <p className="kicker">BOOK A DEMO</p>
           <h2>Tell us about your operation.</h2>
           <form
@@ -142,16 +143,16 @@ export function EnquiryArea() {
               e.preventDefault();
             }}
           >
-            <div className="enquiry-fields">
-              <div className="field">
+            <div className={styles.enquiryFields}>
+              <div className={styles.field}>
                 <label htmlFor="enquiry-name">
-                  Full name<span className="req">*</span>
+                  Full name<span className={styles.req}>*</span>
                 </label>
                 <input id="enquiry-name" required aria-required="true" placeholder="Jane Smith" />
               </div>
-              <div className="field">
+              <div className={styles.field}>
                 <label htmlFor="enquiry-company">
-                  Company name<span className="req">*</span>
+                  Company name<span className={styles.req}>*</span>
                 </label>
                 <input
                   id="enquiry-company"
@@ -160,9 +161,9 @@ export function EnquiryArea() {
                   placeholder="Your fleet name"
                 />
               </div>
-              <div className="field">
+              <div className={styles.field}>
                 <label htmlFor="enquiry-email">
-                  Work email<span className="req">*</span>
+                  Work email<span className={styles.req}>*</span>
                 </label>
                 <input
                   id="enquiry-email"
@@ -172,9 +173,9 @@ export function EnquiryArea() {
                   placeholder="jane@yourfleet.com"
                 />
               </div>
-              <div className="field">
+              <div className={styles.field}>
                 <label htmlFor="enquiry-phone">
-                  Phone number<span className="req">*</span>
+                  Phone number<span className={styles.req}>*</span>
                 </label>
                 <input
                   id="enquiry-phone"
@@ -183,11 +184,11 @@ export function EnquiryArea() {
                   placeholder="07000 000000"
                 />
               </div>
-              <div className="field">
+              <div className={styles.field}>
                 <label htmlFor="enquiry-current-system">Current system</label>
                 <input id="enquiry-current-system" placeholder="Current System (if any)" />
               </div>
-              <div className="field field-full">
+              <div className={`${styles.field} ${styles.fieldFull}`}>
                 <label htmlFor="enquiry-fleet-size">Fleet size</label>
                 <select id="enquiry-fleet-size" defaultValue="">
                   <option value="" disabled>
@@ -199,7 +200,7 @@ export function EnquiryArea() {
                   <option>51–100+ vehicles</option>
                 </select>
               </div>
-              <div className="field field-full">
+              <div className={`${styles.field} ${styles.fieldFull}`}>
                 <label htmlFor="enquiry-message">What would you like to improve?</label>
                 <textarea
                   id="enquiry-message"

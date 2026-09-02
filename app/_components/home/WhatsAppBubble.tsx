@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import styles from "./WhatsAppBubble.module.css";
 
 const MESSAGES = [
   "Have a question? Ask me anything!",
@@ -20,7 +21,7 @@ export function WhatsAppBubble() {
 
   return (
     <a
-      className="whatsapp-bubble"
+      className={styles.whatsappBubble}
       href="https://wa.me/442084558888"
       target="_blank"
       aria-label="Chat with MyCabify on WhatsApp"

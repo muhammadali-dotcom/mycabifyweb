@@ -1,28 +1,29 @@
 import Image from "next/image";
 import { customers } from "../../_data/home";
+import styles from "./TestimonialsSection.module.css";
 
 export function TestimonialsSection() {
   const track = [...customers, ...customers];
 
   return (
-    <section className="proof customer-proof">
-      <div className="proof-heading compact">
+    <section className={`${styles.proof} ${styles.customerProof}`}>
+      <div className={`${styles.proofHeading} ${styles.compact}`}>
         <div>
-          <p className="kicker proof-heading-kicker">TRUSTED BY</p>
+          <p className={`kicker ${styles.proofHeadingKicker}`}>TRUSTED BY</p>
           <h2>Our Clients</h2>
-          <span className="proof-heading-underline" />
+          <span className={styles.proofHeadingUnderline} />
         </div>
       </div>
-      <div className="testimonial-marquee">
-        <div className="testimonial-track">
+      <div className={styles.testimonialMarquee}>
+        <div className={styles.testimonialTrack}>
           {track.map((story, i) => (
-            <div className="testimonial-card" key={`${story.name}-${i}`}>
-              <div className="quote-logo">
+            <div className={styles.testimonialCard} key={`${story.name}-${i}`}>
+              <div className={styles.quoteLogo}>
                 <Image src={story.logo} alt={`${story.name} logo`} width={72} height={72} />
                 <b>{story.name}</b>
               </div>
               <blockquote>
-                <span className="quote-mark">&ldquo;</span>
+                <span className={styles.quoteMark}>&ldquo;</span>
                 <span>{story.quote}</span>
               </blockquote>
             </div>

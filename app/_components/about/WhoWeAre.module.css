@@ -1,0 +1,59 @@
+.whoWeAre {
+  background: var(--cream);
+}
+.whoWeAre h2 {
+  font-size: var(--h2-size);
+  line-height: 0.96;
+  letter-spacing: -0.06em;
+  font-weight: 520;
+  max-width: 900px;
+  margin: 0 0 22px;
+}
+.whoWeAre > p:not(.kicker) {
+  max-width: 780px;
+  color: var(--muted);
+  line-height: 1.7;
+  font-size: 17px;
+  margin: 0 0 5vw;
+}
+.whoGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid var(--line);
+}
+.whoGrid article {
+  padding: 40px 32px 0;
+  border-right: 1px solid var(--line);
+}
+.whoGrid article:last-child {
+  border-right: 0;
+}
+.whoGrid h3 {
+  font-size: var(--h3-size);
+  line-height: 1.05;
+  margin: 0 0 16px;
+}
+.whoGrid p {
+  color: var(--muted);
+  line-height: 1.7;
+}
+@media (max-width: 1000px) {
+  .whoGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .whoGrid article {
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 30px;
+  }
+  .whoGrid article:nth-child(2) {
+    border-right: 0;
+  }
+}
+@media (max-width: 650px) {
+  .whoGrid {
+    grid-template-columns: 1fr;
+  }
+  .whoGrid article {
+    border-right: 0;
+  }
+}

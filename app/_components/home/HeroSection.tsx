@@ -1,6 +1,8 @@
 "use client";
-import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+import styles from "./HeroSection.module.css";
+import { HeroVideo } from "./HeroVideo";
+import { videoIds } from "../../_data/videos";
 
 const heroHeadlines = [
   {
@@ -35,7 +37,7 @@ function HeadlineText({ text, highlight }: { text: string; highlight: string }) 
   );
 }
 
-export function HeroSection({ onPlayVideo }: { onPlayVideo: () => void }) {
+export function HeroSection({ onDemo }: { onDemo: () => void }) {
   const [i, setI] = useState(0);
   const paused = useRef(false);
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
@@ -59,11 +61,11 @@ export function HeroSection({ onPlayVideo }: { onPlayVideo: () => void }) {
     startInterval();
   };
   return (
-    <section className="hero">
-      <div className="hero-copy">
+    <section className={styles.hero}>
+      <div>
         <p className="kicker">COMPLETE MINICAB MANAGEMENT PLATFORM</p>
         <h1
-          className="hero-rotator"
+          className={styles.heroRotator}
           onMouseEnter={() => (paused.current = true)}
           onMouseLeave={() => (paused.current = false)}
         >
@@ -71,7 +73,7 @@ export function HeroSection({ onPlayVideo }: { onPlayVideo: () => void }) {
             <HeadlineText {...heroHeadlines[i]} />
           </span>
         </h1>
-        <div className="hero-rotator-dots">
+        <div className={styles.heroRotatorDots}>
           {heroHeadlines.map((h, idx) => (
             <button
               key={h.text}
@@ -84,29 +86,13 @@ export function HeroSection({ onPlayVideo }: { onPlayVideo: () => void }) {
         </div>
 
         <div className="actions">
-          <button
-            type="button"
-            className="solid hero-video-btn"
-            onClick={onPlayVideo}
-            aria-label="Watch the MyCabify overview video"
-          >
-            <span className="hero-play-circle">
-              <span className="hero-play-ring" />
-              <span className="hero-play-icon">▶</span>
-            </span>
-            Watch Overview
+          <button className="solid" onClick={onDemo}>
+            Book a Demo ↗
           </button>
         </div>
       </div>
-      <div className="hero-art">
-        <Image
-          src="/hero/hero-transparent-4k.png"
-          alt="MyCabify dispatch, driver and passenger apps"
-          fill
-          priority
-          sizes="(max-width: 900px) 90vw, 650px"
-          className="hero-art-image"
-        />
+      <div className={styles.heroArt}>
+        <HeroVideo videoId={videoIds.hero} title="MyCabify dispatch, driver and passenger apps" />
       </div>
     </section>
   );

@@ -1,0 +1,60 @@
+.ourStory {
+  background: var(--paper);
+}
+.ourStory h2 {
+  font-size: var(--h2-size);
+  line-height: 0.96;
+  letter-spacing: -0.06em;
+  font-weight: 520;
+  margin: 0 0 30px;
+  max-width: 900px;
+}
+.ourStory p:not(.kicker) {
+  max-width: 760px;
+  color: var(--muted);
+  line-height: 1.75;
+  font-size: 17px;
+  margin: 0 0 18px;
+}
+.storyDirection {
+  margin-top: 5vw;
+}
+.directionList {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid var(--line);
+}
+.directionList article {
+  padding: 26px 20px;
+  border-right: 1px solid var(--line);
+}
+.directionList article span {
+  display: block;
+  width: 30px;
+  height: 30px;
+  color: var(--green);
+  margin-bottom: 40px;
+}
+.directionList article span svg {
+  width: 100%;
+  height: 100%;
+}
+.directionList article b {
+  font-size: 17px;
+  line-height: 1.4;
+  font-weight: 700;
+}
+@media (max-width: 1000px) {
+  .directionList {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 650px) {
+  .directionList {
+    grid-template-columns: 1fr;
+  }
+  .directionList article {
+    border-right: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.22);
+  }
+}

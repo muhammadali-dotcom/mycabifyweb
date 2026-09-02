@@ -1,11 +1,12 @@
 import Link from "next/link";
 import { solutions } from "../../_data/home";
 import { Screen } from "./Screen";
+import styles from "./EcosystemSection.module.css";
 
 export function EcosystemSection({ onPlayVideo }: { onPlayVideo: (name: string) => void }) {
   return (
-    <section id="platform" className="ecosystem">
-      <div className="section-head">
+    <section id="platform" className={styles.ecosystem}>
+      <div className={styles.sectionHead}>
         <div>
           <p className="kicker">THE MYCABIFY ECOSYSTEM</p>
           <h2>
@@ -13,22 +14,22 @@ export function EcosystemSection({ onPlayVideo }: { onPlayVideo: (name: string) 
           </h2>
         </div>
       </div>
-      <div className="solution-grid">
+      <div className={styles.solutionGrid}>
         {solutions.map((s) => (
           <article key={s.name}>
-            <div className="solution-meta">
+            <div className={styles.solutionMeta}>
               <span>
                 {s.no} / {s.role}
               </span>
             </div>
-            <button className="film" onClick={() => onPlayVideo(s.name)}>
+            <button className={styles.film} onClick={() => onPlayVideo(s.name)}>
               <div>
                 <Screen type={s.type} image={s.image} />
               </div>
               <i>▶</i>
               <strong>{s.role}</strong>
             </button>
-            <div className="solution-copy">
+            <div className={styles.solutionCopy}>
               <h3>{s.title}</h3>
               <p>{s.copy}</p>
               <div>

@@ -1,0 +1,119 @@
+.phoneFan {
+  position: relative;
+  height: 570px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.phoneFanItem {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transition: transform 0.35s ease;
+}
+.phoneFanItem :global(.solution-ui.phone) {
+  width: 175px;
+}
+.phoneFanItem.center {
+  z-index: 4;
+  transform: translate(-50%, -50%);
+}
+.phoneFanItem.backLeft {
+  z-index: 3;
+  transform: translate(-50%, -50%) translate(-115px, 6px) rotate(-5deg) scale(0.95);
+}
+.phoneFanItem.backRight {
+  z-index: 3;
+  transform: translate(-50%, -50%) translate(115px, 6px) rotate(5deg) scale(0.95);
+}
+.phoneFanItem.backLeft2 {
+  z-index: 2;
+  transform: translate(-50%, -50%) translate(-200px, 14px) rotate(-9deg) scale(0.88);
+}
+.phoneFanItem.backRight2 {
+  z-index: 2;
+  transform: translate(-50%, -50%) translate(200px, 14px) rotate(9deg) scale(0.88);
+}
+.phoneFanItem.backLeft3 {
+  z-index: 1;
+  transform: translate(-50%, -50%) translate(-270px, 22px) rotate(-13deg) scale(0.8);
+}
+.phoneFanItem.backRight3 {
+  z-index: 1;
+  transform: translate(-50%, -50%) translate(270px, 22px) rotate(13deg) scale(0.8);
+}
+.phoneFan:hover .backLeft {
+  transform: translate(-50%, -50%) translate(-124px, 2px) rotate(-5deg) scale(0.97);
+}
+.phoneFan:hover .backRight {
+  transform: translate(-50%, -50%) translate(124px, 2px) rotate(5deg) scale(0.97);
+}
+.phoneFan:hover .backLeft2 {
+  transform: translate(-50%, -50%) translate(-214px, 10px) rotate(-9deg) scale(0.9);
+}
+.phoneFan:hover .backRight2 {
+  transform: translate(-50%, -50%) translate(214px, 10px) rotate(9deg) scale(0.9);
+}
+.phoneFan:hover .backLeft3 {
+  transform: translate(-50%, -50%) translate(-288px, 18px) rotate(-13deg) scale(0.82);
+}
+.phoneFan:hover .backRight3 {
+  transform: translate(-50%, -50%) translate(288px, 18px) rotate(13deg) scale(0.82);
+}
+@media (max-width: 1000px) {
+  .phoneFan {
+    height: 540px;
+  }
+  .phoneFanItem :global(.solution-ui.phone) {
+    width: 165px;
+  }
+  .phoneFanItem.backLeft {
+    transform: translate(-50%, -50%) translate(-100px, 6px) rotate(-5deg) scale(0.95);
+  }
+  .phoneFanItem.backRight {
+    transform: translate(-50%, -50%) translate(100px, 6px) rotate(5deg) scale(0.95);
+  }
+  .phoneFanItem.backLeft2 {
+    transform: translate(-50%, -50%) translate(-174px, 14px) rotate(-9deg) scale(0.88);
+  }
+  .phoneFanItem.backRight2 {
+    transform: translate(-50%, -50%) translate(174px, 14px) rotate(9deg) scale(0.88);
+  }
+  .phoneFanItem.backLeft3 {
+    transform: translate(-50%, -50%) translate(-236px, 22px) rotate(-13deg) scale(0.8);
+  }
+  .phoneFanItem.backRight3 {
+    transform: translate(-50%, -50%) translate(236px, 22px) rotate(13deg) scale(0.8);
+  }
+}
+@media (max-width: 650px) {
+  .phoneFan {
+    height: 380px;
+  }
+  .phoneFanItem :global(.solution-ui.phone) {
+    width: 104px;
+  }
+  .phoneFanItem.backLeft {
+    transform: translate(-50%, -50%) translate(-60px, 4px) rotate(-5deg) scale(0.95);
+  }
+  .phoneFanItem.backRight {
+    transform: translate(-50%, -50%) translate(60px, 4px) rotate(5deg) scale(0.95);
+  }
+  .phoneFanItem.backLeft2 {
+    transform: translate(-50%, -50%) translate(-102px, 10px) rotate(-9deg) scale(0.88);
+  }
+  .phoneFanItem.backRight2 {
+    transform: translate(-50%, -50%) translate(102px, 10px) rotate(9deg) scale(0.88);
+  }
+  .phoneFanItem.backLeft3 {
+    transform: translate(-50%, -50%) translate(-148px, 16px) rotate(-13deg) scale(0.8);
+  }
+  .phoneFanItem.backRight3 {
+    transform: translate(-50%, -50%) translate(148px, 16px) rotate(13deg) scale(0.8);
+  }
+}
+@media (max-width: 480px) {
+  .phoneFan {
+    height: 280px;
+  }
+}

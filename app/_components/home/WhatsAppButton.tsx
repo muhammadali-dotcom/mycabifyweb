@@ -1,7 +1,9 @@
+import styles from "./WhatsAppButton.module.css";
+
 export function WhatsAppButton() {
   return (
     <a
-      className="whatsapp"
+      className={styles.whatsapp}
       href="https://wa.me/442084558888"
       target="_blank"
       aria-label="Chat with MyCabify on WhatsApp"

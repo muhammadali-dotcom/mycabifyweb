@@ -1,0 +1,25 @@
+.closing {
+  text-align: center;
+  padding: 6.5vw var(--side-padding);
+  padding-left: var(--content-pad-x);
+  padding-right: var(--content-pad-x);
+  background: var(--cream);
+}
+.closing h2 {
+  font-size: var(--h2-size);
+  line-height: 0.94;
+  letter-spacing: -0.072em;
+  font-weight: 520;
+  margin: 0;
+  max-width: 950px;
+  margin: auto;
+}
+.closing :global(.solid) {
+  margin-top: 35px;
+}
+@media (max-width: 650px) {
+  .closing :global(.solid) {
+    width: 100%;
+    text-align: center;
+  }
+}

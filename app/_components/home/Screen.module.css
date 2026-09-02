@@ -1,0 +1,116 @@
+.screen {
+  position: relative;
+  aspect-ratio: 1.55;
+  border: 5px solid var(--ink);
+  border-radius: 15px;
+  background: #f7f4ec;
+  overflow: hidden;
+}
+.screen.phone,
+.screen.passenger {
+  aspect-ratio: 0.52;
+  border-radius: 28px;
+  border-width: 7px;
+}
+.screen.hasImage {
+  background: var(--ink);
+}
+.screenShot {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.screenTop {
+  height: 26px;
+  padding: 0 8px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: var(--ink);
+  color: white;
+  font-size: 6px;
+}
+.screenTop i {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--green);
+}
+.screenTop b {
+  margin-left: 5px;
+}
+.screenTop span {
+  margin-left: auto;
+}
+.screenBody {
+  display: flex;
+  height: calc(100% - 26px);
+}
+.screen aside {
+  width: 16%;
+  background: #dedad0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 9px;
+  padding: 9px 4px;
+}
+.screen aside strong {
+  background: var(--green);
+  color: white;
+  border-radius: 50%;
+  font-size: 7px;
+  padding: 5px;
+}
+.screen aside i {
+  width: 55%;
+  height: 4px;
+  background: #7e8881;
+}
+.screenMain {
+  flex: 1;
+  padding: 8%;
+  background: linear-gradient(135deg, #f8f6ef, #d5e5d8);
+}
+.metrics {
+  display: flex;
+  gap: 5px;
+}
+.metrics i {
+  height: 18px;
+  background: white;
+  flex: 1;
+}
+.map {
+  height: 52%;
+  margin: 8px 0;
+  background: repeating-linear-gradient(
+    35deg,
+    #c7d8cb,
+    #c7d8cb 1px,
+    transparent 1px,
+    transparent 13px
+  );
+}
+.map span {
+  color: var(--green);
+  margin: 9%;
+}
+.rows i {
+  display: block;
+  height: 8px;
+  background: white;
+  margin: 5px;
+}
+.screen > small {
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+  padding: 3px 5px;
+  background: var(--cream);
+  font-size: 6px;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+}

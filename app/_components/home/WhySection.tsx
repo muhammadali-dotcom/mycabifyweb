@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { featureIcons } from "../../_data/featureIcons";
+import styles from "./WhySection.module.css";
 
 const reasons = [
   [
@@ -32,8 +33,8 @@ const reasons = [
 
 export function WhySection() {
   return (
-    <section className="why">
-      <div className="why-title">
+    <section className={styles.why}>
+      <div className={styles.whyTitle}>
         <p className="kicker">WHY OPERATORS CHOOSE MYCABIFY</p>
         <h2>
           Everything you need. <em>Made simple.</em>
@@ -42,10 +43,10 @@ export function WhySection() {
           Explore Why MyCabify ↗
         </Link>
       </div>
-      <div className="why-list">
+      <div className={styles.whyList}>
         {reasons.map((x) => (
           <article key={x[0]}>
-            <div className="why-icon-badge">{featureIcons[x[2]]}</div>
+            <div className={styles.whyIconBadge}>{featureIcons[x[2]]}</div>
             <div>
               <h3>{x[0]}</h3>
               <p>{x[1]}</p>

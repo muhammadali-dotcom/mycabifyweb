@@ -1,9 +1,10 @@
 import Link from "next/link";
 import { AboutStats } from "./AboutStats";
+import styles from "./AboutHero.module.css";
 
 export function AboutHero() {
   return (
-    <section className="about-hero">
+    <section className={styles.aboutHero}>
       <div>
         <p className="kicker">ABOUT MYCABIFY / COMPLETE MINICAB TECHNOLOGY</p>
         <h1>Complete minicab management technology, built around real business needs.</h1>
@@ -20,7 +21,7 @@ export function AboutHero() {
           </Link>
         </div>
       </div>
-      <div className="about-visual-stack">
+      <div className={styles.aboutVisualStack}>
         <AboutStats />
       </div>
     </section>

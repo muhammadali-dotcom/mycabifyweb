@@ -1,6 +1,8 @@
+import styles from "./WhoWeAre.module.css";
+
 export function WhoWeAre() {
   return (
-    <section className="mc-section who-we-are">
+    <section className={`mc-section ${styles.whoWeAre}`}>
       <p className="kicker">WHO WE ARE / PRACTICAL BY DESIGN</p>
       <h2>A technology partner for UK minicab companies.</h2>
       <p>
@@ -9,7 +11,7 @@ export function WhoWeAre() {
         is to combine complete operational capability with an experience that teams can understand
         and use confidently.
       </p>
-      <div className="who-grid">
+      <div className={styles.whoGrid}>
         <article>
           <h3>Professional</h3>
           <p>Reliable technology and support for business-critical minicab operations.</p>

@@ -1,6 +1,8 @@
+import styles from "./MissionVision.module.css";
+
 export function MissionVision() {
   return (
-    <section className="mission-vision">
+    <section className={styles.missionVision}>
       <div>
         <p className="kicker">01 / OUR MISSION</p>
         <h2>Make complete minicab management easier to operate.</h2>

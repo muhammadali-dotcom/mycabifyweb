@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import styles from "./DispatchMockup.module.css";
 
 export function DispatchMockup({
   hero = "/dispatch-system/dispatch-hero.png",
@@ -11,11 +12,11 @@ export function DispatchMockup({
 }) {
   return (
     <figure
-      className="mc-device-showcase mc-photo-showcase"
+      className={`${styles.mcDeviceShowcase} mc-photo-showcase`}
       aria-label="MyCabify dispatch system across control room displays"
     >
       <Image
-        className="mc-hardware-photo"
+        className={styles.mcHardwarePhoto}
         src={hero}
         alt="Dispatch dashboard and wallboard screens shown on office monitors and laptops"
         fill

@@ -11,6 +11,8 @@ import { PhoneFan } from "./PhoneFan";
 import { DispatchMockup } from "./DispatchMockup";
 import { StoreBadges } from "./StoreBadges";
 import { ProductFilmEmbed } from "./ProductFilmEmbed";
+import sharedStyles from "./ProductPage.module.css";
+import styles from "./ProductDetailPage.module.css";
 
 const driverAppScreens = {
   front: "/driver-app/front.jpeg",
@@ -75,7 +77,9 @@ export function ProductDetailPage({ data, slug }: { data: Product; slug: string 
   return (
     <>
       <SiteHeader />
-      <section className={`product-hero${slug === "web-booker" ? " web-booker-hero" : ""}`}>
+      <section
+        className={`${sharedStyles.productHero}${slug === "web-booker" ? ` ${styles.webBookerHero}` : ""}`}
+      >
         <div>
           <p className="kicker">{data.label}</p>
           <h1>
@@ -113,9 +117,9 @@ export function ProductDetailPage({ data, slug }: { data: Product; slug: string 
         {slug === "driver-app" || slug === "passenger-app" ? (
           <PhoneFan kind={slug} images={heroFanImages[slug]} priority />
         ) : slug === "web-booker" ? (
-          <div className="product-hero-visual">
+          <div className={sharedStyles.productHeroVisual}>
             <Image
-              className="wb-hero-img"
+              className={styles.wbHeroImg}
               src="/web-booker/webbooker_hero_final.png"
               alt="Web Booker"
               width={1697}
@@ -125,16 +129,16 @@ export function ProductDetailPage({ data, slug }: { data: Product; slug: string 
             />
           </div>
         ) : slug === "dispatch-system" ? (
-          <div className="product-hero-visual">
+          <div className={sharedStyles.productHeroVisual}>
             <DispatchMockup priority />
           </div>
         ) : (
-          <div className="product-hero-visual">
+          <div className={sharedStyles.productHeroVisual}>
             <ProductVisual kind={slug} />
           </div>
         )}
       </section>
-      <section id="film" className="product-film refined">
+      <section id="film" className={`${styles.productFilm} ${styles.refined}`}>
         <div>
           {videoId ? (
             <ProductFilmEmbed videoId={videoId} title={data.title} />
@@ -147,14 +151,14 @@ export function ProductDetailPage({ data, slug }: { data: Product; slug: string 
           )}
         </div>
       </section>
-      <section className="features-grid">
-        <div className="features-grid-head">
+      <section className={sharedStyles.featuresGrid}>
+        <div className={sharedStyles.featuresGridHead}>
           <p className="kicker">KEY FEATURES</p>
           <h2>
             Built for the way <em>your team works.</em>
           </h2>
         </div>
-        <div className="features-cards">
+        <div className={sharedStyles.featuresCards}>
           {data.features.map((x) => (
             <article key={x.title}>
               <span>{featureIcons[x.icon]}</span>
@@ -164,7 +168,7 @@ export function ProductDetailPage({ data, slug }: { data: Product; slug: string 
           ))}
         </div>
       </section>
-      <section className="benefit-band">
+      <section className={styles.benefitBand}>
         <p className="kicker">WHAT MYCABIFY CHANGES</p>
         <h2>
           Less daily stress. <em>More control over your business.</em>
@@ -181,7 +185,7 @@ export function ProductDetailPage({ data, slug }: { data: Product; slug: string 
           ))}
         </div>
       </section>
-      <section className="connected-products">
+      <section className={styles.connectedProducts}>
         <div>
           <p className="kicker">ONE CONNECTED MYCABIFY SYSTEM</p>
           <h2>

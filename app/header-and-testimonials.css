@@ -8,169 +8,9 @@
   font-size: 0;
   background: transparent url("/mycabify-logo.png") center/contain no-repeat;
 }
-/* Hero device layering fixes */
-.passenger-device {
-  width: 24%;
-  right: 3%;
-  bottom: 0;
-  transform: rotate(5deg);
-  z-index: 4;
-}
-.screen.passenger {
-  position: relative;
-  width: 100%;
-  right: auto;
-  bottom: auto;
-  transform: none;
-}
-.main-device {
-  z-index: 1;
-}
-.driver {
-  z-index: 3;
-}
-/* Testimonials heading override (font-size rule for .proof-heading.compact h2
-   lives in app/site-and-home.css alongside the base .proof-heading h2 rule) */
-.proof-heading.compact {
-  display: block;
-  max-width: 1180px;
-  margin: 0 auto 45px;
-  text-align: center;
-}
-.proof-heading-kicker {
-  margin: 0 0 12px;
-}
-.proof-heading.compact h2 {
-  margin: 0;
-}
-.proof-heading-underline {
-  display: block;
-  width: 48px;
-  height: 3px;
-  margin: 18px auto 0;
-  border-radius: 99px;
-  background: var(--green);
-}
-/* Testimonial marquee: one continuous full-bleed strip, scrolling continuously */
-.testimonial-marquee {
-  position: relative;
-  margin-left: calc(-1 * var(--content-pad-x));
-  margin-right: calc(-1 * var(--content-pad-x));
-  width: calc(100% + var(--content-pad-x) * 2);
-  overflow: hidden;
-  background: var(--paper);
-  padding: 40px 0;
-  border-top: 2px solid var(--green);
-  border-bottom: 2px solid var(--green);
-  mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
-}
-.testimonial-track {
-  display: flex;
-  align-items: center;
-  gap: 56px;
-  width: max-content;
-  padding: 0 var(--content-pad-x);
-  animation: testimonial-scroll 28s linear infinite;
-}
-.testimonial-marquee:hover .testimonial-track {
-  animation-play-state: paused;
-}
-@keyframes testimonial-scroll {
-  to {
-    transform: translateX(-50%);
-  }
-}
-@media (prefers-reduced-motion: reduce) {
-  .testimonial-track {
-    animation: none;
-  }
-}
-.testimonial-card {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  flex: 0 0 auto;
-  padding-right: 40px;
-  border-right: 1px solid rgba(17, 116, 71, 0.15);
-  color: var(--ink);
-}
-.quote-logo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  flex-shrink: 0;
-}
-.quote-logo img {
-  width: 72px;
-  height: 72px;
-  object-fit: cover;
-  border-radius: 50%;
-  background: white;
-  flex-shrink: 0;
-}
-.quote-logo b {
-  font-size: 14px;
-  font-weight: 700;
-  text-align: center;
-  white-space: nowrap;
-}
-.testimonial-card blockquote {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  margin: 0;
-  max-width: 320px;
-  font-size: 15px;
-  line-height: 1.45;
-  letter-spacing: -0.01em;
-  font-weight: 500;
-}
-.quote-mark {
-  flex-shrink: 0;
-  font-size: 30px;
-  line-height: 1;
-  font-weight: 700;
-  color: var(--green);
-}
 @media (max-width: 650px) {
   .logo > b {
     display: none;
-  }
-  .passenger-device {
-    width: 30%;
-    right: 1%;
-    bottom: 1%;
-  }
-}
-@media (max-width: 480px) {
-  .passenger-device {
-    width: 34%;
-    right: 0;
-    bottom: 0;
-  }
-}
-@media (max-width: 650px) {
-  .testimonial-marquee {
-    padding: 28px 0;
-  }
-  .testimonial-track {
-    gap: 28px;
-  }
-  .testimonial-card {
-    gap: 14px;
-    padding-right: 24px;
-  }
-  .quote-logo img {
-    width: 48px;
-    height: 48px;
-  }
-  .testimonial-card blockquote {
-    max-width: 200px;
-    font-size: 13px;
-  }
-  .proof-heading.compact {
-    margin-bottom: 30px;
   }
 }
 /* Shared header polish (desktop) */
@@ -395,6 +235,38 @@
   text-decoration-thickness: 2px;
   text-underline-offset: 8px;
 }
+.shared-header nav > a::before,
+.solutions-trigger > span::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -14px;
+  right: -14px;
+  height: 38px;
+  transform: translateY(-50%);
+  border-radius: 999px;
+  background: var(--cream);
+  opacity: 0;
+  z-index: -1;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .shared-header nav > a::before,
+  .solutions-trigger > span::before {
+    transition: opacity 0.2s ease;
+  }
+  .shared-header nav > a,
+  .solutions-trigger > span {
+    transition: color 0.2s ease;
+  }
+}
+.shared-header nav > a:not(.active):hover,
+.solutions-trigger > span:not(.active):hover {
+  color: var(--green);
+}
+.shared-header nav > a:not(.active):hover::before,
+.solutions-trigger > span:not(.active):hover::before {
+  opacity: 1;
+}
 .shared-header nav > a,
 .solutions-trigger > span,
 .solutions-trigger button {
@@ -485,12 +357,6 @@
 .site-footer .logo img {
   width: 48px;
   height: 48px;
-}
-.detail-media img {
-  width: 110px;
-  height: 110px;
-  object-fit: contain;
-  margin-bottom: auto;
 }
 @media (max-width: 1000px) {
   .shared-header nav.open > a {

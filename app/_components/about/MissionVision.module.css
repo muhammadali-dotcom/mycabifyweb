@@ -1,0 +1,45 @@
+.missionVision {
+  background: var(--cream);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-left: var(--content-pad-x);
+  padding-right: var(--content-pad-x);
+}
+.missionVision > div {
+  padding: clamp(3rem, 6vw, 6rem) 0;
+}
+.missionVision > div:first-child {
+  padding-right: 5vw;
+  border-right: 1px solid var(--line);
+}
+.missionVision > div:last-child {
+  padding-left: 5vw;
+}
+.missionVision h2 {
+  font-size: var(--h2-size);
+  line-height: 1;
+  letter-spacing: -0.055em;
+  font-weight: 520;
+  margin: 0 0 22px;
+}
+.missionVision p:not(.kicker) {
+  color: var(--muted);
+  line-height: 1.75;
+  font-size: 17px;
+  max-width: 480px;
+  margin: 0;
+}
+@media (max-width: 1000px) {
+  .missionVision {
+    grid-template-columns: 1fr;
+  }
+  .missionVision > div:first-child {
+    border-right: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.22);
+  }
+}
+@media (max-width: 650px) {
+  .missionVision > div {
+    padding: 45px 22px;
+  }
+}

@@ -1,4 +1,5 @@
 import { featureIcons } from "../../_data/featureIcons";
+import styles from "./OurValues.module.css";
 
 const values = [
   {
@@ -30,12 +31,12 @@ const values = [
 
 export function OurValues() {
   return (
-    <section className="mc-section our-values">
+    <section className={`mc-section ${styles.ourValues}`}>
       <p className="kicker">OUR VALUES / HOW WE WORK</p>
       <h2>The principles behind MyCabify.</h2>
-      <div className="values-list">
+      <div className={styles.valuesList}>
         {values.map((v) => (
-          <div className="value-row" key={v.title}>
+          <div className={styles.valueRow} key={v.title}>
             <span>{featureIcons[v.icon]}</span>
             <h3>{v.title}</h3>
             <p>{v.copy}</p>

@@ -6,6 +6,7 @@ import type { Basic } from "../_data/basics";
 import { featureIcons } from "../_data/featureIcons";
 import { WhyBeforeAfter } from "./WhyBeforeAfter";
 import { WhyPillars } from "./WhyPillars";
+import styles from "./BasicPage.module.css";
 
 export function BasicPage({ data, slug }: { data: Basic; slug?: string }) {
   const isWhyMyCabify = slug === "why-mycabify";
@@ -13,7 +14,7 @@ export function BasicPage({ data, slug }: { data: Basic; slug?: string }) {
   return (
     <>
       <SiteHeader />
-      <section className="detail-hero">
+      <section className={styles.detailHero}>
         <div>
           <p className="kicker">{data.label}</p>
           <h1>{data.title}</h1>
@@ -25,7 +26,7 @@ export function BasicPage({ data, slug }: { data: Basic; slug?: string }) {
         {isWhyMyCabify ? (
           <WhyBeforeAfter />
         ) : (
-          <div className="detail-media">
+          <div className={styles.detailMedia}>
             <Image src="/mycabify-logo.png" alt="MyCabify" width={110} height={110} priority />
             <span>MYCABIFY / {data.label}</span>
           </div>
@@ -33,9 +34,9 @@ export function BasicPage({ data, slug }: { data: Basic; slug?: string }) {
       </section>
       {isWhyMyCabify && <WhyPillars />}
       {data.items.length > 0 && (
-        <section className={`feature-grid${isWhyMyCabify ? " feature-grid-cream" : ""}`}>
+        <section className={`${styles.featureGrid} ${isWhyMyCabify ? styles.featureGridCream : ""}`}>
           {data.gridTitle && (
-            <div className="feature-grid-head">
+            <div className={styles.featureGridHead}>
               {data.gridLabel && <p className="kicker">{data.gridLabel}</p>}
               <h2>{data.gridTitle}</h2>
             </div>

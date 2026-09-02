@@ -1,18 +1,19 @@
 import SiteHeader from "../SiteHeader";
 import SiteFooter from "../SiteFooter";
 import type { LegalDoc } from "../_data/legal";
+import styles from "./LegalPage.module.css";
 
 export function LegalPage({ data }: { data: LegalDoc }) {
   return (
     <>
       <SiteHeader />
-      <section className="legal-hero">
+      <section className={styles.legalHero}>
         <p className="kicker">{data.label}</p>
         <h1>{data.title}</h1>
-        <p className="legal-updated">{data.updated}</p>
+        <p className={styles.legalUpdated}>{data.updated}</p>
       </section>
-      <article className="legal-body">
-        <p className="legal-intro">{data.intro}</p>
+      <article className={styles.legalBody}>
+        <p className={styles.legalIntro}>{data.intro}</p>
         {data.sections.map((section, i) => (
           <div key={i}>
             {section.heading && <h2>{section.heading}</h2>}

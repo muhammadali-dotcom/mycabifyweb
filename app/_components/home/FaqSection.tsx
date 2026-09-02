@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import styles from "./FaqSection.module.css";
 
 const faqs = [
   [
@@ -51,28 +52,28 @@ export function FaqSection() {
   const [openIndex, setOpenIndex] = useState(-1);
 
   return (
-    <section className="faq">
-      <div className="faq-intro-panel">
+    <section className={styles.faq}>
+      <div className={styles.faqIntroPanel}>
         <p className="kicker">FAQ</p>
         <h2>Questions before you get moving?</h2>
       </div>
 
-      <div className="faq-accordion-panel">
-        <div className="faq-card">
+      <div className={styles.faqAccordionPanel}>
+        <div className={styles.faqCard}>
           {faqs.map((x, i) => {
             const isOpen = i === openIndex;
             return (
-              <div className={`faq-item${isOpen ? " is-open" : ""}`} key={x[0]}>
+              <div className={`${styles.faqItem}${isOpen ? ` ${styles.isOpen}` : ""}`} key={x[0]}>
                 <button
                   type="button"
-                  className="faq-item-header"
+                  className={styles.faqItemHeader}
                   aria-expanded={isOpen}
                   onClick={() => setOpenIndex(isOpen ? -1 : i)}
                 >
-                  <div className="faq-header">
-                    <span className="faq-question">{x[0]}</span>
+                  <div className={styles.faqHeader}>
+                    <span className={styles.faqQuestion}>{x[0]}</span>
                   </div>
-                  <span className={`faq-chevron${isOpen ? " open" : ""}`}>
+                  <span className={`${styles.faqChevron}${isOpen ? ` ${styles.open}` : ""}`}>
                     <svg viewBox="0 0 12 8" fill="none" aria-hidden="true">
                       <path
                         d="M1 1.5L6 6.5L11 1.5"
@@ -84,7 +85,7 @@ export function FaqSection() {
                     </svg>
                   </span>
                 </button>
-                {isOpen && <p className="faq-item-answer">{x[1]}</p>}
+                {isOpen && <p className={styles.faqItemAnswer}>{x[1]}</p>}
               </div>
             );
           })}

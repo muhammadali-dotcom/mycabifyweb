@@ -1,0 +1,47 @@
+.whatsappBubble {
+  position: fixed;
+  right: 22px;
+  bottom: 90px;
+  z-index: 51;
+  max-width: 230px;
+  background: var(--paper);
+  color: var(--ink);
+  border-radius: 14px;
+  padding: 12px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.35;
+  box-shadow: 0 10px 30px #0003;
+  text-decoration: none;
+}
+.whatsappBubble::after {
+  content: "";
+  position: absolute;
+  right: 22px;
+  bottom: -7px;
+  width: 14px;
+  height: 14px;
+  background: var(--paper);
+  transform: rotate(45deg);
+  border-radius: 2px;
+}
+.whatsappBubble span {
+  display: block;
+  animation: bubbleFade 0.4s ease;
+}
+@keyframes bubbleFade {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (max-width: 650px) {
+  .whatsappBubble {
+    right: 16px;
+    max-width: 190px;
+  }
+}

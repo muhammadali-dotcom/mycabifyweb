@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
+import styles from "./ProductFilmEmbed.module.css";
 
 export function ProductFilmEmbed({ videoId, title }: { videoId: string; title: string }) {
   const wrapperRef = useRef<HTMLDivElement>(null);
@@ -33,7 +34,7 @@ export function ProductFilmEmbed({ videoId, title }: { videoId: string; title: s
   });
 
   return (
-    <div ref={wrapperRef} className="product-film-embed">
+    <div ref={wrapperRef} className={styles.productFilmEmbed}>
       {isVisible ? (
         <>
           <iframe
@@ -46,7 +47,7 @@ export function ProductFilmEmbed({ videoId, title }: { videoId: string; title: s
           {isMuted && (
             <button
               type="button"
-              className="product-film-unmute"
+              className={styles.productFilmUnmute}
               onClick={() => setIsMuted(false)}
             >
               🔇 Tap to unmute

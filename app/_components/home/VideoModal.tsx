@@ -1,16 +1,17 @@
 import { videoIds } from "../../_data/videos";
+import styles from "./VideoModal.module.css";
 
 export function VideoModal({ video, close }: { video: string; close: () => void }) {
   const id = videoIds[video];
 
   return (
     <div
-      className="overlay video-overlay"
+      className={`overlay ${styles.videoOverlay}`}
       role="dialog"
       aria-modal="true"
       aria-label={`${video} video`}
     >
-      <div className="video-modal">
+      <div className={styles.videoModal}>
         <button className="close" onClick={close} aria-label="Close">
           ×
         </button>

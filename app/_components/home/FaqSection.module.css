@@ -1,0 +1,134 @@
+.faq {
+  padding: 5.5vw var(--side-padding);
+  padding-left: var(--content-pad-x);
+  padding-right: var(--content-pad-x);
+  display: flex;
+  flex-direction: column;
+  background: var(--paper);
+}
+.faq h2 {
+  font-size: var(--h2-size);
+  line-height: 0.94;
+  letter-spacing: -0.072em;
+  font-weight: 520;
+  margin: 0;
+  margin-bottom: 22px;
+}
+.faqIntroPanel {
+  display: flex;
+  flex-direction: column;
+}
+.faqAccordionPanel {
+  min-width: 0;
+  width: 100%;
+}
+.faqCard {
+  background: var(--cream);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  box-shadow: 0 20px 44px #07150d14;
+  padding: 8px 28px;
+  overflow: hidden;
+}
+.faqItem {
+  border-top: 1px solid var(--line);
+  border-left: 3px solid transparent;
+  padding-left: 14px;
+  transition: border-color 0.25s;
+}
+.faqItem:first-child {
+  border-top: 0;
+}
+.faqItem.isOpen {
+  border-left-color: var(--green);
+}
+.faqItemHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  text-align: left;
+  font: inherit;
+  color: inherit;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 22px 0;
+}
+.faqItemHeader:hover .faqQuestion {
+  color: var(--green);
+}
+.faqItemHeader[aria-expanded="true"] {
+  font-weight: 800;
+}
+.faqItemHeader[aria-expanded="true"] .faqQuestion {
+  color: var(--green);
+}
+.faqHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+}
+.faqQuestion {
+  transition: color 0.2s;
+  flex: 1;
+  text-align: left;
+}
+.faqItemAnswer {
+  max-width: 780px;
+  color: var(--muted);
+  line-height: 1.65;
+  margin: -8px 0 22px;
+  animation: faqAnswerIn 0.25s ease;
+}
+@keyframes faqAnswerIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.faqChevron {
+  flex-shrink: 0;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  display: grid;
+  place-items: center;
+  color: var(--green);
+  transition:
+    transform 0.25s,
+    background 0.25s,
+    border-color 0.25s,
+    color 0.25s;
+}
+.faqChevron svg {
+  width: 12px;
+  height: 8px;
+}
+.faqChevron.open {
+  transform: rotate(180deg);
+  background: var(--green);
+  border-color: var(--green);
+  color: white;
+}
+@media (max-width: 650px) {
+  .faq {
+    padding: 55px 22px;
+  }
+  .faqCard {
+    padding: 8px var(--side-padding);
+  }
+  .faqChevron {
+    width: 44px;
+    height: 44px;
+  }
+}

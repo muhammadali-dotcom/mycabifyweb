@@ -1,0 +1,129 @@
+.aboutStats {
+  position: relative;
+  height: 100%;
+}
+.valueCard {
+  position: absolute;
+  width: 48%;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 22px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  box-shadow: 0 24px 50px #07150d1c;
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
+  animation: valueFloat 5s ease-in-out infinite;
+}
+.valueCard:hover {
+  transform: translateY(-6px) scale(1.02) !important;
+  box-shadow: 0 30px 60px #07150d26;
+}
+.valueCard b {
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+.valueCard span {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+.valueCard.v0 {
+  left: 0;
+  top: 2%;
+  animation-delay: 0s;
+}
+.valueCard.v1 {
+  right: 0;
+  top: 24%;
+  background: var(--green);
+  border-color: var(--green);
+  animation-delay: -1.25s;
+}
+.valueCard.v1 b,
+.valueCard.v1 span {
+  color: white;
+}
+.valueCard.v2 {
+  left: 4%;
+  bottom: 24%;
+  animation-delay: -2.5s;
+}
+.valueCard.v3 {
+  right: 2%;
+  bottom: 0;
+  background: var(--green);
+  border-color: var(--green);
+  animation-delay: -3.75s;
+}
+.valueCard.v3 b,
+.valueCard.v3 span {
+  color: white;
+}
+@keyframes valueFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .valueCard {
+    animation: none;
+  }
+}
+@media (max-width: 650px) {
+  .valueCard {
+    position: static;
+    width: 100%;
+    animation: none;
+    padding: 20px 22px;
+    gap: 4px;
+    border-left: 3px solid var(--green);
+  }
+  .valueCard::before {
+    display: block;
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 0.1em;
+    color: var(--green);
+    margin-bottom: 2px;
+  }
+  .valueCard.v0::before {
+    content: "01";
+  }
+  .valueCard.v1::before {
+    content: "02";
+  }
+  .valueCard.v2::before {
+    content: "03";
+  }
+  .valueCard.v3::before {
+    content: "04";
+  }
+  .valueCard.v1,
+  .valueCard.v3 {
+    background: white;
+    border-color: var(--line);
+    border-left: 3px solid var(--green);
+  }
+  .valueCard.v1 b,
+  .valueCard.v1 span,
+  .valueCard.v3 b,
+  .valueCard.v3 span {
+    color: unset;
+  }
+  .valueCard b {
+    color: var(--ink);
+  }
+  .valueCard span {
+    color: var(--muted);
+  }
+}

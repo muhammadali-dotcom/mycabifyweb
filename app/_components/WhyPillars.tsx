@@ -1,3 +1,5 @@
+import styles from "./WhyPillars.module.css";
+
 const pillars = [
   {
     label: "Automate",
@@ -18,14 +20,14 @@ const pillars = [
 
 export function WhyPillars() {
   return (
-    <section className="why-pillars">
-      <div className="why-pillars-head">
+    <section className={styles.whyPillars}>
+      <div className={styles.whyPillarsHead}>
         <p className="kicker">HOW MYCABIFY CHANGES YOUR DAY</p>
         <h2>
           Less time managing. <em>More time growing.</em>
         </h2>
       </div>
-      <div className="why-pillars-grid">
+      <div className={styles.whyPillarsGrid}>
         {pillars.map((p) => (
           <article key={p.label}>
             <span>{p.label}</span>
