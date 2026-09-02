@@ -67,13 +67,26 @@
   display: grid;
   grid-template-columns: 28px 1fr auto;
   align-items: center;
+  border-radius: 8px;
+  transition: background 0.2s ease;
+}
+.shared-header .mega a:hover {
+  background: var(--cream);
 }
 .shared-header .mega a b {
   font-weight: 400;
 }
 .shared-header .mega a > i {
   font-style: normal;
+  color: var(--line);
+  display: inline-block;
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+.shared-header .mega a:hover > i {
   color: var(--green);
+  transform: scale(1.3);
 }
 /* Header answer-mark / mobile helper overrides */
 .mobile-actions {
@@ -235,25 +248,7 @@
   text-decoration-thickness: 2px;
   text-underline-offset: 8px;
 }
-.shared-header nav > a::before,
-.solutions-trigger > span::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: -14px;
-  right: -14px;
-  height: 38px;
-  transform: translateY(-50%);
-  border-radius: 999px;
-  background: var(--cream);
-  opacity: 0;
-  z-index: -1;
-}
 @media (prefers-reduced-motion: no-preference) {
-  .shared-header nav > a::before,
-  .solutions-trigger > span::before {
-    transition: opacity 0.2s ease;
-  }
   .shared-header nav > a,
   .solutions-trigger > span {
     transition: color 0.2s ease;
@@ -262,10 +257,6 @@
 .shared-header nav > a:not(.active):hover,
 .solutions-trigger > span:not(.active):hover {
   color: var(--green);
-}
-.shared-header nav > a:not(.active):hover::before,
-.solutions-trigger > span:not(.active):hover::before {
-  opacity: 1;
 }
 .shared-header nav > a,
 .solutions-trigger > span,

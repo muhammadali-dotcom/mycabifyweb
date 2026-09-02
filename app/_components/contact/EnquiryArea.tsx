@@ -50,10 +50,41 @@ const moments = [
 
 const ROTATE_MS = 3800;
 
+type Status = "idle" | "sending" | "success" | "error";
+
 export function EnquiryArea() {
   const [i, setI] = useState(0);
+  const [status, setStatus] = useState<Status>("idle");
   const paused = useRef(false);
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const data = new FormData(form);
+    setStatus("sending");
+    try {
+      const res = await fetch("/api/enquiry", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          formType: "enquiry",
+          name: data.get("name"),
+          company: data.get("company"),
+          email: data.get("email"),
+          phone: data.get("phone"),
+          currentSystem: data.get("currentSystem"),
+          fleetSize: data.get("fleetSize"),
+          message: data.get("message"),
+        }),
+      });
+      if (!res.ok) throw new Error("Request failed");
+      setStatus("success");
+      form.reset();
+    } catch {
+      setStatus("error");
+    }
+  };
 
   const startInterval = () => {
     if (intervalRef.current) clearInterval(intervalRef.current);
@@ -137,18 +168,19 @@ export function EnquiryArea() {
         <div className={`${styles.enquiryPanel} modal`}>
           <p className="kicker">BOOK A DEMO</p>
           <h2>Tell us about your operation.</h2>
-          <form
-            id="enquiry-form"
-            onSubmit={(e) => {
-              e.preventDefault();
-            }}
-          >
+          <form id="enquiry-form" onSubmit={handleSubmit}>
             <div className={styles.enquiryFields}>
               <div className={styles.field}>
                 <label htmlFor="enquiry-name">
                   Full name<span className={styles.req}>*</span>
                 </label>
-                <input id="enquiry-name" required aria-required="true" placeholder="Jane Smith" />
+                <input
+                  id="enquiry-name"
+                  name="name"
+                  required
+                  aria-required="true"
+                  placeholder="Jane Smith"
+                />
               </div>
               <div className={styles.field}>
                 <label htmlFor="enquiry-company">
@@ -156,6 +188,7 @@ export function EnquiryArea() {
                 </label>
                 <input
                   id="enquiry-company"
+                  name="company"
                   required
                   aria-required="true"
                   placeholder="Your fleet name"
@@ -167,6 +200,7 @@ export function EnquiryArea() {
                 </label>
                 <input
                   id="enquiry-email"
+                  name="email"
                   required
                   aria-required="true"
                   type="email"
@@ -179,6 +213,7 @@ export function EnquiryArea() {
                 </label>
                 <input
                   id="enquiry-phone"
+                  name="phone"
                   required
                   aria-required="true"
                   placeholder="07000 000000"
@@ -186,11 +221,15 @@ export function EnquiryArea() {
               </div>
               <div className={styles.field}>
                 <label htmlFor="enquiry-current-system">Current system</label>
-                <input id="enquiry-current-system" placeholder="Current System (if any)" />
+                <input
+                  id="enquiry-current-system"
+                  name="currentSystem"
+                  placeholder="Current System (if any)"
+                />
               </div>
               <div className={`${styles.field} ${styles.fieldFull}`}>
                 <label htmlFor="enquiry-fleet-size">Fleet size</label>
-                <select id="enquiry-fleet-size" defaultValue="">
+                <select id="enquiry-fleet-size" name="fleetSize" defaultValue="">
                   <option value="" disabled>
                     Select fleet size
                   </option>
@@ -204,13 +243,22 @@ export function EnquiryArea() {
                 <label htmlFor="enquiry-message">What would you like to improve?</label>
                 <textarea
                   id="enquiry-message"
+                  name="message"
                   placeholder="Tell us a bit about your current setup"
                 />
               </div>
             </div>
-            <button className="solid" type="submit">
-              Send enquiry ↗
+            <button className="solid" type="submit" disabled={status === "sending"}>
+              {status === "sending" ? "Sending…" : "Send enquiry ↗"}
             </button>
+            {status === "success" && (
+              <p className={styles.formStatusSuccess}>Thanks! We&apos;ll be in touch shortly.</p>
+            )}
+            {status === "error" && (
+              <p className={styles.formStatusError}>
+                Something went wrong. Please try again or email info@mycabify.com.
+              </p>
+            )}
           </form>
         </div>
       </div>

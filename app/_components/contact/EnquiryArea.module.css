@@ -262,3 +262,15 @@
     padding: 28px 20px;
   }
 }
+
+.formStatusSuccess {
+  margin-top: 12px;
+  font-size: 0.9rem;
+  color: #1a7a3c;
+}
+
+.formStatusError {
+  margin-top: 12px;
+  font-size: 0.9rem;
+  color: #c0392b;
+}

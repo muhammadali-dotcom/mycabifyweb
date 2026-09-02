@@ -14,11 +14,19 @@
   padding-top: 24px;
 }
 .productHero h1 {
-  font-size: clamp(28px, 4vw, 53px);
-  line-height: 0.94;
-  letter-spacing: -0.072em;
+  font-size: clamp(30px, 3.2vw, 44px);
+  line-height: 1.05;
+  letter-spacing: -0.04em;
   font-weight: 520;
+  color: var(--green);
   margin: 0;
+}
+.productHero :global(.kicker) {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  margin: 0 0 12px;
 }
 .productHero > div > p:not(.kicker) {
   max-width: 650px;
@@ -144,7 +152,7 @@
     padding: 45px 22px 30px;
   }
   .productHero h1 {
-    font-size: 40px;
+    font-size: 30px;
   }
   .productHero > div > div {
     flex-direction: column;
@@ -163,6 +171,6 @@
 }
 @media (max-width: 480px) {
   .productHero h1 {
-    font-size: 32px;
+    font-size: 26px;
   }
 }
