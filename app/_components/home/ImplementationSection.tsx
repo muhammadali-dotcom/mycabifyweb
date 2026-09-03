@@ -1,3 +1,6 @@
+"use client";
+import { useDemo } from "./DemoProvider";
+
 const steps = [
   "Understand your operation",
   "Configure MyCabify",
@@ -27,7 +30,8 @@ function StepArrow() {
   );
 }
 
-export function ImplementationSection({ onDemo }: { onDemo: () => void }) {
+export function ImplementationSection() {
+  const { openDemo } = useDemo();
   return (
     <section className="implementation">
       <div className="implementation-intro">
@@ -35,7 +39,7 @@ export function ImplementationSection({ onDemo }: { onDemo: () => void }) {
         <h2>
           Change your system. <em>Keep your business moving.</em>
         </h2>
-        <button className="solid" onClick={onDemo}>
+        <button className="solid" onClick={openDemo}>
           Plan Your Switch ↗
         </button>
       </div>

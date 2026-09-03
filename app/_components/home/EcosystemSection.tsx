@@ -1,9 +1,12 @@
+"use client";
 import Link from "next/link";
 import { solutions } from "../../_data/home";
 import { Screen } from "./Screen";
 import styles from "./EcosystemSection.module.css";
+import { useDemo } from "./DemoProvider";
 
-export function EcosystemSection({ onPlayVideo }: { onPlayVideo: (name: string) => void }) {
+export function EcosystemSection() {
+  const { openVideo } = useDemo();
   return (
     <section id="platform" className={styles.ecosystem}>
       <div className={styles.sectionHead}>
@@ -22,7 +25,7 @@ export function EcosystemSection({ onPlayVideo }: { onPlayVideo: (name: string) 
                 {s.no} / {s.role}
               </span>
             </div>
-            <button className={styles.film} onClick={() => onPlayVideo(s.name)}>
+            <button className={styles.film} onClick={() => openVideo(s.name)}>
               <div>
                 <Screen type={s.type} image={s.image} />
               </div>
@@ -33,7 +36,7 @@ export function EcosystemSection({ onPlayVideo }: { onPlayVideo: (name: string) 
               <h3>{s.title}</h3>
               <p>{s.copy}</p>
               <div>
-                <button onClick={() => onPlayVideo(s.name)}>Watch film</button>
+                <button onClick={() => openVideo(s.name)}>Watch film</button>
                 <Link href={s.href}>Explore feature ↗</Link>
               </div>
             </div>

@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import styles from "./HeroSection.module.css";
 import { HeroVideo } from "./HeroVideo";
 import { videoIds } from "../../_data/videos";
+import { useDemo } from "./DemoProvider";
 
 const heroSubheadings = [
   "Minicab Dispatch Software UK",
@@ -16,7 +17,8 @@ const heroParagraph =
 
 const ROTATE_MS = 1500;
 
-export function HeroSection({ onDemo }: { onDemo: () => void }) {
+export function HeroSection() {
+  const { openDemo } = useDemo();
   const [i, setI] = useState(0);
   const paused = useRef(false);
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
@@ -49,7 +51,7 @@ export function HeroSection({ onDemo }: { onDemo: () => void }) {
         <p className={styles.heroParagraph}>{heroParagraph}</p>
 
         <div className="actions">
-          <button className="solid" onClick={onDemo}>
+          <button className="solid" onClick={openDemo}>
             Book a Demo ↗
           </button>
         </div>

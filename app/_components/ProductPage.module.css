@@ -21,13 +21,6 @@
   color: var(--green);
   margin: 0;
 }
-.productHero :global(.kicker) {
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  color: var(--muted);
-  margin: 0 0 12px;
-}
 .productHero > div > p:not(.kicker) {
   max-width: 650px;
   color: var(--muted);

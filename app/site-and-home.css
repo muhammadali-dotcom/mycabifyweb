@@ -13,7 +13,7 @@
   --green: #117447;
   --cream: #f1ede3;
   --paper: #fbfaf6;
-  --muted: #68746d;
+  --muted: #4f594f;
   --line: #18261d2b;
   --page-max-width: 1320px;
   --side-padding: 64px;
@@ -68,10 +68,17 @@ button {
   border: 0;
 }
 .kicker {
+  display: inline-flex;
+  align-items: center;
   font-size: 10px;
   font-weight: 900;
   letter-spacing: 0.18em;
   margin: 0 0 22px;
+  padding: 7px 16px;
+  border-radius: 999px;
+  background: rgba(17, 116, 71, 0.1);
+  border: 1px solid rgba(17, 116, 71, 0.2);
+  color: var(--green);
 }
 .pale {
   color: #aebbb4;

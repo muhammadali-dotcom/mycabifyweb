@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import type { ReactNode } from "react";
 import { useEffect, useRef, useState } from "react";
 import { solutionIcons } from "./_data/solutionIcons";
+import { useOptionalDemo } from "./_components/home/DemoProvider";
 
 type HeaderMenuItem = {
   name: string;
@@ -72,7 +73,9 @@ const featureItems: HeaderMenuItem[] = [
     icon: solutionIcons["web-booker"],
   },
 ];
-export default function SiteHeader({ onDemo }: { onDemo?: () => void }) {
+export default function SiteHeader({ onDemo: onDemoProp }: { onDemo?: () => void }) {
+  const demoCtx = useOptionalDemo();
+  const onDemo = onDemoProp ?? demoCtx?.openDemo;
   const [mobile, setMobile] = useState(false);
   const [solutionsOpen, setSolutionsOpen] = useState(false);
   const [newSolutionOpen, setNewSolutionOpen] = useState(false);
